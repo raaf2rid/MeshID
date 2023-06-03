@@ -28,7 +28,7 @@ select:-webkit-autofill:focus {
 }
 
 .preview .content .wrapper{
- align-items: center;
+ justify-content: center;
 }
   
 /* Dutch Banking */
