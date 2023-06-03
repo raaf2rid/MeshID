@@ -35,6 +35,16 @@ select:-webkit-autofill:focus {
   background-color: #fff;
 }
 
+
+.logo-fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.logo-fade-out {
+  opacity: 0;
+}
+
 /* Dutch Banking */
   
   .glossary{
