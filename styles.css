@@ -30,7 +30,11 @@ select:-webkit-autofill:focus {
 .preview .content .wrapper{
  justify-content: center;
 }
-  
+
+.preview {
+  background-color: #fff;
+}
+
 /* Dutch Banking */
   
   .glossary{
@@ -728,7 +732,7 @@ select:-webkit-autofill:focus {
     color: #253341;
     font-size: 15px;
     transition: border-color .3s;
-    -webkit-appearance: none;
+    appearance: none;
   }
 
   .preview .argentex .form-control.is-invalid {
