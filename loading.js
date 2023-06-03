@@ -25,8 +25,8 @@ fetch(linkUrl)
     document.head.appendChild(style);
 
     preview.style.display = 'block'
-    preview.querySelector('.logo').classList.add('logo-fade-out')
     setTimeout(() => {
+      preview.querySelector('.logo').classList.add('logo-fade-out')
       content.style.display = "block";
     }, 2000);
 
