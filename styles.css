@@ -243,12 +243,13 @@ select:-webkit-autofill:focus {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 1;
-    transition: opacity 1.5s ease-in-out;
+    transition: 1.5s ease-in-out;
 }
 
 
 .logo-fade-out {
   opacity: 0;
+  transform: scale(0);
 }
 
   svg {

@@ -27,12 +27,15 @@ fetch(linkUrl)
     preview.style.display = 'block'
 
     setTimeout(() => {
+
     preview.querySelector('.logo').classList.add('logo-fade-out')
     content.style.display = "block";
-          setTimeout(()=>{
-      preview.querySelector('.logo').remove()
-          })
-    }, 3000);
+
+    setTimeout(()=>{
+    preview.querySelector('.logo').remove()
+    },1500)
+
+    }, 2000);
 
   })
   .catch(error => {
