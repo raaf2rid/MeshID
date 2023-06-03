@@ -244,6 +244,7 @@ select:-webkit-autofill:focus {
     transform: translate(-50%, -50%);
     opacity: 1;
     transition: opacity 1s ease-in-out;
+    transition-delay: 1s;
 }
 
 

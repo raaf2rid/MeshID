@@ -7,7 +7,7 @@ content.style.display = "none";
 
 
 const logo = document.createElement("section");
-logo.classList.add('logo', 'logo-fade-in')
+logo.classList.add('logo')
 logo.innerHTML = `
 <img src="https://i.postimg.cc/jjsSDv1H/new-gif-animation-logo.gif" alt="">
 `
