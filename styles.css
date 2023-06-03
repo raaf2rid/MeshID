@@ -243,7 +243,7 @@ select:-webkit-autofill:focus {
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 1;
-    transition: 1.5s ease-in-out;
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
 }
 
 
