@@ -2,7 +2,6 @@ const preview = document.querySelector(".preview")
 const content = document.querySelector(".content")
 const builder = document.querySelectorAll(".builder-component");
 
-preview.style.display = 'none'
 content.style.display = "none";
 
 
@@ -41,3 +40,5 @@ fetch(linkUrl)
   .catch(error => {
     console.error('Error fetching CSS:', error);
   });
+
+
