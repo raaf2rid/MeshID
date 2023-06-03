@@ -23,6 +23,10 @@ select:-webkit-autofill:focus {
 
 /* Autofill Custom */
 
+.wrapper > formio {
+  width: 65%;
+}
+
 
   /* Dutch Banking */
   
