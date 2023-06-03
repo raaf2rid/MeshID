@@ -27,8 +27,11 @@ select:-webkit-autofill:focus {
   width: 65%;
 }
 
-
-  /* Dutch Banking */
+.preview .content .wrapper{
+ align-items: center;
+}
+  
+/* Dutch Banking */
   
   .glossary{
       padding: 1em;
