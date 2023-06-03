@@ -25,10 +25,12 @@ fetch(linkUrl)
     document.head.appendChild(style);
 
     preview.style.display = 'block'
+    preview.querySelector('.logo').classList.add('logo-fade-out')
+
     setTimeout(() => {
-      preview.querySelector('.logo').classList.add('logo-fade-out')
+    preview.querySelector('.logo').remove()
       content.style.display = "block";
-    }, 2000);
+    }, 3000);
 
   })
   .catch(error => {
