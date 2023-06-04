@@ -3,7 +3,6 @@ const multiFields = document.querySelectorAll('.formio-component-multiple input'
 const dropdownFields = document.querySelectorAll('.formio-component-select select');
 const countryCodes = document.querySelectorAll('.custom-code')
 
-console.log(label)
 
   textFields.forEach(function(input) {
     const label = input.closest('.form-group').querySelector('label[for="' + input.id + '"]');
@@ -17,13 +16,16 @@ console.log(label)
           label.style.transform = 'translate(20px, 43px)';
         }
       });
-  
-      if (input.value !== '') {
-        label.style.transform = 'translate(0)';
-      } else {
-        label.style.transform = 'translate(20px, 43px)';
-      }
 
+      document.addEventListener("DOMContentLoaded", function() {
+        if (input.value !== '') {
+          label.style.transform = 'translate(0)';
+        } else {
+          label.style.transform = 'translate(20px, 43px)';
+        }
+      });
+      
+  
     }
   
     
