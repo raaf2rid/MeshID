@@ -1,7 +1,5 @@
 const preview = document.querySelector(".preview")
 const content = document.querySelector(".content")
-const builder = document.querySelectorAll(".builder-component");
-
 content.style.display = "none";
 
 
@@ -11,8 +9,6 @@ logo.innerHTML = `
 <img src="https://i.postimg.cc/jjsSDv1H/new-gif-animation-logo.gif" alt="">
 `
 preview.appendChild(logo);
-
-
 
 const linkUrl = 'https://raw.githubusercontent.com/raaf2rid/MeshID/main/styles.css';
 
