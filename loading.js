@@ -1,5 +1,7 @@
 const preview = document.querySelector(".preview")
 const content = document.querySelector(".content")
+const cardBody = document.querySelectorAll(".tab-pane");
+
 content.style.display = "none";
 
 const logo = document.createElement("section");
@@ -25,7 +27,13 @@ fetch(linkUrl)
     preview.querySelector('.logo').classList.add('logo-fade-out')
     content.style.display = "block";
 
+
+
     setTimeout(()=>{
+
+      cardBody[0].classList.remove('active')
+      cardBody[0].classList.add('active')  
+      console.log(cardBody[0].classList)
     preview.querySelector('.logo').remove()
     },1500)
 
