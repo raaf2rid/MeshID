@@ -27,7 +27,7 @@ function getResult(nameValue){
 
       
   
-      if (row[apiValue] !== '') {
+      if (data.tabContainerComp[apiValue] !== '') {
         label.style.transform = 'translate(0)';
       } else {
         label.style.transform = 'translate(20px, 43px)';
