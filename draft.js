@@ -1,5 +1,5 @@
 // Create a new <script> element
-let script = 'https://raw.githubusercontent.com/raaf2rid/MeshID/main/customization.js'
+let script = 'https://raw.githubusercontent.com/raaf2rid/MeshID/main/loading.js'
 
 
 

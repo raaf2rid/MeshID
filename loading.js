@@ -18,7 +18,10 @@ fetch(linkUrl)
     const style = document.createElement('style');
     style.textContent = cssText;
 
+    document.head.appendChild(style)
+
     setTimeout(() => {
+
 
     preview.querySelector('.logo').classList.add('logo-fade-out')
     preview.style.display = "block";
