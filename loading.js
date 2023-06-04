@@ -17,7 +17,6 @@ fetch(linkUrl)
   .then(cssText => {
     const style = document.createElement('style');
     style.textContent = cssText;
-    document.head.appendChild(style);
 
     preview.style.display = 'block'
 
