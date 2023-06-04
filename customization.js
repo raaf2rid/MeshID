@@ -9,14 +9,6 @@ const countryCodes = document.querySelectorAll('.custom-code')
 
     if(label){
 
-      input.addEventListener('input', function() {
-        if (input.value !== '') {
-          label.style.transform = 'translate(0)';
-        } else {
-          label.style.transform = 'translate(20px, 43px)';
-        }
-      });
-
       document.addEventListener("DOMContentLoaded", function() {
         if (input.value !== '') {
           label.style.transform = 'translate(0)';
