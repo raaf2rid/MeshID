@@ -40,6 +40,8 @@ if (navBar) {
 if (cardBody) {
   let fields;
 
+  console.log(cardBody[0])
+
   cardBody[0].classList.remove('active')
   cardBody[0].classList.add('active')
 
