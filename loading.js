@@ -21,9 +21,9 @@ fetch(linkUrl)
     setTimeout(() => {
 
     preview.querySelector('.logo').classList.add('logo-fade-out')
+    preview.style.display = "block";
     content.style.display = "block";
 
-    preview.style.display = "block";
 
 
     setTimeout(()=>{
