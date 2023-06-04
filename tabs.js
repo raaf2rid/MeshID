@@ -40,6 +40,10 @@ if (navBar) {
 if (cardBody) {
   let fields;
 
+  cardBody[0].classList.remove('active')
+  cardBody[0].classList.add('active')
+
+
   cardBody.forEach((tab) => {
     if (tab.style.display == "block") {
       fields = tab.querySelectorAll(".required");
