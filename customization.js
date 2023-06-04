@@ -18,6 +18,7 @@ const countryCodes = document.querySelectorAll('.custom-code')
       });
   
       if (input.value !== '') {
+        console.log(label)
         label.style.transform = 'translate(0)';
       } else {
         label.style.transform = 'translate(20px, 43px)';
