@@ -32,8 +32,10 @@ fetch(linkUrl)
     setTimeout(()=>{
 
       cardBody[0].classList.remove('active')
+      cardBody[0].style.display = 'none' 
       cardBody[1].classList.add('active')  
-      
+      cardBody[1].style.display = 'block' 
+
     preview.querySelector('.logo').remove()
     },1500)
 
