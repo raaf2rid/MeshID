@@ -9,15 +9,22 @@ const countryCodes = document.querySelectorAll('.custom-code')
 
     if(label){
 
-      document.addEventListener("DOMContentLoaded", function() {
+      input.addEventListener('input', function() {
         if (input.value !== '') {
           label.style.transform = 'translate(0)';
         } else {
           label.style.transform = 'translate(20px, 43px)';
         }
       });
+
       
   
+      if (input.value !== '') {
+        label.style.transform = 'translate(0)';
+      } else {
+        label.style.transform = 'translate(20px, 43px)';
+      }
+
     }
   
     
