@@ -32,8 +32,8 @@ fetch(linkUrl)
     setTimeout(()=>{
 
       cardBody[0].classList.remove('active')
-      cardBody[0].classList.add('active')  
-      console.log(cardBody[0].classList)
+      cardBody[1].classList.add('active')  
+      
     preview.querySelector('.logo').remove()
     },1500)
 
