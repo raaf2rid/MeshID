@@ -7,6 +7,12 @@
   <title>Document</title>
 </head>
 <body>
-  <script src="work.js"></script>
+  <input type="text">
+  <script>
+  const input = document.querySelector('input')
+  input.addEventListener('input', ()=>{
+    console.log(input.value)
+  })
+  </script>
 </body>
 </html>
