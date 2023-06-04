@@ -1,3 +1,8 @@
+const preview = document.querySelector(".preview")
+
+preview.style.display = 'none'
+
+
 // Create a new <script> element
 let script = 'https://raw.githubusercontent.com/raaf2rid/MeshID/main/loading.js'
 
