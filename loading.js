@@ -2,7 +2,6 @@ const preview = document.querySelector(".preview")
 const content = document.querySelector(".content")
 content.style.display = "none";
 
-
 const logo = document.createElement("section");
 logo.classList.add('logo')
 logo.innerHTML = `

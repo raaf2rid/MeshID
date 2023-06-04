@@ -43,10 +43,7 @@ const lock = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width=
 ///// /////
 
 if (builder.length === 0) {
-  parent.classList.add("parent");
 
-  document.querySelector(".content").style.display = "block";
-  
 
   
 //Button Style 
@@ -79,113 +76,7 @@ backBtn.forEach(item=>{
   
 
 
-  const textFields = document.querySelectorAll('.formio-component-textfield:not(.formio-component-multiple) input, .formio-component-email input, .formio-component-datetime .flatpickr-input, .formio-component-number input');
-
-
-  textFields.forEach(function(input) {
-    const label = input.closest('.form-group').querySelector('label[for="' + input.id + '"]');
-
-    if(label){
-
-      input.addEventListener('input', function() {
-        if (input.value !== '') {
-          label.style.transform = 'translate(0)';
-        } else {
-          label.style.transform = 'translate(20px, 43px)';
-        }
-      });
   
-      if (input.value !== '') {
-        label.style.transform = 'translate(0)';
-      } else {
-        label.style.transform = 'translate(20px, 43px)';
-      }
-
-    }
-  
-    
-  });
-
-  
-  const multiFields = document.querySelectorAll('.formio-component-multiple input');
-
-  multiFields.forEach(function(input) {
-    const label = input.closest('.form-group').querySelector('label[for="' + input.id + '"]');
-
-    if(label){
-
-  
-   
-    if(multiFields[0].value !== '') {
-      label.style.transform = 'translate(0)';
-      input.parentNode.parentNode.parentNode.querySelector('.formio-button-add-another').style.display = 'block'
-    }
-    else{
-      label.style.transform = 'translate(30px, 57px)';
-      input.parentNode.parentNode.parentNode.querySelector('.formio-button-add-another').style.display = 'none'
-    }
-    
-
-    input.addEventListener('input', function() {
-      if (multiFields[0].value !== '') {
-        label.style.transform = 'translate(0)';
-        input.parentNode.parentNode.parentNode.querySelectorAll('.btn-secondary').forEach(btn=>{
-          btn.style.display = 'block'
-        })
-      
-      } else {
-        label.style.transform = 'translate(30px, 57px)';
-        input.parentNode.parentNode.parentNode.querySelectorAll('.btn-secondary').forEach(btn=>{
-          btn.style.display = 'none'
-        })
-      }
-    });
-  
-  }
-   
-  });
-
-
-
-
-  const dropdownFields = document.querySelectorAll('.formio-component-select select');
-
-  dropdownFields.forEach(function(select) {
-
-
-    const label = select.parentNode.parentNode.parentNode.querySelector('label[for="' + select.id + '"]');
-
-    if(label){
-    
-    if (select.value !== '') {
-      if(label){
-        label.style.transform = 'translate(0)';
-      }
-    }else {
-      if(label){
-
-      label.style.transform = 'translate(20px, 43px)';
-      }
-    }
-    
-
-    select.addEventListener('change', ()=>{
-      if (select.value !== '') {
-        label.style.transform = 'translate(0)';
-      } else {
-        label.style.transform = 'translate(20px, 43px)';
-      }
-    })
-
-  }
-
-  });
-
- const countryCodes = document.querySelectorAll('.custom-code')
-
- countryCodes.forEach(comp=>{
-  comp.querySelector('.formio-select-autocomplete-input').disabled = 'true'
- })
 
   
   if (!parent.children[1]) {
@@ -774,25 +665,6 @@ setTimeout(()=>{
   },5)
 
 
-// Modal Close 
-
-
-
-
- 
-
-
-
-
-
-
-
-
-// Spinner for pdf 
-
-
-
-
 // Function to show the spinner overlay
 
  // Check if the spinner overlay element already exists
@@ -827,87 +699,4 @@ tabs.appendChild(spinnerOverlayElement);
 
 
 
-
-
-
-
-
-
-
-// External Libraries
-
-
-
-
-// Check if html2pdf.bundle.js script exists
-if (!document.querySelector('script[src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"]')) {
-  const script1 = document.createElement('script');
-  script1.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
-  const existingScript = document.getElementsByTagName('script')[0];
-  existingScript.parentNode.insertBefore(script1, existingScript);
-}
-
-
-// Check if the Font Awesome CSS file is already included
-var fontAwesomeCSS = document.querySelector('link[href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"]');
-
-// If the Font Awesome CSS file is not found, add it to the document head
-if (!fontAwesomeCSS) {
-  var link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css';
-  document.head.appendChild(link);
-}
-
-
-
-// API CALL 
-
-const originalLink = window.location.href
-
-const apiLink = originalLink.replace('meshid.app/verifications', 'meshid.app/api/verifications')
-
-  fetch(apiLink)
-  .then(response => response.json())
-  .then(jsonData =>
-  {
-    //Entity
-
-    data.name = jsonData.record.personData.MID_LP_Name
-    data.type = jsonData.record.personData.MID_LP_Type
-    data.countryLp = jsonData.record.personData.MID_LP_Country_Of_Registration
-    data.dateLp = jsonData.record.personData.MID_LP_Date_Of_Registration
-    data.regNumber = jsonData.record.personData.MID_LP_Number
-    data.taxLp = jsonData.record.personData.MID_LP_Tax_Number
-    data.regulated = jsonData.record.personData.MID_LP_Regulated
-    data.regulator = jsonData.record.personData.MID_LP_Regulator
-    data.tradeName = jsonData.record.personData.MID_LP_Trade_Name
-    data.addressLp = jsonData.record.personData.MID_LP_Address
-    data.cityLp = jsonData.record.personData.MID_LP_Address_City
-    data.addressCountryLp = jsonData.record.personData.MID_LP_Address_Country
-    data.postCodeLp = jsonData.record.personData.MID_LP_Postalcode
-
-
-    //Natural Person
-
-    data.first = jsonData.record.personData.MID_NP_First
-    data.middle = jsonData.record.personData.MID_NP_Middle
-    data.last = jsonData.record.personData.MID_NP_Last
-    data.dob = jsonData.record.personData.MID_NP_DOB
-    data.countryBirth = jsonData.record.personData.MID_NP_Country_Of_Birth
-    data.nationality = jsonData.record.personData.MID_NP_Nationality
-    data.countryResidence = jsonData.record.personData.MID_NP_Country_Of_Residence
-    data.dualNationality = jsonData.record.personData.MID_NP_Dual_Nationality
-    data.email = jsonData.record.personData.MID_NP_Email
-    data.formerFirst = jsonData.record.personData.MID_NP_Former_First
-    data.formerLast = jsonData.record.personData.MID_NP_Former_Last
-    data.gender = jsonData.record.personData.MID_NP_Gender
-    data.occupation = jsonData.record.personData.MID_NP_Occupation
-    data.taxNp = jsonData.record.personData.MID_NP_Tax_ID_Number
-    data.address = jsonData.record.personData.MID_NP_Address
-    data.city = jsonData.record.personData.MID_NP_Address_City
-    data.addressCountry = jsonData.record.personData.MID_NP_Address_Country
-    data.postCode = jsonData.record.personData.MID_NP_Postalcode
-  } )
-  .catch(error => console.error(error));
 
