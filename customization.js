@@ -4,13 +4,21 @@ const dropdownFields = document.querySelectorAll('.formio-component-select selec
 const countryCodes = document.querySelectorAll('.custom-code')
 
 
+function getResult(nameValue){
+  let startIndex = nameValue.lastIndexOf('[') + 1;
+  let endIndex = nameValue.lastIndexOf(']');
+  return nameValue.substring(startIndex, endIndex); 
+}
+
   textFields.forEach(function(input) {
     const label = input.closest('.form-group').querySelector('label[for="' + input.id + '"]');
+
+    const apiValue = getResult(input.name)
 
     if(label){
 
       input.addEventListener('input', function() {
-        if (input.value !== '') {
+        if (row[apiValue] !== '') {
           label.style.transform = 'translate(0)';
         } else {
           label.style.transform = 'translate(20px, 43px)';
@@ -19,7 +27,7 @@ const countryCodes = document.querySelectorAll('.custom-code')
 
       
   
-      if (input.value !== '') {
+      if (row[apiValue] !== '') {
         label.style.transform = 'translate(0)';
       } else {
         label.style.transform = 'translate(20px, 43px)';
