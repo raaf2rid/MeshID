@@ -759,7 +759,6 @@ select:-webkit-autofill:focus {
     z-index: 1000;
     font-weight: 700;
     position: relative;
-    transform: translate(20px, 43px);
     opacity: 0.7 !important;
     pointer-events: none !important;
   }
