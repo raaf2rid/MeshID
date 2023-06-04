@@ -1,6 +1,5 @@
 const preview = document.querySelector(".preview")
 const content = document.querySelector(".content")
-const cardBody = document.querySelectorAll(".tab-pane");
 
 content.style.display = "none";
 
@@ -31,10 +30,7 @@ fetch(linkUrl)
 
     setTimeout(()=>{
 
-      cardBody[0].classList.remove('active')
-      cardBody[0].style.display = 'none' 
-      cardBody[1].classList.add('active')  
-      cardBody[1].style.display = 'block' 
+     
 
     preview.querySelector('.logo').remove()
     },1500)
