@@ -1,8 +1,4 @@
-// Variable to track whether the form has been loaded
-let tabsLoaded = false;
-
 // Check if the form has not yet been loaded
-if (!tabsLoaded) {
   // Perform the desired action
   const cardHeader = document.querySelector(".card-header");
   const card = document.querySelector(".card");
@@ -217,6 +213,6 @@ if (!tabsLoaded) {
   
   // Set the variable to true to indicate that the form has been loaded
   tabsLoaded = true;
-}
+
 
 // If the form has already been loaded, nothing will happen
