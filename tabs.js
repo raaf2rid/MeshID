@@ -1,3 +1,5 @@
+let scriptAdded
+
 // Check if the form has not yet been loaded
   // Perform the desired action
   const cardHeader = document.querySelector(".card-header");

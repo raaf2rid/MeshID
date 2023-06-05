@@ -1,3 +1,5 @@
+let scriptAdded
+
 const preview = document.querySelector(".preview")
 const content = document.querySelector(".content")
 
