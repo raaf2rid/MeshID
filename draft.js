@@ -3,9 +3,14 @@ let loadingScript = 'https://raw.githubusercontent.com/raaf2rid/MeshID/main/load
   // Perform the desired action
 
 if (!document.querySelector('script[src="' + loadingScript + '"]')) {
+
 const preview = document.querySelector(".preview")
 
 preview.style.display = 'none'
+
+
+
+
 
 fetch(loadingScript)
   .then(response => response.text())

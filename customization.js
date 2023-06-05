@@ -1,10 +1,4 @@
 
- // Variable to track whether the form has been loaded
-let customLoaded = false;
-
-// Check if the form has not yet been loaded
-if (!customLoaded) {
-  // Perform the desired action
 
   const textFields = document.querySelectorAll('.formio-component-textfield:not(.formio-component-multiple) input, .formio-component-email input, .formio-component-datetime .flatpickr-input, .formio-component-number input');
   const multiFields = document.querySelectorAll('.formio-component-multiple input');
@@ -119,10 +113,3 @@ if (!customLoaded) {
   
   
   
-  
-  
-  // Set the variable to true to indicate that the form has been loaded
-  customLoaded = true;
-}
-
-// If the form has already been loaded, nothing will happen
