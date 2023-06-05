@@ -1,15 +1,17 @@
+// Check if the script has already been loaded
+if (!window.loading) {
+  // Set the flag to indicate that the script is being loaded
+  window.loading = true;
+
+
 // Create a new <script> element
 let loadingScript = 'https://raw.githubusercontent.com/raaf2rid/MeshID/main/loading.js'
   // Perform the desired action
 
-if (!document.querySelector('script[src="' + loadingScript + '"]')) {
 
 const preview = document.querySelector(".preview")
 
 preview.style.display = 'none'
-
-
-
 
 
 fetch(loadingScript)
@@ -30,3 +32,6 @@ fetch(loadingScript)
   });
 
 }
+
+
+
