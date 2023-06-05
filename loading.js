@@ -1,6 +1,7 @@
 const preview = document.querySelector(".preview")
 const content = document.querySelector(".content")
 
+preview.style.display = "block";
 content.style.display = "none";
 
 const logo = document.createElement("section");
@@ -21,6 +22,7 @@ fetch(linkUrl)
     document.head.appendChild(style)
 
 
+
     setTimeout(() => {
 
 
@@ -29,8 +31,7 @@ fetch(linkUrl)
 
     setTimeout(()=>{
 
-      preview.style.display = "block";
-      content.style.display = "block";
+    content.style.display = "block";
 
     preview.querySelector('.logo').remove()
     },1500)
