@@ -26,12 +26,11 @@ fetch(linkUrl)
 
     preview.querySelector('.logo').classList.add('logo-fade-out')
     
-    preview.style.display = "block";
-    content.style.display = "block";
 
     setTimeout(()=>{
 
-     
+      preview.style.display = "block";
+      content.style.display = "block";
 
     preview.querySelector('.logo').remove()
     },1500)
