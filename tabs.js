@@ -1,4 +1,5 @@
-let scriptAdded
+//  Search String
+
 
 // Check if the form has not yet been loaded
   // Perform the desired action
