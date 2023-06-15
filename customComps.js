@@ -1,6 +1,5 @@
 // MeshID Custom
 
-console.log('attached')
 
 const textFields = document.querySelectorAll('.formio-component-textfield:not(.formio-component-multiple) input, .formio-component-email input, .formio-component-datetime .flatpickr-input, .formio-component-textarea textarea');
   
