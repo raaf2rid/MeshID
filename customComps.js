@@ -22,7 +22,7 @@ textFields.forEach(function(input) {
     }
   }
 
-  
+
 });
 
 const dropdownFields = document.querySelectorAll('.formio-component-select select');
