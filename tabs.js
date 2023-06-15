@@ -1,183 +1,378 @@
-//  Search String
 
+const cardHeader = document.querySelector(".card-header");
+const card = document.querySelector(".card");
+const cardBody = document.querySelectorAll(".tab-pane");
+const head = document.querySelector("head");
+const navBar = document.querySelector(".card-header-tabs");
+const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
+const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
+const builder = document.querySelectorAll(".builder-component");
+const cardHeaderUl = document.querySelector(".card-header > ul");
+const snackbar = document.querySelector("#snackbar");
+const tabs = document.querySelector(".wrapper");
+const formioWrapper = document.querySelector(".formio-wrapper");
+let parent = document.querySelector(".formio-component-form").parentElement;
+const child = document.querySelector(".formio-component-form");
 
-// Check if the form has not yet been loaded
-  // Perform the desired action
-  const cardHeader = document.querySelector(".card-header");
-  const card = document.querySelector(".card");
-  const cardBody = document.querySelectorAll(".tab-pane");
-  const navBar = document.querySelector(".card-header-tabs");
-  const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
-  const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
-  const cardHeaderUl = document.querySelector(".card-header > ul");
-  const snackbar = document.querySelector("#snackbar");
-  const formio = document.querySelector('.preview .content .wrapper formio');
+const errorFields = document.querySelectorAll(".tab-pane:not(:last-child) .custom-error")
+const backBtn = document.querySelectorAll('.navigation-back > .navigation-back')
+const nextBtn = document.querySelectorAll('.navigation-next > .navigation-next')
+const formio = document.querySelector('.preview .content .wrapper formio');
   
   
   
-  if (cardHeader) {
-    if (!cardHeader.classList.contains("form-builder-group-header")) {
+  if (builder.length === 0) {
+    parent.classList.add("parent");
+  
+    document.querySelector(".content").style.display = "block";
+    
+  
+    
+  //Button Style 
+  
+  backBtn.forEach(item=>{
+  
+    item.classList.remove('btn', 'btn-secondary', 'btn-md', 'btn-block');
+  
+    item.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20ZM12 11H16V13H12V16L8 12L12 8V11Z" fill="rgba(110,121,116,1)"></path></svg>`
+  })
+  
+  
+  
+    
+    nextBtn.forEach(item=>{
+      item.classList.remove('btn', 'btn-success', 'btn-md', 'btn-block', 'btn-danger', 'submit-fail');
+      item.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+      <rect x="10" y="10" width="180" height="60" rx="30" ry="30" fill="#d5d5d5" stroke="black" stroke-width="2"></rect>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" font-weight="bold">Next</text>
+    </svg>
+    `
+    if(item.classList.contains("review")){
+      item.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+      <rect x="10" y="10" width="180" height="60" rx="10" ry="10" fill="#d5d5d5" stroke="black" stroke-width="2"></rect>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" font-weight="bold">Review and Sign</text>
+    </svg>
+    `
     }
-  }
+    }) 
+    
   
-  cardHeader.style.display = 'none'
+    const textFields = document.querySelectorAll('.formio-component-textfield:not(.formio-component-multiple) input, .formio-component-email input, .formio-component-datetime .flatpickr-input, .formio-component-textarea textarea');
   
-  if (card) {
-    mediaQueriesCard();
-    window.addEventListener("resize", mediaQueriesCard);
-  }
+    textFields.forEach(function(input) {
+      const label = input.closest('.form-group').querySelector('label[for="' + input.id + '"]');
+    
+      if(label){
+        input.addEventListener('input', function() {
+          if (input.value !== '') {
+            label.style.transform = 'translate(0)';
+          } else {
+            label.style.transform = 'translate(20px, 43px)';
+          }
+        });
+    
+        if (input.value !== '') {
+          label.style.transform = 'translate(0)';
+        } else {
+          label.style.transform = 'translate(20px, 43px)';
+        }
+      }
   
-  if (navBar) {
-    navBar.style.flexDirection = "column";
+      
+    });
   
-  }
+    const dropdownFields = document.querySelectorAll('.formio-component-select select');
   
-  if (cardBody) {
-    let fields;
+    dropdownFields.forEach(function(select) {
+  
+  
+      const label = select.parentNode.parentNode.parentNode.querySelector('label[for="' + select.id + '"]');
+  
+      if(label){
+  
+        if (select.value !== '') {
+          if(label){
+            label.style.transform = 'translate(0)';
+          }
+        }else {
+          if(label){
+    
+          label.style.transform = 'translate(20px, 43px)';
+          }
+        }
+        
+    
+        select.addEventListener('change', ()=>{
+          if (select.value !== '') {
+            label.style.transform = 'translate(0)';
+          } else {
+            label.style.transform = 'translate(20px, 43px)';
+          }
+        })
+  
+      }
+      
+     
+  
+    });
+  
+    const multiFields = document.querySelectorAll('.formio-component-multiple:not(.formio-component-select) input');
+  
+    multiFields.forEach(function(input) {
+      const label = input.closest('.form-group').querySelector('label[for="' + input.id + '"]');
+  
+  
+    if(label){
+      if(multiFields[0].value !== '') {
+        label.style.transform = 'translate(0)';
+        input.parentNode.parentNode.parentNode.querySelector('.formio-button-add-another').parentElement.style.display = 'block'
+      }
+      else{
+        label.style.transform = 'translate(20px, 57px)';
+        input.parentNode.parentNode.parentNode.querySelector('.formio-button-add-another').parentElement.style.display = 'none'
+      }
+      
+  
+      input.addEventListener('input', function() {
+        if (multiFields[0].value !== '') {
+          label.style.transform = 'translate(0)';
+          input.parentNode.parentNode.parentNode.querySelectorAll('.btn-secondary').forEach(btn=>{
+          })
+        
+        } else {
+          label.style.transform = 'translate(20px, 57px)';
+          input.parentNode.parentNode.parentNode.querySelectorAll('.btn-secondary').forEach(btn=>{
+            btn.style.visibility = 'hidden'
+          })
+        }
+      });
+    }
+     
+     
+    
+  
+     
+    });
+  
+  
+  
+  
+  
+  
+  
+    if (!parent.children[1]) {
+      const logo = document.createElement("section");
+      parent.appendChild(logo);
+      parent.querySelector(".formio-form").style.display = "none";
+  
+      tabs.style.display = "flex";
+  
+      tabs.style.justifyContent = "center";
+      tabs.style.alignItems = "center";
+  
+      setTimeout(() => {
+      
+        formio.style.width = '35%';
+        parent.querySelector("section").innerHTML = `
+          <img class="logo" src="https://i.postimg.cc/jjsSDv1H/new-gif-animation-logo.gif" alt="">
+          `;
+      }, 0);
+  
+      setTimeout(() => {
+        parent.querySelector(".formio-form").style.display = "block";
+        parent.querySelector("section").innerHTML = "";
+        tabs.style.display = "block";
+        formio.style.width = '65%';
+      }, 2000);
+    }
+  
   
   
     cardBody[0].classList.remove('active')
-    cardBody[0].style.display = 'none' 
-    cardBody[1].classList.add('active')  
-    cardBody[1].style.display = 'block' 
-  
+    cardBody[0].style.display = 'none'
+      
+    cardBody[1].classList.add('active')
+    cardBody[1].style.display = 'block'
+    
+    
+    cardBody.forEach((tab, i)=>{
+    
+      if(i !== 0 && i !== 1 && tab.classList.contains('active')){
+      cardBody[1].classList.remove('active')
+      cardBody[1].style.display = 'none'
+    
+      }
+    
+    })
   
     
+  cardHeader.style.display = "none"
   
-    cardBody.forEach((tab) => {
-      if (tab.style.display == "block") {
-        fields = tab.querySelectorAll(".required");
+    if (cardHeader) {
+      if (!cardHeader.classList.contains("form-builder-group-header")) {
       }
+    }
   
-      if (fields) {
-        fields.forEach((item) => {
-          if (item.classList.contains("formio-modified")) {
-            item.classList.remove("formio-error-wrapper");
-          }
-        });
-      }
-    });
+    if (card) {
+      mediaQueriesCard();
+      window.addEventListener("resize", mediaQueriesCard);
+    }
   
-    cardBody.forEach((element, i) => {
-      element.style.width = "100%";
+    if (navBar) {
+      navBar.style.flexDirection = "column";
   
-    
-    });
-  }
+    }
   
-  if (cardHeaderUl) {
-    cardHeader.style.padding = "0";
-    cardHeader.style.borderBottom = "0";
-    cardHeader.style.borderBottomLeftRadius = "7px";
-    cardHeader.style.background = "#fafafa";
-    cardHeader.style.paddingBottom = "2em";
   
-    if (!cardHeaderUl.classList.contains("loaded")) {
-      cardHeaderUl.style.margin = "0";
-      cardHeaderUl.classList.add("loaded");
-      cardHeaderUl.insertAdjacentHTML(
-        "beforebegin",
-        '<p class="nav-header">All Pages</p>'
-      );
-      const navHeader = document.querySelector(".nav-header");
   
-      mediaQueriesHeader(navHeader);
   
-      window.addEventListener("resize", () => {
-        mediaQueriesHeader(navHeader);
+  
+    if (cardBody) {
+      let fields;
+  
+      cardBody.forEach((tab) => {
+        if (tab.style.display == "block") {
+          fields = tab.querySelectorAll(".required");
+        }
+  
+        
+  
+        if (fields) {
+          fields.forEach((item) => {
+            if (item.classList.contains("formio-modified")) {
+              item.classList.remove("formio-error-wrapper");
+            }
+          });
+        }
+      });
+  
+      cardBody.forEach((element, i) => {
+        element.style.width = "100%";
+  
+        disableButtons()
+  
+        setTimeout(()=>{
+          enableButtons
+        },850)
+  
+      
       });
     }
-  }
-  navItems.forEach((item) => {
-    item.style.width = "100%";
-    // item.style.borderBottom = "2px solid #F5F5F5"
-  });
   
-  navLinks.forEach((item) => {
-    item.style.fontSize = "1.2rem";
-    item.style.fontWeight = "700";
-    item.style.border = "0";
-    item.style.width = "100%";
-    item.style.borderRadius = "0";
-    item.style.borderRadius = "0";
-    item.addEventListener("click", () => {
-      animate();
+    if (cardHeaderUl) {
+      cardHeader.style.padding = "0";
+      cardHeader.style.borderBottom = "0";
+      cardHeader.style.borderBottomLeftRadius = "7px";
+      cardHeader.style.background = "#fafafa";
+      cardHeader.style.paddingBottom = "2em";
+  
+      if (!cardHeaderUl.classList.contains("loaded")) {
+        cardHeaderUl.style.margin = "0";
+        cardHeaderUl.classList.add("loaded");
+        cardHeaderUl.insertAdjacentHTML(
+          "beforebegin",
+          '<p class="nav-header">All Pages</p>'
+        );
+        const navHeader = document.querySelector(".nav-header");
+  
+        mediaQueriesHeader(navHeader);
+  
+        window.addEventListener("resize", () => {
+          mediaQueriesHeader(navHeader);
+        });
+      }
+    }
+    navItems.forEach((item) => {
+      item.style.width = "100%";
+      // item.style.borderBottom = "2px solid #F5F5F5"
     });
-  });
   
-  
+    navLinks.forEach((item) => {
+      item.style.fontSize = "1.2rem";
+      item.style.fontWeight = "700";
+      item.style.border = "0";
+      item.style.width = "100%";
+      item.style.borderRadius = "0";
+      item.style.borderRadius = "0";
+      item.addEventListener("click", () => {
+        animate();
+      });
+    });
+  }
+
+
   ///// /////
-  // Functions
-  ///// /////
-  
-  /////
-  // Card Animation(Opacity+Translate)
-  /////
-  
-  function animate() {
+// Functions
+///// /////
+
+/////
+// Card Animation(Opacity+Translate)
+/////
+
+function animate() {
   card.classList.add("card-animation");
   disableButtons();
   setTimeout(removeAnimation, 800);
-  
+
   function removeAnimation() {
     card.classList.remove("card-animation");
     enableButtons();
   }
-  }
-  
-  /////
-  // Sidebar buttons enabling/disabling for Card animation to work properly
-  /////
-  
-  function disableButtons() {
+}
+
+/////
+// Sidebar buttons enabling/disabling for Card animation to work properly
+/////
+
+function disableButtons() {
   navLinks.forEach((item) => {
     item.style.pointerEvents = "none";
   });
-  }
-  
-  function enableButtons() {
+}
+
+function enableButtons() {
   navLinks.forEach((item) => {
     item.style.pointerEvents = "auto";
   });
-  }
-  
-  ///// /////
-  // Media Queries
-  ///// /////
-  
-  /////
-  // Card Display
-  /////
-  
-  function mediaQueriesCard() {
+}
+
+///// /////
+// Media Queries
+///// /////
+
+/////
+// Card Display
+/////
+
+function mediaQueriesCard() {
   /////
   // Mobile Devices
   /////
-  
+
   if (
     window.matchMedia("(min-width: 200px)").matches &&
     window.matchMedia("(max-width: 600px)").matches
   ) {
     card.style.flexDirection = "column";
   }
-  
+
   /////
   // Large Screen
   /////
   else {
     card.style.flexDirection = "row";
   }
-  }
-  
-  /////
-  // Navbar Styling
-  /////
-  
-  function mediaQueriesHeader(navHeader) {
+}
+
+/////
+// Navbar Styling
+/////
+
+function mediaQueriesHeader(navHeader) {
   /////
   // Mobile Devices
   /////
-  
+
   if (
     window.matchMedia("(min-width: 200px)").matches &&
     window.matchMedia("(max-width: 600px)").matches
@@ -191,9 +386,9 @@
     cardHeader.style.borderRight = "0";
     formio.style.width = '100%';
   
-  
+
   }
-  
+
   /////
   // Large Screen
   /////
@@ -210,5 +405,4 @@
     formio.style.width = '65%';
   
   }
-  }
-
+}

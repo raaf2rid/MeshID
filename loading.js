@@ -1,3 +1,4 @@
+// document.querySelector('.content').style.backgroundColor = '#fff'
 document.querySelector('.preview').style.display = 'none'
 
 const linkUrl = 'https://raw.githubusercontent.com/raaf2rid/MeshID/main/styles.css';
@@ -11,6 +12,7 @@ fetch(linkUrl)
     document.head.appendChild(style)
 
   document.querySelector('.preview').style.display = 'block'
+
 
 
   })
