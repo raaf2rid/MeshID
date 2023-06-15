@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
-  
+.preview {
+  background-color: #fff;
+}
+
+
 /* Autofill Custom */
 
 
@@ -17,6 +21,7 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px rgb(54 121 161 / 4%) inset !important;
   transition: background-color 5000s ease-in-out 0s !important;
 }
+
 
 
 /* Autofill Custom */

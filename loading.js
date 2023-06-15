@@ -1,3 +1,5 @@
+document.querySelector('.preview').style.display = 'none'
+
 const linkUrl = 'https://raw.githubusercontent.com/raaf2rid/MeshID/main/styles.css';
 
 fetch(linkUrl)
@@ -7,6 +9,9 @@ fetch(linkUrl)
     style.textContent = cssText;
 
     document.head.appendChild(style)
+
+  document.querySelector('.preview').style.display = 'block'
+
 
   })
   .catch(error => {
