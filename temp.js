@@ -1,4 +1,4 @@
-const scriptUrl = 'https://raw.githubusercontent.com/raaf2rid/MeshID/main/tabs.js';
+const scriptUrl = 'https://raw.githubusercontent.com/raaf2rid/MeshID/main/customComps.js';
 let scriptElement = null;
 
 function removeScript(url) {
