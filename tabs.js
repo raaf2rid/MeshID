@@ -211,11 +211,4 @@
   
   }
   }
-  
-  
-  
-  // Set the variable to true to indicate that the form has been loaded
-  tabsLoaded = true;
 
-
-// If the form has already been loaded, nothing will happen
