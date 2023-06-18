@@ -154,6 +154,9 @@ const formio = document.querySelector('.preview .content .wrapper formio');
         item.classList.remove('active')
         item.style.display = 'none'
       }
+      if(i = 1){
+        item.classList.add('active')
+      }
     });
   
     navLinks.forEach((item) => {
