@@ -67,10 +67,7 @@ const formio = document.querySelector('.preview .content .wrapper formio');
       parent.appendChild(logo);
       parent.querySelector(".formio-form").style.display = "none";
   
-      tabs.style.display = "flex";
-  
-      tabs.style.justifyContent = "center";
-      tabs.style.alignItems = "center";
+     
   
       setTimeout(() => {
       
