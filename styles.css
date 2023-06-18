@@ -791,7 +791,7 @@ select:-webkit-autofill:focus {
 
 
   .preview .meshid-custom .has-error label{
-    color: #e00303;
+    color: #e00303 !important;
   }
 
   .preview .meshid-custom .formio-error-wrapper{

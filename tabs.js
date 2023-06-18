@@ -4,7 +4,6 @@
 const cardHeader = document.querySelector(".card-header");
 const card = document.querySelector(".card");
 const cardBody = document.querySelectorAll(".tab-pane");
-const head = document.querySelector("head");
 const navBar = document.querySelector(".card-header-tabs");
 const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
 const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
