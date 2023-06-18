@@ -152,13 +152,9 @@ const formio = document.querySelector('.preview .content .wrapper formio');
       navItems[0].style.display = 'none'
       navItems[0].classList.remove('active')
 
-      if(cardBody[i].classList.contains("active") ){
-        navItems[i].classList.add('active')
-      }
-      else{
-        navItems[i].classList.remove('active')
 
-      }
+      navItems[1].classList.add('active')
+      
      
     });
   
