@@ -179,9 +179,14 @@ const formio = document.querySelector('.preview .content .wrapper formio');
         });
       }
     }
-    navItems.forEach((item) => {
+    navItems.forEach((item, i) => {
+
       item.style.width = "100%";
       // item.style.borderBottom = "2px solid #F5F5F5"
+      if(i = 0){
+        item.classList.remove('active')
+        item.style.display = 'none'
+      }
     });
   
     navLinks.forEach((item) => {
