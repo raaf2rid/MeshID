@@ -1,4 +1,6 @@
 // MeshID Custom
+const builder = document.querySelectorAll(".builder-component");
+
 
 if (builder.length === 0) {
 
