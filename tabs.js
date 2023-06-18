@@ -151,7 +151,14 @@ const formio = document.querySelector('.preview .content .wrapper formio');
       item.style.width = "100%";
       navItems[0].style.display = 'none'
       navItems[0].classList.remove('active')
-      navItems[1].classList.add('active')
+
+      if(cardBody[i].classList.contains("active") ){
+        navItems[1].classList.add('active')
+      }
+      else{
+        navItems[1].classList.remove('active')
+
+      }
      
     });
   
