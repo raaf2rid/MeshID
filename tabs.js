@@ -162,6 +162,7 @@ const formio = document.querySelector('.preview .content .wrapper formio');
       item.style.width = "100%";
       item.style.borderRadius = "0";
       item.style.borderRadius = "0";
+      item.style.pointerEvents = "auto";
       item.addEventListener("click", () => {
         animate();
       });
