@@ -150,11 +150,11 @@ const formio = document.querySelector('.preview .content .wrapper formio');
 
       item.style.width = "100%";
       // item.style.borderBottom = "2px solid #F5F5F5"
-      if(i = 0){
+      if(i == 0){
         item.classList.remove('active')
         item.style.display = 'none'
       }
-      if(i = 1){
+      if(i == 1){
         item.classList.add('active')
       }
     });
