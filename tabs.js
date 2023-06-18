@@ -103,8 +103,7 @@ const formio = document.querySelector('.preview .content .wrapper formio');
     
     })
   
-    
-  cardHeader.style.display = "none"
+  
   
     if (cardHeader) {
       if (!cardHeader.classList.contains("form-builder-group-header")) {
