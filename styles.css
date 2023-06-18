@@ -1,11 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 
-.preview .content .wrapper{
- display: flex;
- justify-content: center;
- align-items: center;
-}
+
 
 
 /* Autofill Custom */
@@ -65,6 +61,7 @@ select:-webkit-autofill:focus {
     height: 100vh;
     overflow-x: hidden;
     background: #fff;
+    justify-content: center;
   }
 
   .preview .content .card {
