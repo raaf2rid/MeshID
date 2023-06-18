@@ -57,6 +57,8 @@ const formio = document.querySelector('.preview .content .wrapper formio');
     cardBody[0].style.display = 'none'
       
     cardBody[1].classList.add('active')
+    navItems[1].classList.add('active');
+    navLinks[1].classList.add('active');
     cardBody[1].style.display = 'block'
     
     
@@ -65,7 +67,8 @@ const formio = document.querySelector('.preview .content .wrapper formio');
       if(i !== 0 && i !== 1 && tab.classList.contains('active')){
       cardBody[1].classList.remove('active')
       cardBody[1].style.display = 'none'
-    
+      navItems[1].classList.remove('active');
+      navLinks[1].classList.remove('active');
       }
     
     })

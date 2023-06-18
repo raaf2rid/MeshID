@@ -10,7 +10,7 @@ const backBtn = document.querySelectorAll('.navigation-back > .navigation-back')
 const nextBtn = document.querySelectorAll('.navigation-next > .navigation-next')
 
 
-cardHeaderItem[1].classList.remove('active')
+
 
 let toastMsg = document.getElementById("snackbar-message");
 let currentTab = getCurrentTab();
@@ -204,6 +204,8 @@ function displayTab() {
   cardHeaderLink[currentTab].classList.remove("active");
   cardHeaderLink[nextTab].classList.add("active");
 
+
+
   if (collection[nextTab].children[0].classList.contains("formio-hidden")) {
     collection[nextTab].style.display = "none";
     collection[nextTab].classList.remove("active");
@@ -214,6 +216,7 @@ function displayTab() {
 
     displayTab();
   }
+
 }
 
 function getCurrentTab() {
