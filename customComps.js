@@ -1,8 +1,4 @@
-// MeshID Custom
-const builder = document.querySelectorAll(".builder-component");
 
-
-if (builder.length === 0) {
 
 const textFields = document.querySelectorAll('.formio-component-textfield:not(.formio-component-multiple) input, .formio-component-email input, .formio-component-datetime .flatpickr-input, .formio-component-textarea textarea');
   
@@ -101,4 +97,3 @@ if(label){
  
 });
 
-}
