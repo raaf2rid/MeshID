@@ -21,7 +21,7 @@ const formio = document.querySelector('.preview .content .wrapper formio');
   
   
   
-  if (builder.length === 0) {
+
     parent.classList.add("parent");
     
   
@@ -167,7 +167,7 @@ const formio = document.querySelector('.preview .content .wrapper formio');
         animate();
       });
     });
-  }
+  
 
 
   ///// /////
