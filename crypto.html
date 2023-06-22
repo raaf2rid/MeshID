@@ -23,8 +23,8 @@
     html,
     body {
       max-width: 1120px;
-      font-size: 16px;
-      text-align: justify;
+      font-size: 21px;
+
     }
 
     * {
@@ -195,10 +195,7 @@
       border: solid 2px #1a93a5;
       background-color: #1a93a5;
       font-family: 'Lato', sans-serif;
-      width: 100vw;
-      left: 0;
     }
-
 
     .verification-info h2 {
       font-family: 'PT Sans Narrow', sans-serif;
@@ -694,7 +691,6 @@
     #output .title-div {
       display: flex;
       flex-direction: column;
-      margin-bottom: 15px;
     }
 
     .title-p {
@@ -745,14 +741,13 @@
     }
 
     #output input[type='text'],
-    #output input[type='text']:disabled,
-    #output .custom-textarea {
+    #output input[type='text']:disabled {
       position: relative;
       display: block;
       width: 100%;
-      padding: 12px 0px;
+      padding: 15px 0px;
       text-indent: 10px;
-      min-height: 50px;
+      height: 50px;
       border-top: none;
       border-right: none;
       border-bottom: none;
@@ -761,24 +756,16 @@
       border-radius: 0px !important;
       background: rgb(54 121 161 / 4%) !important;
       color: #253341;
-      font-size: 16px;
-      margin-bottom: 5px;
-      margin-top: 5px;
+      font-size: 20px;
+      margin-bottom: 27px;
       transition: border-color .3s;
       appearance: none;
-    }
-
-    #output .custom-textarea{
-      text-indent: 0px !important;
-      padding: 12px;
-
     }
 
     #output .info-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 25px;
-      margin-bottom: 25px;
     }
 
     #output label{
@@ -793,7 +780,6 @@
       height: 15px;
       width: 15px;
       transform: translateY(3px);
-      
       /* pointer-events: none !important; */
     }
 
@@ -817,7 +803,7 @@
 #output .radio-label:before {
   content: "";
   position: absolute;
-  top: 4px;
+  top: 8px;
   left: 0;
   width: 16px;
   height: 16px;
@@ -831,7 +817,7 @@
   border: 6px solid rgba(4,51,28,1);
 }
 
-#output .custom-checkbox.radio-label:before{
+#output .custom-checkox.radio-label:before{
   border-radius: 0%;
 }
 #output .page-title{
@@ -854,6 +840,13 @@
   padding: 0;
 }
 
+#output .custom-textarea{
+  border-left: 9px solid;
+      border-color: rgba(4,51,28,1);
+      border-radius: 0px !important;
+      background: rgb(54 121 161 / 4%) !important;
+      padding: 10px;
+}
 
 #output th,
 #output td{
@@ -981,27 +974,20 @@
       </section>
 
 
-      <section>
-      <section style="position: absolute; transform: translateY(25px);" class="mt-auto verification-info hide-in-app"  >
-      <h2>Contract unique identifier</h2>
+      <section class="mt-auto verification-info hide-in-app">
+        <h2>Contract unique identifier</h2>
         <h3>
           {{verificationKey}}
-        </h3>  
-      </section>
-      <section class="hide-in-app" style="height: 250px;">
-      </section>
+        </h3>
       </section>
 
-
-
-  
+      <div style="page-break-after:always;" class="hide-in-app"></div>
     </section>
     <!-- !!! EOF: STANDARD FIRST PAGE !!! -->
 
     <!-- PAGE BREAK  -->
     <div style="page-break-after:always;" class="hide-in-app"></div>
     <!----------------->
-
 
     {{#with tabContainerComp}}
 
@@ -1011,12 +997,11 @@
 
   <div class="page-logo">
 
-       <img src="https://greenfieldyield.com/images/Group-5.png" width="5%">
+      <img src="https://greenfieldyield.com/images/Group-5.png" width="10%">
 
   </div>
 
-  <h4 class="mt-1 text-center">Inschrijfformulier Greenfield Yield</h4>
-
+  <h2 class="mt-1 mb-3 text-center">Inschrijfformulier Greenfield Yield</h2>
   
 
         <div class="title-div">
@@ -1024,32 +1009,45 @@
           </p>
         </div>
 
-    
+        <br>
 
-        <div>
+        <div class="info-container">
 
           <p>
             Door ondertekening van dit formulier verklaart u te willen participeren in het beleggingsfonds Greenfield Yield, zulks voor een minimale looptijd van één (1) jaar en voor een bedrag van <strong>{{totalCrypto}}</strong>, gestort van wallet adress <strong>{{walletAddress}}</strong> op <strong>{{blockchainNetwork}}</strong>. Door ondertekening van dit formulier gaat u ermee akkoord dat er een bedrag van eu200 aan set up fee in rekening wordt gebracht. Dit bedrag dient overgemaakt te worden van tegenrekening <strong>{{ibanAccountNumber}}</strong> ten name van <strong>{{nameOnBankAccount}}</strong>.
-          </p>
-          
-          <p>
+        <br> <br>
             Het participatiebedrag <strong>{{totalCrypto}}</strong> dient uiterlijk drie (3) dagen voor onze handelsdag te zijn ontvangen op <strong>{{walletAddressGreen}}</strong>. De set-up fee dient uiterlijk drie (3) dagen voor onze handelsdag te zijn ontvangen op onze bankrekening <strong>{{GYAccount}}</strong>, ten name van <strong>{{GYAccountName}}</strong>.
-          </p>
-          <p>
-
+        <br> <br>
             Door ondertekening van dit formulier gaat u er eveneens mee akkoord dat er ten aanzien van u zowel een initieel als een doorlopend klantenonderzoek plaatsvindt. Het niet succesvol doorlopen van het initiële klantenonderzoek leidt ertoe dat u niet tot het fonds kunt toetreden. Bijzonderheden die naar voren komen uit het doorlopende klantenonderzoek kunnen aanleiding zijn om de reeds aangegane zakelijke relatie met u terstond te beëindigen.
         </p>
         
        </div>
 
-       <div class="title-div">
-        <p class="page-title" >Noodzakelijke gegevens
-        </p>
-       </div>
 
+</section>
 
+<!-- PAGE BREAK  -->
+<div style="page-break-after:always;" class="hide-in-app"></div>
+<!----------------->
+
+<section>
 
   
+
+  <div class="page-logo">
+
+    <img src="https://greenfieldyield.com/images/Group-5.png" width="10%">
+
+</div>
+
+<h2 class="mt-1 mb-3 text-center">Inschrijfformulier Greenfield Yield</h2>
+
+  <div class="title-div">
+        <p class="page-title" >Noodzakelijke gegevens
+        </p>
+  </div>
+
+  <br>
 
   <div class="info-container">
 
@@ -1061,19 +1059,17 @@
     
   </div>
 
-
+  <br>
 
   <div class="info-container">
 
     <div>
       
 
-      <label>Bent u een (familielid en/of naaste geassocieerde van een) 'Politically Exposed Person' (PEP)?</label> 
+      <label>Bent u een (familielid en/of naaste geassocieerde van een) 'Politically Exposed Person' (PEP)?</label><br>
 
 
-      <div style="display: flex;">
-
-      <div class="custom-radio" style="margin-right: 18px;">
+      <div class="custom-radio">
         <input type="radio"  value="1-10m" class="radio-input" {{#if (equalsTo pep 'ja')}} checked {{/if}} >
         <label class="radio-label">Ja</label>
       </div>
@@ -1084,45 +1080,44 @@
         </label>
       </div>
       
-    </div>
       
       
     </div>
   </div>
 
-
-  
+  <br>
   <div class="info-container">
 
     <div>
      
 
-      <label>Wat is voor u het doel van de zakelijke relatie?</label> 
+      <label>Wat is voor u het doel van de zakelijke relatie?</label><br>
 
 
       <div class="custom-radio">
-        <input type="radio"  value="1-10m" class="radio-input" {{#if doelRelatie.vermogensbehoud}} checked {{/if}} >
-        <label class="radio-label custom-checkbox">Vermogensbehoud
+        <input type="radio"  value="1-10m" class="radio-input" {{#if (equalsTo doelRelatie 'vermogensbehoud')}} checked {{/if}} >
+        <label class="radio-label">Vermogensbehoud
         </label>
       </div>
 
       <div class="custom-radio">
-        <input type="radio" value="10m+" class="radio-input" {{#if doelRelatie.risicospreiding}} checked {{/if}} >
-        <label class="radio-label custom-checkbox"> Risicospreiding
+        <input type="radio" value="10m+" class="radio-input" {{#if (equalsTo doelRelatie 'risicospreiding')}} checked {{/if}} >
+        <label class="radio-label"> Risicospreiding
         </label>
       </div>
       <div class="custom-radio">
-        <input type="radio" value="10m+" class="radio-input" {{#if doelRelatie.exposureAanDeCryptoMarkt}} checked {{/if}} >
-        <label class="radio-label custom-checkbox"> Exposure aan de crypto markt
+        <input type="radio" value="10m+" class="radio-input" {{#if (equalsTo doelRelatie 'exposureAanDeCryptoMarkt')}} checked {{/if}} >
+        <label class="radio-label"> Exposure aan de crypto markt
         </label>
       </div>
       <div class="custom-radio">
-        <input type="radio" value="10m+" class="radio-input" {{#if doelRelatie.anders}} checked {{/if}} >
-        <label class="radio-label custom-checkbox"> Anders
+        <input type="radio" value="10m+" class="radio-input" {{#if (equalsTo doelRelatie 'anders')}} checked {{/if}} >
+        <label class="radio-label"> Anders
         </label>
       </div>
-      {{#if doelRelatie.anders}}
+      {{#if (equalsTo doelRelatie 'anders')}} 
       <div>
+        
         <input disabled type='text' value="{{doelRelatieAnders}}">
       </div>
       {{/if}}
@@ -1130,14 +1125,14 @@
     </div>
   </div>
 
-
+  <br>
 
 
   <div class="info-container">
 
     <div>
 
-      <label>Hierbij verklaar ik dat:</label> 
+      <label>Hierbij verklaar ik dat:</label><br>
 
 
       <div class="custom-radio">
@@ -1162,7 +1157,15 @@
 <!----------------->
 <section>
 
- 
+  
+
+  <div class="page-logo">
+
+    <img src="https://greenfieldyield.com/images/Group-5.png" width="10%">
+
+</div>
+
+<h2 class="mt-1 mb-3 text-center">Inschrijfformulier Greenfield Yield</h2>
 
 
 
@@ -1170,7 +1173,7 @@
         <p class="page-title" >Bron van geldmiddelen</p>
   </div>
 
-   
+  <br>
 
 
   <div class="info-container">
@@ -1179,54 +1182,72 @@
 
       <label>Wat is de herkomst van de geldmiddelen?</label>
       
-       
+      <br>
 
 
       <div class="custom-radio">
-        <input type="radio"  value="1-10m" class="radio-input" {{#if sop.a}} checked {{/if}} >
-        <label class="radio-label custom-checkbox">Inkomsten uit arbeid in loondienst</label>
+        <input type="radio"  value="1-10m" class="radio-input" {{#if (equalsTo sop 'a')}} checked {{/if}} >
+        <label class="radio-label">Inkomsten uit arbeid in loondienst</label>
       </div>
       <div class="custom-radio">
-        <input type="radio"  value="1-10m" class="radio-input" {{#if sop.b}} checked {{/if}} >
-        <label class="radio-label custom-checkbox">Spaargeld</label>
+        <input type="radio"  value="1-10m" class="radio-input" {{#if (equalsTo sop 'b')}} checked {{/if}} >
+        <label class="radio-label">Spaargeld</label>
       </div>
       <div class="custom-radio">
-        <input type="radio"  value="1-10m" class="radio-input" {{#if sop.c}} checked {{/if}} >
-        <label class="radio-label custom-checkbox">Erfenis</label>
+        <input type="radio"  value="1-10m" class="radio-input" {{#if (equalsTo sop 'c')}} checked {{/if}} >
+        <label class="radio-label">Erfenis</label>
       </div>
       <div class="custom-radio">
-        <input type="radio"  value="1-10m" class="radio-input" {{#if sop.d}} checked {{/if}} >
-        <label class="radio-label custom-checkbox">Opbrengst uit beleggingen
+        <input type="radio"  value="1-10m" class="radio-input" {{#if (equalsTo sop 'd')}} checked {{/if}} >
+        <label class="radio-label">Opbrengst uit beleggingen
         </label>
       </div>
       <div class="custom-radio">
-        <input type="radio"  value="1-10m" class="radio-input" {{#if sop.e}} checked {{/if}} >
-        <label class="radio-label custom-checkbox">Opbrengst uit vermogen (onroerend goed)
+        <input type="radio"  value="1-10m" class="radio-input" {{#if (equalsTo sop 'e')}} checked {{/if}} >
+        <label class="radio-label">Opbrengst uit vermogen (onroerend goed)
         </label>
       </div>
       <div class="custom-radio">
-        <input type="radio"  value="1-10m" class="radio-input" {{#if sop.f}} checked {{/if}} >
-        <label class="radio-label custom-checkbox">Inkomsten uit actieve bedrijfsactiviteiten
+        <input type="radio"  value="1-10m" class="radio-input" {{#if (equalsTo sop 'f')}} checked {{/if}} >
+        <label class="radio-label">Inkomsten uit actieve bedrijfsactiviteiten
         </label>
       </div>
 
       <div class="custom-radio">
-        <input type="radio" value="10m+" class="radio-input" {{#if sop.g}} checked {{/if}} >
-        <label class="radio-label custom-checkbox">Anders
+        <input type="radio" value="10m+" class="radio-input" {{#if (equalsTo sop 'g')}} checked {{/if}} >
+        <label class="radio-label">Anders
         </label>
       </div>
     
-    {{#if sop.g}}
+      {{#if (equalsTo sop 'g')}} 
       <div>
         <div class="custom-textarea">
           {{detail}}
         </div>
       </div>
-    {{/if}}
+      {{/if}}
       
       
     </div>
   </div>
+
+</section>
+
+<!-- PAGE BREAK  -->
+<div style="page-break-after:always;" class="hide-in-app"></div>
+<!----------------->
+
+<section>
+
+          
+  
+          <div class="page-logo">
+
+            <img src="https://greenfieldyield.com/images/Group-5.png" width="10%">
+      
+        </div>
+
+<h2 class="mt-1 mb-3 text-center">Inschrijfformulier Greenfield Yield</h2>
 
 
         <div class="title-div">
@@ -1238,30 +1259,30 @@
         
   <div class="info-container">
     <div>
-       
+      <br>
       <label>Door ondertekening van dit formulier verklaar ik te hebben gelezen en akkoord te gaan met de inhoud van:</label>
-     
-       
+      
+      <br>
 
       <div class="custom-radio">
         <input type="radio" value="0-1m" class="radio-input" checked >
-        <label class="radio-label custom-checkbox">het Informatie Memorandum (IM)</label>
+        <label class="radio-label custom-checkox">het Informatie Memorandum (IM)</label>
       
       </div>
       <div class="custom-radio">
         <input type="radio" value="0-1m" class="radio-input" checked >
-        <label class="radio-label custom-checkbox">het Essentieel Informatie Document (EID)</label>
+        <label class="radio-label custom-checkox">het Essentieel Informatie Document (EID)</label>
       
       </div>
       <div class="custom-radio">
         <input type="radio" value="0-1m" class="radio-input" checked >
-        <label class="radio-label custom-checkbox"> de Fondsvoorwaarden</label>
+        <label class="radio-label custom-checkox"> de Fondsvoorwaarden</label>
       
       </div>
 
       <div class="custom-radio">
         <input type="radio" value="0-1m" class="radio-input" checked >
-        <label class="radio-label custom-checkbox"> dit inschrijfformulier</label>
+        <label class="radio-label custom-checkox"> dit inschrijfformulier</label>
       
       </div>
 
@@ -1280,13 +1301,13 @@
   
   
             <div>
-               
-              <label>Voornaam</label>  
+              <br>
+              <label>Voornaam</label> <br>
               <input disabled type='text' value="{{signeeFirst}}">
             </div>
             <div>
-               
-              <label>Achternaam </label>  
+              <br>
+              <label>Achternaam </label> <br>
               <input disabled type='text' value="{{signeeLast}}">
             </div>
   
@@ -1300,13 +1321,13 @@
   
             <div>
   
-              <label>E-mailadres</label>  
+              <label>E-mailadres</label> <br>
               <input disabled type='text' value="{{signeeEmail}}">
             </div>
 
             <div>
   
-              <label>Plaats (stad)</label>  
+              <label>Plaats (stad)</label> <br>
               <input disabled type='text' value="{{signingPlace}}">
             </div>
   
@@ -1319,14 +1340,14 @@
             
             <div>
   
-              <label>Signature </label>  
+              <label>Signature </label> <br>
               <input disabled type='text' value="{{signature}}" style="font-family: 'Sacramento', cursive !important; font-size: 1.4rem; font-style: italic;">
             </div>
   
   
             <div>
   
-              <label>Datum van ondertekening </label>  
+              <label>Datum van ondertekening </label> <br>
               <div class="custom-textarea">   
                 {{signingDate}}</div>
             </div>

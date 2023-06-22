@@ -31,6 +31,956 @@ const formio = document.querySelector('.preview .content .wrapper formio');
 
 
 
+// const fields = document.querySelectorAll(".required");
+
+/////
+// Adding Custom Stylesheet to the head
+/////
+
+const customStyles = 
+`
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+  
+/* Autofill Custom */
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #383838 !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(54 121 161 / 4%) inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+
+/* Autofill Custom */
+
+
+  /* Dutch Banking */
+  
+  .glossary{
+      padding: 1em;
+      padding-bottom:3em;
+      height: 1400px;
+    }
+
+  .arrow{
+    display: none !important;
+  }
+    
+  .carousel-indicators{
+    display: none;
+  }
+
+  .formio-form[ref="webform"]{
+    padding-bottom: 40px !important;
+  }
+
+  .formio-component-cp .form-text error{
+    display: none;
+  }
+
+  .preview div[role="form"][aria-label="Container"] {
+    height: 100%;
+  }
+  
+  .preview .content .wrapper {
+    display: flex !important;
+    align-items: baseline !important;
+    padding: 4rem 2rem !important;
+    height: 100vh;
+    overflow-x: hidden;
+    background: #fff;
+  }
+
+  .preview .content .card {
+  border: none;
+  border-radius: 0 !important;
+  min-height: max-content !important;
+  background: #fff;
+  }
+  
+  .preview .card-body {
+  padding: 0 !important;
+  }
+  
+  
+  .preview .content {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0vh !important;
+    left: 0vw !important;
+    background-color: #fff !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+  }
+  
+  .preview .content .form-type-heading {
+    display: none !important;
+  }.preview div[role="form"][aria-label="Container"] {
+  height: 100%;
+  }
+  
+ 
+  
+  .preview .card {
+  border: none;
+  border-radius: 0 !important;
+  min-height: max-content !important;
+  }
+  
+  .preview .card-body {
+  padding: 0 !important;
+  }
+  
+  
+  .preview .content {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0vh !important;
+  left: 0vw !important;
+  background-color: #fff !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  }
+  
+  .form-type-heading:nth-child(1) {
+  display: none !important;
+  }
+
+  .glossary-panel .text-muted{
+    color: #DD6921 !important;
+    font-size: 25px !important;
+  }
+
+  .glossary-panel .card-title{
+    display: block !important;
+    text-align: center !important;
+  }
+
+  .preview .get-started button{
+    background-color: #DD6921;
+    border: 3px solid #DD6921;
+    box-shadow: none !important;
+  }
+
+  .preview .get-started button {
+    width: 250px;
+    height: 65px;
+    border-radius: 50px !important;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+
+  .preview .get-started button:hover,
+  .preview .get-started button:active {
+    background: #fff !important;
+    border: 3px solid #DD6921 !important;
+    color: #DD6921 !important;
+  }
+
+  .middle .pen span:before {
+    content:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='36' height='36'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z' fill='%23ddc69d'/%3E%3C/svg%3E");
+    ;
+  }
+
+  /* Global */
+
+  html {
+    overflow: hidden;
+  }
+
+  figure {
+    display: flex;
+    justify-content: center;
+  }
+
+  figure table,
+  figure td {
+    border: none !important;
+  }
+
+  #confirm_template_mode {
+    padding: 0 1rem !important;
+  }
+
+  .preview .row .col-sm-2 {
+    display: none !important;
+  }
+
+  .preview .row .col-sm-2:nth-child(1),
+  .preview .row .col-sm-2:nth-child(2),
+  .preview .row .col-sm-2:last-child {
+    display: block !important;
+  }
+
+  /* Validation */
+
+  .boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    margin: 10px 0;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+  }
+
+  .preview .boxes svg {
+    margin-right: 5px;
+  }
+
+  /* Disclaimer */
+
+  .preview .have-read,
+  .preview .have-read span {
+    cursor: pointer !important;
+    font-size: 1rem;
+  }
+
+  .preview .have-read input {
+    cursor: pointer !important;
+    width: 25px;
+    height: 17px;
+    transform: translateX(-8px);
+}
+
+  .card {
+    font-family: "Lato", sans-serif;
+  }
+
+  .sourceOfWealth td {
+    vertical-align: inherit;
+  }
+
+  .logo {
+    width: 100%;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    transform: translate(2px, 1px);
+  }
+
+  /* Navbar */
+
+  .nav-header {
+    background: rgba(31, 148, 165, 1);
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 0;
+    border-top-left-radius: 7px;
+    padding: 8px;
+    width: 100%;
+    text-align: start;
+    padding-left: 18px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  .parent .nav-link:hover {
+    background: #e8e86a;
+    color: #495057;
+  }
+
+  a svg {
+    transform: translateY(-2px);
+  }
+
+  /* Introduction + Type of Entity  */
+
+  .intro-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro strong {
+    display: block;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1em;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+  }
+
+  .intro-box {
+    display: block;
+  }
+
+  .intro .field-required::after {
+    content: " ";
+    color: "#fff";
+  }
+
+  .middle {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+  .middle input[type="radio"] {
+    display: none;
+  }
+
+  .middle input[type="radio"]:checked + .intro-box {
+    background: #02341D;
+    color: #fff;
+  }
+
+  .middle input[type="radio"]:checked + .intro-box span {
+    color: white;
+    transform: translateY(70px);
+  }
+
+  .middle input[type="radio"]:checked + .intro-box span:before {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  .middle .intro-box {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(139, 139, 139, 0.1);
+    border-radius: 25px;
+    transition: all 250ms ease;
+    will-change: transition;
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    font-family: "Inter", sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+  .middle .intro-box:active {
+    transform: translateY(10px);
+  }
+  .middle .intro-box:hover {
+    background-color: hsla(152, 93%, 11%, 0.6);
+  }
+  .middle input[type="radio"]:hover + .intro-box {
+    color: #fff;
+  }
+
+  .middle .intro-box span {
+    position: absolute;
+    transform: translate(0, 60px);
+    left: 0;
+    right: 0;
+
+    transition: all 300ms ease;
+    font-size: 1.5em;
+    user-select: none;
+    color: #DD6921;
+  }
+
+  .middle .intro-box span:before {
+    font-size: 1.2em;
+    display: block;
+    transform: translateY(-80px);
+    opacity: 0;
+    bottom: 30px;
+    transition: all 300ms ease-in-out;
+    font-weight: normal;
+    color: white;
+  }
+
+  .middle .individual span:before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='36' height='36'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M20 22H4v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2zm-8-9a6 6 0 1 1 0-12 6 6 0 0 1 0 12z' fill='%23ddc69d'/%3E%3C/svg%3E");
+  }
+
+  .middle .entity span:before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='36' height='36'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M21 19h2v2H1v-2h2V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v15h2V9h3a1 1 0 0 1 1 1v9zM7 11v2h4v-2H7zm0-4v2h4V7H7z' fill='%23ddc69d'/%3E%3C/svg%3E");
+  }
+
+  .custom-type-of-entity .middle .intro-box {
+    width: 230px;
+    height: 60px;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .custom-type-of-entity .middle .intro-box span {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: none;
+    transition: all 300ms ease;
+    font-size: 0.8rem;
+    font-weight: bold;
+    user-select: none;
+    color: #143250;
+  }
+
+  .custom-type-of-entity .middle .intro-box span:before {
+    display: none;
+  }
+
+  .custom-type-of-entity .middle input[type="radio"]:checked + .intro-box span {
+    color: white;
+    transform: translateY(18px);
+  }
+
+  .intro-tab .fieldset-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-tab td {
+    transform: translateY(-50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-tab .continue {
+    border-radius: 50px;
+    width: 160px;
+    padding: 12px;
+    margin-left: -13px;
+    font-weight: 500;
+    border: none;
+    transition: 0.5s ease-in-out;
+    font-size: 18px;
+}
+
+  .intro-tab .continue button {
+    background: #02341D;
+    border: 1px solid #02341D;
+    box-shadow: none !important;
+}
+
+  
+  
+  .intro-tab .continue button:hover {
+    background: #fff;
+    border: 1px solid #02341D;
+    color: #02341D;
+  }
+
+  .intro-tab .continue button:active {
+    transform: scale(0.95);
+    background: #02341D !important;
+    border: 1px solid #fff !important;
+    color: #fff !important;
+
+  }
+
+  .intro-tab .continue button[disabled] {
+    background: #02341D;
+    border: 3px solid #02341D;
+    color: #fff;
+  }
+
+  .intro-tab .invalid-feedback {
+    display: none !important;
+  }
+
+  /* Animation  */
+
+  .tab-animation {
+    animation-name: tab-animation;
+    animation-duration: 0.8s;
+  }
+  @keyframes tab-animation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .button-animation {
+    animation-name: button-animation;
+    animation-duration: 1.8s;
+  }
+  @keyframes button-animation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .card-animation {
+    animation-name: card-animation;
+    animation-duration: 0.8s;
+  }
+
+  @keyframes card-animation {
+    from {
+      transform: translate(-1%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0%);
+      opacity: 1;
+    }
+  }
+
+  .next {
+    animation-name: left-to-right-animation;
+    animation-duration: 0.7s;
+  }
+  @keyframes left-to-right-animation {
+    from {
+      transform: translate(-4%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0%);
+      opacity: 1;
+    }
+  }
+
+  .back {
+    animation-name: right-to-left-animation;
+    animation-duration: 0.7s;
+  }
+  @keyframes right-to-left-animation {
+    from {
+      transform: translate(4%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0%);
+      opacity: 1;
+    }
+  }
+
+  .nav-item-hide {
+    animation-name: hide-animation;
+    animation-duration: 0.9s;
+  }
+  @keyframes hide-animation {
+    from {
+      transform: translate(0%);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-2%);
+      opacity: 0;
+    }
+  }
+  .nav-item-show {
+    animation-name: show-animation;
+    animation-duration: 0.8s;
+  }
+  @keyframes show-animation {
+    from {
+      transform: translateY(2%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0%);
+      opacity: 1;
+    }
+  }
+
+  /* Signee Details   */
+
+  .overlay:before {
+    content: "This section will become available after all other sections are complete.";
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='240' height='240'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12 2c5.523 0 10 4.477 10 10 0 2.136-.67 4.116-1.811 5.741L17 12h3a8 8 0 1 0-2.46 5.772l.998 1.795A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2zm0 5a3 3 0 0 1 3 3v1h1v5H8v-5h1v-1a3 3 0 0 1 3-3zm2 6h-4v1h4v-1zm-2-4a1 1 0 0 0-.993.883L11 10v1h2v-1a1 1 0 0 0-.883-.993L12 9z' fill='rgba(236,240,241,1)'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 540px;
+    font-size: 50px;
+    color: #ffffff;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    height: max-content;
+    z-index: 1000;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: color-burn;
+    padding: 5rem;
+    border-radius: 100px;
+    text-shadow: 8px -8px 20px black;
+  }
+
+  .overlay:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 101%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+
+  /* Buttons  */
+
+  .preview .get-started{
+    border-radius: 25px;
+  }
+
+  .navigation-back svg,
+  .navigation-next svg {
+    width: 90px;
+    height: 90px;
+    transform: translate(0);
+  }
+
+  .navigation-next svg {
+    width: 220px;
+  }
+
+  .navigation-back path,
+  .navigation-next path {
+    transition: 0.4s;
+  }
+
+  .navigation-back svg:hover path,
+  .navigation-next svg:hover path {
+    fill: black;
+  }
+
+  .preview .navigation-back,
+  .preview .navigation-next {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .preview .navigation-back .navigation-back,
+  .preview .navigation-next .navigation-next {
+    background: none;
+    border: none;
+  }
+
+  .preview .navigation-next svg rect {
+    opacity: 0.5;
+    transition: 0.4s;
+  }
+
+  .preview .navigation-next svg:hover rect {
+    opacity: 0.8;
+  }
+
+  .preview svg {
+    transition: 0.4s;
+  }
+
+  .preview button:hover svg {
+    transform: scale(0.95);
+  }
+
+  .preview button:active svg {
+    transform: scale(1.05);
+  }
+
+  .preview .navigation-back .btn-success,
+  .preview .navigation-next .btn-success,
+  .preview .navigation-back .btn-danger,
+  .preview .navigation-next .btn-danger {
+    background: none !important;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .preview .next-green rect {
+    transition: 0.5s;
+    fill: #00a86b;
+    opacity: 1 !important;
+    stroke-width: 0;
+  }
+
+  .preview .next-green svg:hover rect {
+    fill: #fff;
+    stroke-width: 2;
+    stroke: #00a86b;
+  }
+
+  .preview .next-green text {
+    fill: #fff;
+  }
+
+  .preview .next-green svg:hover text {
+    fill: #00a86b;
+  }
+
+  .preview .signee-details .next-green rect {
+    stroke-dasharray: 630;
+    stroke-dashoffset: 500;
+    transition: 1.5s;
+  }
+
+  .preview .signee-details .next-green svg:hover rect {
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+    stroke: #00a86b;
+    fill: #fff;
+  }
+
+  .preview .signee-details .next-green svg:hover text {
+    fill: #00a86b;
+  }
+
+  .preview .meshid-custom .form-control{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 15px 10px;
+    min-height: 50px;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0px !important;
+    border-left: 9px solid;
+    border-color: #02341D;
+    background: rgb(54 121 161 / 4%);
+    color: #253341;
+    font-size: 15px;
+    transition: border-color .3s;
+    -webkit-appearance: none;
+  }
+
+  .preview .meshid-custom .formio-component-textarea .form-control{
+    height: 100px;
+  }
+
+  .preview .meshid-custom .form-control.is-invalid {
+    border-color: #e00303;
+  }
+
+  .preview .meshid-custom .formio-component-textfield label,
+  .preview .meshid-custom .formio-component-number label,
+  .preview .meshid-custom .formio-component-datagrid th,
+  .preview .meshid-custom .formio-component-textarea label,
+  .preview .meshid-custom .formio-component-email label,
+  .preview .meshid-custom .formio-component-datetime label,
+  .preview .meshid-custom .formio-component-select:not(.formio-component-code) label
+  {
+    transition: 250ms;
+    z-index: 1000;
+    font-weight: 700;
+    position: relative;
+    transform: translate(20px, 43px);
+    opacity: 1 !important;
+    pointer-events: none !important;
+    color: #02341D;
+  }
+
+  .preview .meshid-custom .formio-component-datagrid th{
+    transform: none;
+  }
+
+
+  .preview .control-label--hidden{
+    display: none;
+  }
+
+  .preview .meshid-custom .form-group.formio-component-multiple label{
+    transform: none;
+  }
+
+
+  .preview .meshid-custom .form-group.formio-component-multiple  tr[ref="row"]:first-of-type .btn.btn-secondary{
+    visibility: hidden !important;
+  }
+
+  .preview .meshid-custom .formio-component-radio:not(.type-custom) label,
+  .preview .meshid-custom .formio-component-radio.type-custom label.field-required
+  ,
+  .preview .meshid-custom .formio-component-checkbox label,
+  .preview .meshid-custom .formio-component-selectboxes label{
+    opacity: 1 !important;
+    font-weight: 700;
+    color: #02341D;
+
+  }
+
+
+  .preview .meshid-custom .has-error label{
+    color: #e00303 !important;
+    transform: translate(0) !important;
+  }
+
+  .preview .meshid-custom .formio-error-wrapper{
+    color: #e00303;
+    background-color: transparent;
+    border-color: transparent;
+    padding: 0;
+  }
+
+  .preview .meshid-custom .formio-error-wrapper .form-control {
+    border-left: 9px solid #e00303 !important;
+  }
+
+  .preview .meshid-custom .formio-error-wrapper
+  label {
+    color: #e00303 !important;
+  }
+
+  
+
+  .preview .meshid-custom .form-control:focus{
+    box-shadow: none !important;
+  }
+
+  .preview .meshid-custom .input-group-append{
+    position: absolute;
+    right: 0;
+  }
+  .preview .meshid-custom .input-group-prepend{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+
+  .preview .meshid-custom .input-group-prepend + input{
+    text-indent: 30px;
+  }
+
+  .preview .meshid-custom .input-group-append span{
+    min-height: 50px;
+    border: none;
+    background: rgb(128 128 128 / 30%);
+  }
+
+  .preview .wrapper, 
+  .preview .card {
+    background: #F4F5F6;
+  }
+  .preview .is-active {
+   z-index: 10000;
+  }
+  .preview input[type=checkbox],
+  .preview input[type=radio] {
+    accent-color: #02341D !important;
+}
+
+.formio-errors .error {
+  color:  #e00303;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.preview .meshid-custom .formio-button-add-another,
+.preview .meshid-custom .formio-button-add-row {
+  background: #02341D !important;
+  border: #02341D !important;
+  box-shadow: none !important;
+  transition: 300ms;
+}
+
+.preview .meshid-custom .formio-button-add-another:active,
+.preview .meshid-custom .formio-button-add-another:focus,
+.preview .meshid-custom .formio-button-add-row:active,
+.preview .meshid-custom .formio-button-add-row:focus {
+  background: #000000 !important;
+  border: #000000 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+}
+
+.preview .meshid-custom .custom-mobile .fieldset-body{
+  display: flex;
+} 
+
+.preview .meshid-custom .custom-mobile .fieldset-body .formio-component-number .form-control {
+  border-left: none;
+}
+
+.preview .meshid-custom .custom-mobile .fieldset-body .formio-component-number .form-control.is-invalid {
+  border-left: 9px solid #e00303;
+}
+
+.preview .meshid-custom .custom-mobile .fieldset-body .formio-component-select {
+  width: 30%;
+}
+
+.preview .meshid-custom .custom-mobile .fieldset-body .formio-component-select .field-required:after {
+  content: "";
+  display: none;
+}
+.preview .meshid-custom .custom-mobile .fieldset-body .formio-component-number {
+  width: 70%;
+}
+
+.preview .meshid-custom .choices__list--dropdown .choices__list .choices__item:first-child {
+  display: none;
+}
+
+.preview .hide-label label {
+  visibility: hidden;
+}
+
+
+.preview .page-title{
+  background: linear-gradient(90deg, rgba(4,51,28,1) 0%, rgba(40,93,65,1) 50%, rgba(124,164,148,1) 100%) !important;
+}
+
+.preview .formio-component-multiple .choices__input{
+  background: transparent;
+}
+
+.preview .formio-component-multiple .table-bordered, 
+.preview .formio-component-multiple .table-bordered th, 
+.preview .formio-component-multiple .table-bordered td {
+  border: none;
+  padding-left: 0;
+}
+
+.preview .title-div .fieldset-body{
+  display: flex;
+}
+.preview .title-div .fieldset-body .formio-component-select{
+  width: 100%;
+}
+
+.preview .title-div .fieldset-body .hide-label input{
+  border: none;
+}
+
+
+
+
+</style>
+
+`
+
+
 
 
 /////
@@ -77,36 +1027,45 @@ backBtn.forEach(item=>{
     item.classList.remove('btn', 'btn-success', 'btn-md', 'btn-block', 'btn-danger', 'submit-fail');
     item.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
     <rect x="10" y="10" width="180" height="60" rx="30" ry="30" fill="#d5d5d5" stroke="black" stroke-width="2"></rect>
-    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" font-weight="bold">Next</text>
+    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" font-weight="bold">Volgende</text>
   </svg>
   `
   if(item.classList.contains("review")){
-    item.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
-    <rect x="10" y="10" width="180" height="60" rx="10" ry="10" fill="#d5d5d5" stroke="black" stroke-width="2"></rect>
-    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" font-weight="bold">Review and Sign</text>
+    item.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="143" height="80">
+    <rect x="10" y="10" width="187" height="60" rx="10" ry="10" fill="#d5d5d5" stroke="black" stroke-width="2"></rect>
+    <text x="53%" y="53%" dominant-baseline="middle" text-anchor="middle" font-size="13" font-weight="bold">Beoordelen en ondertekenen</text>
   </svg>
   `
   }
   }) 
   
 
-  const textFields = document.querySelectorAll('.formio-component-textfield:not(.formio-component-multiple) input, .formio-component-email input, .formio-component-datetime .flatpickr-input, .formio-component-textarea textarea');
+  const textFields = document.querySelectorAll('.formio-component-textfield:not(.formio-component-multiple) input, .formio-component-number:not(.formio-component-multiple) input, .formio-component-email input, .formio-component-datetime .flatpickr-input, .formio-component-textarea textarea');
 
   textFields.forEach(function(input) {
     const label = input.closest('.form-group').querySelector('label[for="' + input.id + '"]');
   
     if(label){
-      input.addEventListener('input', function() {
+      input.addEventListener('focus', function() {
+          label.style.transform = 'translate(0)';
+      });
+      input.addEventListener('blur', function() {
         if (input.value !== '') {
           label.style.transform = 'translate(0)';
-        } else {
+        }else if(input.previousElementSibling){
+          label.style.transform = 'translate(53px, 43px)';
+        }
+        else {
           label.style.transform = 'translate(20px, 43px)';
         }
       });
   
       if (input.value !== '') {
         label.style.transform = 'translate(0)';
-      } else {
+      }else if(input.previousElementSibling){
+        label.style.transform = 'translate(53px, 43px)';
+      }
+      else {
         label.style.transform = 'translate(20px, 43px)';
       }
     }
@@ -219,24 +1178,10 @@ backBtn.forEach(item=>{
     }, 2000);
   }
 
+  if (!head.innerHTML.includes(customStyles)) {
+    head.innerHTML += customStyles;
+  }
 
-
-  cardBody[0].classList.remove('active')
-  cardBody[0].style.display = 'none'
-    
-  cardBody[1].classList.add('active')
-  cardBody[1].style.display = 'block'
-  
-  
-  cardBody.forEach((tab, i)=>{
-  
-    if(i !== 0 && i !== 1 && tab.classList.contains('active')){
-    cardBody[1].classList.remove('active')
-    cardBody[1].style.display = 'none'
-  
-    }
-  
-  })
 
   
 cardHeader.style.display = "none"
@@ -256,10 +1201,6 @@ cardHeader.style.display = "none"
 
   }
 
-
-
-
-
   if (cardBody) {
     let fields;
 
@@ -267,8 +1208,6 @@ cardHeader.style.display = "none"
       if (tab.style.display == "block") {
         fields = tab.querySelectorAll(".required");
       }
-
-      
 
       if (fields) {
         fields.forEach((item) => {
@@ -649,13 +1588,14 @@ function checkError() {
           if(data.tabContainerComp.selectALanguage == 'dutch'){
             boxesEl.innerHTML = `
             <div  class="boxes">
-            ${yellow} Er zijn nog geen velden ingevuld 
+            ${yellow} Er zijn nog geen verplichte velden ingevuld
+
             </div>`;
           }
           else{
             boxesEl.innerHTML = `
             <div  class="boxes">
-            ${yellow} No fields(Mandatory) have yet been completed 
+            ${yellow} No mandatory fields have yet been completed 
             </div>`;
           }
 
@@ -680,7 +1620,7 @@ function checkError() {
           boxesEl.innerHTML = `
           <div  class="boxes">  
               
-          ${grey} Er ontbreken nog steeds ${fieldErrors.length} velden informatie 
+          ${grey} Er zijn nog steeds ${fieldErrors.length} verplichte velden die informatie missen
           </div>`;
 
           }
@@ -688,7 +1628,7 @@ function checkError() {
 
             boxesEl.innerHTML = `
           <div  class="boxes">  
-          ${grey} There are still ${fieldErrors.length} fields(Mandatory) missing information 
+          ${grey} There are still ${fieldErrors.length} mandatory fields missing information 
           </div>`;
 
           }
@@ -699,7 +1639,7 @@ function checkError() {
               boxesEl.innerHTML = `
               <div  class="boxes">
                   
-              ${grey} Er ontbreekt nog 1 veld informatie 
+              ${grey} Er is nog 1 verplicht veld ontbrekende informatie
               </div>`;
             }
             else{
@@ -707,7 +1647,7 @@ function checkError() {
             boxesEl.innerHTML = `
             <div  class="boxes">
                 
-            ${grey} There is still 1 field(Mandatory) missing information 
+            ${grey} There is still 1 mandatory field missing information 
             </div>`;
             }
            
@@ -728,14 +1668,14 @@ function checkError() {
 
             boxesEl.innerHTML = `
             <div  class="boxes">    
-            ${green} Alle velden ingevuld 
+            ${green} Alle verplichte velden ingevuld
             </div>`; 
               
           }
           else{
             boxesEl.innerHTML = `
             <div  class="boxes">    
-            ${green} All fields(Mandatory) completed 
+            ${green} All mandatory fields completed 
             </div>`;   
           }
    
@@ -873,6 +1813,5 @@ const typeLabels = type.querySelectorAll(".form-check-label")
 typeLabels.forEach(item=>{
   item.querySelector('span').classList.add("intro-box")
 })
-
 
 

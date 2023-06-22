@@ -1,28 +1,37 @@
 
 
-const textFields = document.querySelectorAll('.formio-component-textfield:not(.formio-component-multiple) input, .formio-component-email input, .formio-component-datetime .flatpickr-input, .formio-component-textarea textarea');
-  
-textFields.forEach(function(input) {
-  const label = input.closest('.form-group').querySelector('label[for="' + input.id + '"]');
+const textFields = document.querySelectorAll('.formio-component-textfield:not(.formio-component-multiple) input, .formio-component-number:not(.formio-component-multiple) input, .formio-component-email input, .formio-component-datetime .flatpickr-input, .formio-component-textarea textarea');
 
-  if(label){
-    input.addEventListener('input', function() {
+  textFields.forEach(function(input) {
+    const label = input.closest('.form-group').querySelector('label[for="' + input.id + '"]');
+  
+    if(label){
+      input.addEventListener('focus', function() {
+          label.style.transform = 'translate(0)';
+      });
+      input.addEventListener('blur', function() {
+        if (input.value !== '') {
+          label.style.transform = 'translate(0)';
+        }else if(input.previousElementSibling){
+          label.style.transform = 'translate(53px, 43px)';
+        }
+        else {
+          label.style.transform = 'translate(20px, 43px)';
+        }
+      });
+  
       if (input.value !== '') {
         label.style.transform = 'translate(0)';
-      } else {
+      }else if(input.previousElementSibling){
+        label.style.transform = 'translate(53px, 43px)';
+      }
+      else {
         label.style.transform = 'translate(20px, 43px)';
       }
-    });
-
-    if (input.value !== '') {
-      label.style.transform = 'translate(0)';
-    } else {
-      label.style.transform = 'translate(20px, 43px)';
     }
-  }
 
-
-});
+    
+  });
 
 const dropdownFields = document.querySelectorAll('.formio-component-select select');
 
