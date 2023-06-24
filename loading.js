@@ -10,6 +10,6 @@ if (previewElement) {
   previewElement.prepend(logoImage);
 }
 
-document.querySelector('.preview').style.display = 'block';
+document.querySelector('.preview').style.display = 'flex';
 
 
