@@ -19,36 +19,6 @@ const formio = document.querySelector('.preview .content .wrapper formio');
   
   
   
-
-    parent.classList.add("parent");
-    
-  
- 
-     
-  
-    if (!parent.children[1]) {
-      const logo = document.createElement("section");
-      parent.appendChild(logo);
-      parent.querySelector(".formio-form").style.display = "none";
-  
-     
-  
-      setTimeout(() => {
-      
-        formio.style.width = '35%';
-        parent.querySelector("section").innerHTML = `
-          <img class="logo" src="https://i.postimg.cc/jjsSDv1H/new-gif-animation-logo.gif" alt="">
-          `;
-      }, 0);
-  
-      setTimeout(() => {
-        parent.querySelector(".formio-form").style.display = "block";
-        parent.querySelector("section").innerHTML = "";
-        tabs.style.display = "block";
-        formio.style.width = '100%';
-      }, 2000);
-    }
-  
   
   
     cardBody[0].classList.remove('active')
