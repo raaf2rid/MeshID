@@ -13,3 +13,7 @@ if (previewElement) {
 document.querySelector('.preview').style.display = 'flex';
 
 
+setTimeout(()=>{
+  document.querySelector('.preview .logo').style.display = 'none';
+  document.querySelector('.content').style.display = 'flex';
+})
