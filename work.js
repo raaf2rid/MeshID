@@ -334,7 +334,6 @@ select:-webkit-autofill:focus {
     font-weight: 700;
     letter-spacing: 1.1px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -346,14 +345,10 @@ select:-webkit-autofill:focus {
   .middle input[type="radio"]:checked + .intro-box {
     background: #02341D;
     color: #fff;
+    padding-bottom: 0;
   }
 
-  .middle input[type="radio"]:checked + .intro-box span {
-    color: white;
-    transform: translateY(70px);
-  }
-
-  .middle input[type="radio"]:checked + .intro-box span:before {
+  .middle input[type="radio"]:checked + .intro-box figure {
     transform: translateY(0px);
     opacity: 1;
   }
@@ -363,7 +358,6 @@ select:-webkit-autofill:focus {
     height: 200px;
     background-color: rgba(139, 139, 139, 0.1);
     border-radius: 25px;
-    transition: all 250ms ease;
     will-change: transition;
     display: flex;
     text-align: center;
@@ -372,8 +366,16 @@ select:-webkit-autofill:focus {
     font-family: "Inter", sans-serif;
     justify-content: center;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
+    flex-direction: column;
+    transition: all 250ms ease-in-out;
 }
+
+.middle .intro-box span {
+  padding-bottom: 65px;
+}
+
+
 
   .middle .intro-box:active {
     transform: translateY(10px);
@@ -385,36 +387,20 @@ select:-webkit-autofill:focus {
     color: #fff;
   }
 
-  .middle .intro-box span {
-    position: absolute;
-    transform: translate(0, 60px);
-    left: 0;
-    right: 0;
 
-    transition: all 300ms ease;
-    font-size: 1.5em;
-    user-select: none;
-    color: #DD6921;
-  }
-
-  .middle .intro-box span:before {
+  .middle .intro-box span figure {
     font-size: 1.2em;
-    display: block;
     transform: translateY(-80px);
     opacity: 0;
-    bottom: 30px;
-    transition: all 300ms ease-in-out;
+    transition: all 250ms ease-in-out;
     font-weight: normal;
     color: white;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
   }
+  
 
-  .middle .individual span:before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='36' height='36'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M20 22H4v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2zm-8-9a6 6 0 1 1 0-12 6 6 0 0 1 0 12z' fill='%23ddc69d'/%3E%3C/svg%3E");
-  }
-
-  .middle .entity span:before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='36' height='36'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M21 19h2v2H1v-2h2V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v15h2V9h3a1 1 0 0 1 1 1v9zM7 11v2h4v-2H7zm0-4v2h4V7H7z' fill='%23ddc69d'/%3E%3C/svg%3E");
-  }
 
   .custom-type-of-entity .middle .intro-box {
     width: 230px;
@@ -673,11 +659,16 @@ select:-webkit-autofill:focus {
     fill: black;
   }
 
-  .preview .navigation-back,
+  .preview .navigation-back {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .preview .navigation-next {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
   }
 
   .preview .navigation-back .navigation-back,
@@ -821,8 +812,7 @@ select:-webkit-autofill:focus {
   .preview .meshid-custom .formio-component-radio:not(.type-custom) label,
   .preview .meshid-custom .formio-component-radio.type-custom label.field-required
   ,
-  .preview .meshid-custom .formio-component-checkbox label,
-  .preview .meshid-custom .formio-component-selectboxes label{
+  .preview .meshid-custom .formio-component-checkbox label{
     opacity: 1 !important;
     font-weight: 700;
     color: #02341D;
@@ -832,7 +822,6 @@ select:-webkit-autofill:focus {
 
   .preview .meshid-custom .has-error label{
     color: #e00303 !important;
-    transform: translate(0) !important;
   }
 
   .preview .meshid-custom .formio-error-wrapper{
@@ -1046,13 +1035,11 @@ backBtn.forEach(item=>{
     const label = input.closest('.form-group').querySelector('label[for="' + input.id + '"]');
   
     if(label){
-      input.addEventListener('focus', function() {
-          label.style.transform = 'translate(0)';
-      });
-      input.addEventListener('blur', function() {
+      input.addEventListener('input', function() {
         if (input.value !== '') {
           label.style.transform = 'translate(0)';
-        }else if(input.previousElementSibling){
+        } 
+        else if(input.previousElementSibling.classList.contains("input-group-prepend")){
           label.style.transform = 'translate(53px, 43px)';
         }
         else {
@@ -1805,13 +1792,37 @@ fetch(apiLink)
 
 const type = document.querySelector(".custom-type-of-entity")
 
-type.querySelector(".radio").classList.add("middle")
+if(type){
+
+  
+  type.querySelector(".radio").classList.add("middle")
+  
+  
+  const typeLabels = type.querySelectorAll(".form-check-label")
+  
+  typeLabels.forEach(item=>{
+    item.querySelector('span').classList.add("intro-box")
+  })
+  
+}
 
 
-const typeLabels = type.querySelectorAll(".form-check-label")
 
-typeLabels.forEach(item=>{
-  item.querySelector('span').classList.add("intro-box")
-})
+const introTypes = document.querySelectorAll(".intro-type");
 
+introTypes.forEach(introType => {
+  introType.querySelector(".radio").classList.add("middle");
+  introType.querySelectorAll(".form-check-inline").forEach(item => {
+    item.classList.add("intro-box");
+  });
+
+  const labelsType = introType.querySelectorAll(".form-check-label")
+
+
+
+labelsType.forEach(function(element) {
+  element.querySelector('span').classList.add("intro-box");
+});
+
+});
 

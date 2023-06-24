@@ -53,13 +53,15 @@ select:-webkit-autofill:focus {
   
   .preview .content .wrapper {
     display: flex !important;
-    align-items: baseline !important;
-    padding: 4rem 2rem !important;
     height: 100vh;
     overflow-x: hidden;
     background: #fff;
-    justify-content: center;
-  }
+    width: 100vw;
+}
+
+.ppreview .formio-wrapper{
+  background-color: #fff;
+}
 
   .preview .content .card {
   border: none;
