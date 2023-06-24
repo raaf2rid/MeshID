@@ -6,6 +6,8 @@ logoImage.alt = "";
 
 // Prepend the image element to the .preview element
 const previewElement = document.querySelector(".preview");
+const contentElement = document.querySelector(".preview");
+
 if (previewElement) {
   previewElement.prepend(logoImage);
 }
@@ -15,4 +17,7 @@ document.querySelector('.preview').style.display = 'flex';
 
 setTimeout(()=>{
   logoImage.classList.add('fade-out')
+  setTimeout(()=>{
+    contentElement.style.display = 'flex'
+  },2000)
 },2000)
