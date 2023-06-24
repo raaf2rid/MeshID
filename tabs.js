@@ -1,6 +1,4 @@
 // MeshID Custom
-document.documentElement.style.zoom = "100%"
-
 const cardHeader = document.querySelector(".card-header");
 const card = document.querySelector(".card");
 const cardBody = document.querySelectorAll(".tab-pane");
