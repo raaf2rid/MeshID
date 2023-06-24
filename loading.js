@@ -6,7 +6,7 @@ logoImage.alt = "";
 
 // Prepend the image element to the .preview element
 const previewElement = document.querySelector(".preview");
-const contentElement = document.querySelector(".preview");
+const contentElement = document.querySelector(".content");
 
 if (previewElement) {
   previewElement.prepend(logoImage);
