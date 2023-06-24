@@ -12,10 +12,8 @@ if (previewElement) {
 
 document.querySelector('.preview').style.display = 'flex';
 
-document.querySelector('.preview .logo').style.display = 'none';
-
 
 setTimeout(()=>{
-  
-  document.querySelector('.content').style.display = 'flex';
+  document.querySelector('.preview .logo').style.display = 'none';
+
 },2000)
