@@ -30,6 +30,10 @@ select:-webkit-autofill:focus {
   100% { opacity: 0; display: none; }
 }
 
+.preview .nav-tabs .nav-item:first-child{
+  display: none !important;
+}
+
 /* Autofill Custom */
 
 
