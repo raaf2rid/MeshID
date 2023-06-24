@@ -12,9 +12,7 @@ if (previewElement) {
 
 document.querySelector('.preview').style.display = 'flex';
 
-document.querySelector('.preview .logo').classList.add('.fade-out')
 
 setTimeout(()=>{
-  document.querySelector('.preview .logo').style.display = 'none';
-
+  document.querySelector('.preview .logo').classList.add('.fade-out')
 },2000)
