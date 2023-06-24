@@ -18,6 +18,7 @@ document.querySelector('.preview').style.display = 'flex';
 setTimeout(()=>{
   logoImage.classList.add('fade-out')
   setTimeout(()=>{
+    logoImage.style.display = 'none'
     contentElement.style.display = 'flex'
   },2000)
 },2000)
