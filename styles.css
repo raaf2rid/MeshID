@@ -57,6 +57,7 @@ select:-webkit-autofill:focus {
     overflow-x: hidden;
     background: #fff;
     width: 100vw;
+    justify-content: center;
 }
 
 .formio-wrapper{
