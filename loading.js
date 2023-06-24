@@ -12,8 +12,10 @@ if (previewElement) {
 
 document.querySelector('.preview').style.display = 'flex';
 
+document.querySelector('.preview .logo').style.display = 'none';
+
 
 setTimeout(()=>{
-  document.querySelector('.preview .logo').style.display = 'none';
+  
   document.querySelector('.content').style.display = 'flex';
-})
+},500)
