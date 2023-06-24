@@ -18,4 +18,4 @@ document.querySelector('.preview .logo').style.display = 'none';
 setTimeout(()=>{
   
   document.querySelector('.content').style.display = 'flex';
-},500)
+},2000)
