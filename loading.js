@@ -1,23 +1,15 @@
-// document.querySelector('.content').style.backgroundColor = '#fff'
-document.querySelector('.preview').style.display = 'none'
+// Create the image element
+const logoImage = document.createElement("img");
+logoImage.className = "logo";
+logoImage.src = "https://i.postimg.cc/jjsSDv1H/new-gif-animation-logo.gif";
+logoImage.alt = "";
 
-const linkUrl = 'https://raw.githubusercontent.com/raaf2rid/MeshID/main/styles.css';
+// Prepend the image element to the .preview element
+const previewElement = document.querySelector(".preview");
+if (previewElement) {
+  previewElement.prepend(logoImage);
+}
 
-fetch(linkUrl)
-  .then(response => response.text())
-  .then(cssText => {
-    const style = document.createElement('style');
-    style.textContent = cssText;
-
-    document.head.appendChild(style)
-
-  document.querySelector('.preview').style.display = 'block'
-
-
-
-  })
-  .catch(error => {
-    console.error('Error fetching CSS:', error);
-  });
+document.querySelector('.preview').style.display = 'block';
 
 
