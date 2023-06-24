@@ -47,7 +47,7 @@ const formio = document.querySelector('.preview .content .wrapper formio');
         parent.querySelector(".formio-form").style.display = "block";
         parent.querySelector("section").innerHTML = "";
         tabs.style.display = "block";
-        formio.style.width = '65%';
+        formio.style.width = '100%';
       }, 2000);
     }
   
