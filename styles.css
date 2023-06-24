@@ -238,10 +238,6 @@ select:-webkit-autofill:focus {
     vertical-align: inherit;
   }
 
-  .logo {
-    width: 100%;
-  }
-
   svg {
     width: 18px;
     height: 18px;
