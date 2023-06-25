@@ -262,7 +262,7 @@ select:-webkit-autofill:focus {
     background: #383838;
     color: #fff;
     font-size: 1.1rem;
-    border-radius: 0;
+    border-radius: 7px;
     padding: 8px;
     width: 100%;
     text-align: start;
@@ -903,6 +903,7 @@ select:-webkit-autofill:focus {
  background: radial-gradient(circle, #ce629d 10%, #317aa3 200%);
  background: linear-gradient(145deg, #c2207e 0%, #383838 100%) !important; */
  background-color: #383838;
+ border-radius: 7px;
 }
 
 .preview .formio-component-multiple .choices__input{
