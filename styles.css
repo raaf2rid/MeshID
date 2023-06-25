@@ -291,7 +291,7 @@ select:-webkit-autofill:focus {
   padding-left: 18px;
 }
 
-.nav-link {
+.nav-item {
   display: inline-block;
   padding: 5px 0;
   width: max-content !important;
@@ -299,19 +299,6 @@ select:-webkit-autofill:focus {
   background-color: transparent;
 }
 
-
-.nav-item::after {
-  position: absolute;
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  top: 0;
-  background-color: #383838;
-  transition: width .4s;
-  z-index: -1;
-  transform: translateX(15px);
-}
 
 .nav-item::after {
   position: absolute;
