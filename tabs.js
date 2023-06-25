@@ -230,7 +230,6 @@ function mediaQueriesHeader(navHeader) {
   // Large Screen
   /////
   else {
-    cardHeader.style.borderRight = "5px solid #f5f5f5";
     cardHeader.style.borderBottom = "0";
     cardHeader.style.width = "570px";
     card.style.minHeight = "670px";

@@ -69,7 +69,7 @@ select:-webkit-autofill:focus {
     display: flex !important;
     height: 100vh;
     overflow-x: hidden;
-    background: #8e8e8e;
+    background: #fff;
     width: 100vw;
     justify-content: center;
 }
@@ -82,7 +82,10 @@ select:-webkit-autofill:focus {
   border: none;
   border-radius: 0 !important;
   min-height: max-content !important;
-  background: #fff;
+  border-radius: 50px;
+  background: linear-gradient(315deg, #e6e6e6, #ffffff);
+  box-shadow:  -30px -30px 59px #d9d9d9,
+              30px 30px 59px #ffffff;
   }
   
   .preview .card-body {
@@ -829,11 +832,7 @@ select:-webkit-autofill:focus {
   .preview .meshid-custom .input-group-append{
     display: none;
   }
-
-  .preview .wrapper, 
-  .preview .card {
-    background: #F4F5F6;
-  }
+  
   .preview .is-active {
    z-index: 10000;
   }
