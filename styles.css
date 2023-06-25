@@ -89,7 +89,7 @@ select:-webkit-autofill:focus {
   }
 
   .preview .content .card-header{
-    background: linear-gradient(315deg, #e6e6e6, #ffffff);
+    background: transparent;
   }
   
   .preview .card-body {
