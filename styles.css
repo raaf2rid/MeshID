@@ -266,7 +266,7 @@ select:-webkit-autofill:focus {
     margin: 0;
   }
 
-  .parent .nav-link:hover {
+  .nav-link:hover {
     background: #e8e86a;
     color: #495057;
   }
