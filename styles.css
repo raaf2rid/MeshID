@@ -747,7 +747,7 @@ select:-webkit-autofill:focus {
     border-radius: 0px !important;
     border-left: 9px solid;
     border-color: #383838;
-    background: rgb(54 121 161 / 4%);
+    background: #fff;
     color: #253341;
     font-size: 15px;
     transition: border-color .3s;
