@@ -259,6 +259,10 @@ select:-webkit-autofill:focus {
 
   /* Navbar */
 
+  .nav-tabs{
+    position: relative;
+  }
+
   .nav-header {
     background: #383838;
     color: #fff;
