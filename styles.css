@@ -310,7 +310,7 @@ select:-webkit-autofill:focus {
   background-color: #383838;
   transition: width .4s;
   z-index: -1;
-  transform: translateX(15px);
+  transform: translateX(-18px);
 }
 
 .nav-item.hovered::after {
