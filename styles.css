@@ -276,6 +276,7 @@ select:-webkit-autofill:focus {
 
 .nav-item {
   display: inline-block;
+  padding: 10px 0;
 }
 
 .nav-item a {
