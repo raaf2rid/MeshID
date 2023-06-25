@@ -97,9 +97,7 @@ const formio = document.querySelector('.preview .content .wrapper formio');
     if (cardHeaderUl) {
       cardHeader.style.padding = "0";
       cardHeader.style.borderBottom = "0";
-      cardHeader.style.borderBottomLeftRadius = "7px";
-      cardHeader.style.background = "#fafafa";
-      cardHeader.style.paddingBottom = "2em";
+      cardHeader.style.background = "transparent;"
   
       if (!cardHeaderUl.classList.contains("loaded")) {
         cardHeaderUl.style.margin = "0";
