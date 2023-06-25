@@ -326,7 +326,7 @@ select:-webkit-autofill:focus {
   transform: translateX(15px);
 }
 
-.nav-link:hover::parent::after {
+.nav-item.hovered::after {
   width: 100%;
   height: 100%;
 }
