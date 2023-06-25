@@ -735,24 +735,24 @@ select:-webkit-autofill:focus {
     fill: #00a86b;
   }
 
-  .preview .meshid-custom .form-control{
+  .preview .meshid-custom .form-control {
     position: relative;
     display: block;
     width: 100%;
     padding: 15px 10px;
     min-height: 50px;
-    border-top: none;
-    border-right: none;
-    border-bottom: none;
-    border-radius: 0px !important;
+    /* border-top: none; */
+    /* border-right: none; */
+    /* border-bottom: none; */
+    border-radius: 7px !important;
     border-left: 9px solid;
     border-color: #383838;
-    background: #fff;
+    /* background: rgb(54 121 161 / 4%); */
     color: #253341;
     font-size: 15px;
     transition: border-color .3s;
     appearance: none;
-  }
+}
 
   .preview .meshid-custom .formio-component-textarea .form-control{
     height: 100px;
