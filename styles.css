@@ -86,6 +86,7 @@ select:-webkit-autofill:focus {
   background: linear-gradient(315deg, #e6e6e6, #ffffff);
   box-shadow:  -30px -30px 59px #d9d9d9,
               30px 30px 59px #ffffff;
+              padding: 1rem;
   }
 
   .preview .content .card-header{
