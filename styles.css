@@ -251,11 +251,10 @@ select:-webkit-autofill:focus {
   /* Navbar */
 
   .nav-header {
-    background: rgba(31, 148, 165, 1);
+    background: #383838;
     color: #fff;
     font-size: 1.1rem;
     border-radius: 0;
-    border-top-left-radius: 7px;
     padding: 8px;
     width: 100%;
     text-align: start;
@@ -264,7 +263,7 @@ select:-webkit-autofill:focus {
     font-weight: bold;
     letter-spacing: 1px;
     margin: 0;
-  }
+}
 
   .nav-link:hover {
     background: #e8e86a;
@@ -317,7 +316,7 @@ select:-webkit-autofill:focus {
   }
 
   .middle input[type="radio"]:checked + .intro-box {
-    background: #019dcd;
+    background: #383838;
     color: #fff;
   }
 
@@ -461,7 +460,7 @@ select:-webkit-autofill:focus {
 
   .intro-tab .continue button:active {
     transform: scale(0.95);
-    background: #019dcd !important;
+    background: #383838 !important;
     border: 1px solid #fff !important;
     color: #fff !important;
 
@@ -739,7 +738,7 @@ select:-webkit-autofill:focus {
     border-bottom: none;
     border-radius: 0px !important;
     border-left: 9px solid;
-    border-color: #019dcd;
+    border-color: #383838;
     background: rgb(54 121 161 / 4%);
     color: #253341;
     font-size: 15px;
@@ -769,7 +768,7 @@ select:-webkit-autofill:focus {
     transform: translate(20px, 43px);
     opacity: 1 !important;
     pointer-events: none !important;
-    color: #019dcd;
+    color: #383838;
   }
 
   .preview .meshid-custom .formio-component-datagrid th{
@@ -796,7 +795,7 @@ select:-webkit-autofill:focus {
   .preview .meshid-custom .formio-component-checkbox label{
     opacity: 1 !important;
     font-weight: 700;
-    color: #019dcd;
+    color: #383838;
 
   }
 
@@ -840,7 +839,7 @@ select:-webkit-autofill:focus {
   }
   .preview input[type=checkbox],
   .preview input[type=radio] {
-    accent-color: #019dcd !important;
+    accent-color: #383838 !important;
 }
 
 .formio-errors .error {
@@ -851,8 +850,8 @@ select:-webkit-autofill:focus {
 
 .preview .meshid-custom .formio-button-add-another,
 .preview .meshid-custom .formio-button-add-row {
-  background: #019dcd !important;
-  border: #019dcd !important;
+  background: #383838 !important;
+  border: #383838 !important;
   box-shadow: none !important;
   transition: 300ms;
 }
@@ -896,9 +895,10 @@ select:-webkit-autofill:focus {
 
 
 .preview .page-title{
- background: rgb(209,84,149) !important; 
+ /* background: rgb(209,84,149) !important; 
  background: radial-gradient(circle, #ce629d 10%, #317aa3 200%);
- background: linear-gradient(145deg, #c2207e 0%, #019dcd 100%) !important;
+ background: linear-gradient(145deg, #c2207e 0%, #383838 100%) !important; */
+ background-color: #383838;
 }
 
 .preview .formio-component-multiple .choices__input{
