@@ -277,6 +277,7 @@ select:-webkit-autofill:focus {
 
 .nav-tabs .nav-link.active{
   background-color: transparent!important;
+  color: #fff!important;
 }
 .nav-tabs .nav-item.active{
   background-color: #00a86b;
@@ -294,17 +295,6 @@ select:-webkit-autofill:focus {
   background-color: transparent;
 }
 
-
-
-.nav-link a {
-  text-decoration: none;
-  display: inline-block;
-  color: #FFF;
-  font-weight: lighter;
-  font-size: 28px;
-  padding: 0 20px;
-  background-color: transparent;
-}
 
 .nav-item::after {
   position: absolute;
@@ -346,10 +336,6 @@ select:-webkit-autofill:focus {
 .nav-link.active:hover::after {
   width: 0%;
 }
-.nav-link.active:hover::after {
-  color: #383838;
-}
-
 
   a svg {
     transform: translateY(-2px);
