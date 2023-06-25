@@ -317,6 +317,9 @@ select:-webkit-autofill:focus {
   height: 100%;
 }
 
+.nav-item.active.hovered::after{
+  width: 0;
+}
 
 .nav-link:hover {
   color: #fff;
