@@ -741,13 +741,10 @@ select:-webkit-autofill:focus {
     width: 100%;
     padding: 15px 10px;
     min-height: 50px;
-    /* border-top: none; */
-    /* border-right: none; */
-    /* border-bottom: none; */
-    border-radius: 7px !important;
+    border-radius: 7px;
+    border-top-right-radius: 0;
     border-left: 9px solid;
     border-color: #383838;
-    /* background: rgb(54 121 161 / 4%); */
     color: #253341;
     font-size: 15px;
     transition: border-color .3s;
@@ -904,6 +901,7 @@ select:-webkit-autofill:focus {
  background: linear-gradient(145deg, #c2207e 0%, #383838 100%) !important; */
  background-color: #383838;
  border-radius: 7px;
+ border-top-right-radius: 0;
 }
 
 .preview .formio-component-multiple .choices__input{
