@@ -222,8 +222,6 @@ function mediaQueriesHeader(navHeader) {
     cardHeader.style.borderBottom = "5px solid #f5f5f5";
     cardHeader.style.borderRight = "0";
     formio.style.width = '100%';
-  
-
   }
 
   /////
@@ -242,3 +240,11 @@ function mediaQueriesHeader(navHeader) {
   
   }
 }
+
+$(document).ready(function() {
+  $('.nav-link').hover(function() {
+    $(this).parent('.nav-item').addClass('hovered');
+  }, function() {
+    $(this).parent('.nav-item').removeClass('hovered');
+  });
+});
