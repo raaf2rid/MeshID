@@ -279,13 +279,19 @@ select:-webkit-autofill:focus {
   background-color: transparent !important;
 }
 
+.nav-item{
+  padding-left: 18px;
+}
+
 .nav-link {
   display: inline-block;
   padding: 5px 0;
   width: max-content !important;
   position: relative;
   background-color: transparent;
-}link
+}
+
+
 
 .nav-link a {
   text-decoration: none;
