@@ -282,7 +282,6 @@ select:-webkit-autofill:focus {
   text-decoration: none;
   display: inline-block;
   color: #FFF;
-  font-family: Source Sans Pro;
   font-weight: lighter;
   font-size: 28px;
   padding: 0 20px;
@@ -293,7 +292,7 @@ select:-webkit-autofill:focus {
   display: block;
   width: 0;
   height: 2px;
-  background: #FFF;
+  background: #383838;
   transition: width .3s;
 }
 
