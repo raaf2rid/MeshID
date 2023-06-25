@@ -279,15 +279,15 @@ select:-webkit-autofill:focus {
   background-color: transparent !important;
 }
 
-.nav-item {
+.nav-link {
   display: inline-block;
   padding: 5px 0;
   width: max-content !important;
   position: relative;
   background-color: transparent;
-}
+}link
 
-.nav-item a {
+.nav-link a {
   text-decoration: none;
   display: inline-block;
   color: #FFF;
@@ -297,7 +297,7 @@ select:-webkit-autofill:focus {
   background-color: transparent;
 }
 
-.nav-item::after {
+.nav-link::after {
   position: absolute;
   content: '';
   display: block;
@@ -305,12 +305,12 @@ select:-webkit-autofill:focus {
   height: 0;
   top: 0;
   background-color: #383838;
-  transition: all .4s;
+  transition: width .4s;
   z-index: -1;
   transform: translateX(15px);
 }
 
-.nav-item:hover::after {
+.nav-link:hover::after {
   width: 100%;
   height: 100%;
 }
@@ -320,7 +320,7 @@ select:-webkit-autofill:focus {
   transition: all .7s;
 }
 
-.nav-item.active:hover::after {
+.nav-link.active:hover::after {
   width: 0%;
 }
 .nav-link.active:hover::after {
