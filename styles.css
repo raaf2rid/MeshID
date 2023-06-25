@@ -276,7 +276,7 @@ select:-webkit-autofill:focus {
 }
 
 .nav-tabs .nav-link.active{
-  background-color: transparent !important;
+  background-color: #00a86b !important;
 }
 
 .nav-item{
