@@ -305,6 +305,7 @@ select:-webkit-autofill:focus {
   top: 0;
   background: rgba(184, 216, 107);
   transition: width .7s;
+  opacity: 0.5;
 }
 
 .nav-link:hover::after {
@@ -314,7 +315,7 @@ select:-webkit-autofill:focus {
 }
 
 .nav-link:hover {
-  color: #fff;
+  color: #000;
   transition: all .7s;
 }
 
