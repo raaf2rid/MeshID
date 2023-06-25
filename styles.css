@@ -273,6 +273,9 @@ select:-webkit-autofill:focus {
     margin: 0;
 }
 
+.nav-tabs .nav-link.active{
+  background-color: transparent !important;
+}
 
 .nav-item {
   display: inline-block;
@@ -293,7 +296,7 @@ select:-webkit-autofill:focus {
   content: '';
   display: block;
   width: 0;
-  height: 2px;
+  height: 3px !important;
   background: #383838;
   transition: width .7s;
 }
@@ -301,6 +304,9 @@ select:-webkit-autofill:focus {
 .nav-link:hover::after {
   width: 100%;
   transition: width .7s;
+}
+.nav-link.active:hover::after {
+  width: 0%;
 }
 
 
