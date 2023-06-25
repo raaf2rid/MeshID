@@ -305,6 +305,12 @@ select:-webkit-autofill:focus {
   width: 100%;
   transition: width .7s;
 }
+
+.nav-link:hover {
+  color: #383838;
+  transition: all .7s;
+}
+
 .nav-link.active:hover::after {
   width: 0%;
 }
