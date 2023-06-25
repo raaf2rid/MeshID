@@ -283,6 +283,7 @@ select:-webkit-autofill:focus {
   padding: 5px 0;
   width: max-content !important;
   position: relative;
+  background-color: transparent;
 }
 
 .nav-item a {
@@ -292,6 +293,7 @@ select:-webkit-autofill:focus {
   font-weight: lighter;
   font-size: 28px;
   padding: 0 20px;
+  background-color: transparent;
 }
 
 .nav-link::after {
@@ -300,7 +302,8 @@ select:-webkit-autofill:focus {
   display: block;
   width: 0;
   height: 0;
-  background: rgba(184, 216, 107, 0.5);
+  top: 0;
+  background: rgba(184, 216, 107);
   transition: width .7s;
 }
 
