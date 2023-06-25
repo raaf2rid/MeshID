@@ -354,7 +354,7 @@ select:-webkit-autofill:focus {
   }
 
   .middle .intro-box {
-    width: 200px;
+    width: 220px;
     height: 200px;
     background-color: rgba(139, 139, 139, 0.1);
     border-radius: 25px;
