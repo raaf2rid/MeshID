@@ -274,28 +274,32 @@ select:-webkit-autofill:focus {
 }
 
 
+.nav-item {
+  display: inline-block;
+}
+
 .nav-item a {
-	padding: 10px 0;
-	border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  display: inline-block;
+  color: #FFF;
+  font-family: Source Sans Pro;
+  font-weight: lighter;
+  font-size: 28px;
+  padding: 0 20px;
 }
 
-.nav-item a:before {
-	position: absolute;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	padding: 10px 0;
-	max-width: 0;
-	border-bottom: 2px solid #c8a755;
-	color: #c8a755;
-	content: attr(data-hover);
-	-webkit-transition: max-width 0.5s;
-	-moz-transition: max-width 0.5s;
-	transition: max-width 0.5s;
+.nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #FFF;
+  transition: width .3s;
 }
 
-.nav-item a:hover:before, .nav-item a:focus:before {
-	max-width: 100%;
+.nav-link:hover::after {
+  width: 100%;
+  transition: width .3s;
 }
 
 
