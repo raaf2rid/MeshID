@@ -87,6 +87,10 @@ select:-webkit-autofill:focus {
   box-shadow:  -30px -30px 59px #d9d9d9,
               30px 30px 59px #ffffff;
   }
+
+  .preview .content .card-header{
+    background: linear-gradient(315deg, #e6e6e6, #ffffff);
+  }
   
   .preview .card-body {
   padding: 0 !important;
@@ -832,7 +836,7 @@ select:-webkit-autofill:focus {
   .preview .meshid-custom .input-group-append{
     display: none;
   }
-  
+
   .preview .is-active {
    z-index: 10000;
   }
