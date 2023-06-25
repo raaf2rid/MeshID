@@ -316,10 +316,24 @@ select:-webkit-autofill:focus {
   transform: translateX(15px);
 }
 
-.nav-link:hover .nav-item::after {
+.nav-item::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  top: 0;
+  background-color: #383838;
+  transition: width .4s;
+  z-index: -1;
+  transform: translateX(15px);
+}
+
+.nav-link:hover::parent::after {
   width: 100%;
   height: 100%;
 }
+
 
 .nav-link:hover {
   color: #fff;
