@@ -262,7 +262,7 @@ if ($('.card .header').length === 0) {
   '</header>';
 
   // Prepend the header code to '.card'
-  $('.card').prepend(headerCode);
+  $('.content').prepend(headerCode);
 }
 
 
