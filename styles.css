@@ -72,6 +72,7 @@ select:-webkit-autofill:focus {
               30px 30px 59px #ffffff;
   z-index: 1000;
   font-family: "Lato", sans-serif;
+  transition: all 0.7s;
   }
 
   .preview .content .card-header{
