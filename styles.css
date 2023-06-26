@@ -66,12 +66,10 @@ select:-webkit-autofill:focus {
   border: none;
   border-radius: 0 !important;
   min-height: max-content !important;
- border-radius: 48px;
-background: linear-gradient(45deg, #c8c8c8, #eeeeee);
-box-shadow:  28px -28px 57px #a9a9a9,
-             -28px 28px 57px #ffffff;
-  z-index: 1000;
-  font-family: "Lato", sans-serif;
+  border-radius: 48px;
+  background: linear-gradient(315deg, #c8c8c8, #eeeeee);
+  box-shadow:  -28px -28px 57px #a9a9a9,
+               28px 28px 57px #ffffff;
   transition: all 0.7s;
   }
 
@@ -204,7 +202,7 @@ box-shadow:  28px -28px 57px #a9a9a9,
 
 .preview .nav-tabs .nav-link.active{
   background-color: transparent!important;
-  color: #fff!important;
+  color: #383838!important;
 }
 .preview .nav-tabs .nav-item.active{
   background-color: #00a86b;
