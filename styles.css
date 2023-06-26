@@ -178,7 +178,7 @@ select:-webkit-autofill:focus {
     background:#fff;
     width:235px;
     position:fixed;
-    top:0;
+    top:60px;
     left:-235px;
     height:100%;
     box-shadow:0 2px 8px rgba(0,0,0,0.2);
@@ -1013,5 +1013,5 @@ a svg {
 }
 
 .sidebarshow {
-  left:0;
+  left:0 !important;
 }
