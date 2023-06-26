@@ -43,14 +43,9 @@ dropdownFields.forEach(function(select) {
   if(label){
 
     if (select.value !== '') {
-      if(label){
         label.style.transform = 'translate(0)';
-      }
     }else {
-      if(label){
-
       label.style.transform = 'translate(20px, 43px)';
-      }
     }
     
 
@@ -83,14 +78,14 @@ if(label){
     label.style.transform = 'translate(20px, 57px)';
     input.parentNode.parentNode.parentNode.querySelector('.formio-button-add-another').parentElement.style.display = 'none'
   }
-  
 
-  input.addEventListener('input', function() {
+
+  input.addEventListener('focus', function() {
+    label.style.transform = 'translate(0)';
+  });
+  input.addEventListener('blur', function() {
     if (multiFields[0].value !== '') {
-      label.style.transform = 'translate(0)';
-      input.parentNode.parentNode.parentNode.querySelectorAll('.btn-secondary').forEach(btn=>{
-      })
-    
+      label.style.transform = 'translate(0)';    
     } else {
       label.style.transform = 'translate(20px, 57px)';
       input.parentNode.parentNode.parentNode.querySelectorAll('.btn-secondary').forEach(btn=>{
@@ -98,6 +93,10 @@ if(label){
       })
     }
   });
+
+  
+
+
 }
  
  
