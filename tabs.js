@@ -251,7 +251,7 @@ $(document).ready(function() {
 
 
 // Check if the header code has already been added to '.card'
-if ($('.card .header').length === 0) {
+if ($('.content .header').length === 0) {
   // Get the header code
   var headerCode = '<header class="header">' +
      '<div class="header_in">' +

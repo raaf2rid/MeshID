@@ -175,6 +175,10 @@ select:-webkit-autofill:focus {
   }
 
   .preview .nav-header {
+    left: 400px;
+  }
+  
+  .preview .nav-header {
     background: #383838;
     color: #fff;
     font-size: 1.1rem;
@@ -223,7 +227,7 @@ select:-webkit-autofill:focus {
 }
 
 .preview .nav-item.hovered::after {
-  width: 100%;
+  width: 10px;
   height: 100%;
 }
 
@@ -921,7 +925,7 @@ a svg {
   background:#555;
   display:block;
   position:relative;
-  coursor:pointer;
+  cursor:pointer;
 }
 
 .toggle span:before,
@@ -960,21 +964,6 @@ a svg {
   background:#4CAF50;
 }
 
-.card-header {
-  background:#fff;
-  width:235px;
-  position:fixed;
-  top:0;
-  left:-235px;
-  height:100%;
-  box-shadow:0 2px 8px rgba(0,0,0,0.2);
-  padding-top:90px;
-  transition:all 0.3s ease-out;
-}
-
-.card-header ul {
-  list-style:none;
-}
 
 .card-header ul li {
   display:block;
