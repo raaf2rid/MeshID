@@ -73,7 +73,6 @@ if(label){
     input.parentNode.parentNode.parentNode.querySelector('.formio-button-add-another').parentElement.style.display = 'block'
   }
   else{
-    label.style.transform = 'translate(20px, 57px)';
     input.parentNode.parentNode.parentNode.querySelector('.formio-button-add-another').parentElement.style.display = 'none'
   }
 
