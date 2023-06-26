@@ -485,52 +485,7 @@ a svg {
     }
   }
 
-  .card-animation {
-    animation-name: card-animation;
-    animation-duration: 0.8s;
-  }
-
-  @keyframes card-animation {
-    from {
-      transform: translate(-1%);
-      opacity: 0;
-    }
-    to {
-      transform: translate(0%);
-      opacity: 1;
-    }
-  }
-
-  .next {
-    animation-name: left-to-right-animation;
-    animation-duration: 0.7s;
-  }
-  @keyframes left-to-right-animation {
-    from {
-      transform: translate(-4%);
-      opacity: 0;
-    }
-    to {
-      transform: translate(0%);
-      opacity: 1;
-    }
-  }
-
-  .back {
-    animation-name: right-to-left-animation;
-    animation-duration: 0.7s;
-  }
-  @keyframes right-to-left-animation {
-    from {
-      transform: translate(4%);
-      opacity: 0;
-    }
-    to {
-      transform: translate(0%);
-      opacity: 1;
-    }
-  }
-
+ 
   .nav-item-hide {
     animation-name: hide-animation;
     animation-duration: 0.9s;
