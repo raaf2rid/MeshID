@@ -272,11 +272,11 @@ var btnst = true;
 btn.onclick = function() {
   if(btnst == true) {
     document.querySelector('.toggle span').classList.add('toggle');
-    document.getElementById('card-header').classList.add('sidebarshow');
+    document.querySelector('.card-header').classList.add('sidebarshow');
     btnst = false;
   }else if(btnst == false) {
     document.querySelector('.toggle span').classList.remove('toggle');
-    document.getElementById('card-header').classList.remove('sidebarshow');
+    document.querySelector('.card-header').classList.remove('sidebarshow');
     btnst = true;
   }
 }
