@@ -250,12 +250,14 @@ $(document).ready(function() {
 });
 
 
-document.getElementById('toggle').addEventListener('change', function() {
-  var cardHeader = document.querySelector('.card-header');
-  
-  if (this.checked) {
-    cardHeader.style.display = 'none';
-  } else {
-    cardHeader.style.display = 'block';
-  }
-});
+// Get the header code
+var headerCode = '<header class="header">' +
+   '<div class="header_in">' +
+     '<button type="button" class="toggle" id="toggle">' +
+       '<span></span>' +
+      '</button>' +
+  '</div>' +
+'</header>';
+
+// Prepend the header code to the '.card' element
+$('.card').prepend(headerCode);
