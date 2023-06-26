@@ -173,6 +173,10 @@ select:-webkit-autofill:focus {
 
   /* Navbar */
 
+  .preview .card-header{
+        border: 5px solid #383838;
+  }
+
   .preview .nav-tabs{
     position: relative;
   }
