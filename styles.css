@@ -70,8 +70,8 @@ select:-webkit-autofill:focus {
   background: linear-gradient(315deg, #e6e6e6, #ffffff);
   box-shadow:  -30px -30px 59px #d9d9d9,
               30px 30px 59px #ffffff;
-  padding: 1rem;
   z-index: 1000;
+  font-family: "Lato", sans-serif;
   }
 
   .preview .content .card-header{
@@ -157,10 +157,6 @@ select:-webkit-autofill:focus {
     transform: translateX(-8px);
 }
 
-  .card {
-    font-family: "Lato", sans-serif;
-  }
-
   .sourceOfWealth td {
     vertical-align: inherit;
   }
@@ -174,7 +170,7 @@ select:-webkit-autofill:focus {
   /* Navbar */
 
   .preview .card-header{
-        border: 5px solid #383838;
+    border: 5px solid #383838 !important;
   }
 
   .preview .nav-tabs{
@@ -185,7 +181,6 @@ select:-webkit-autofill:focus {
     background: #383838;
     color: #fff;
     font-size: 1.1rem;
-    border-radius: 7px;
     padding: 8px;
     width: 100%;
     text-align: start;
