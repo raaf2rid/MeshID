@@ -25,9 +25,7 @@ const textFields = document.querySelectorAll('.formio-component-textfield:not(.f
       }else if(input.previousElementSibling){
         label.style.transform = 'translate(53px, 43px)';
       }
-      else {
-        label.style.transform = 'translate(20px, 43px)';
-      }
+      
     }
 
     
@@ -79,10 +77,10 @@ if(label){
     input.parentNode.parentNode.parentNode.querySelector('.formio-button-add-another').parentElement.style.display = 'none'
   }
 
-
   input.addEventListener('focus', function() {
     label.style.transform = 'translate(0)';
   });
+
   input.addEventListener('blur', function() {
     if (multiFields[0].value !== '') {
       label.style.transform = 'translate(0)';    
