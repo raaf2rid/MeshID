@@ -178,12 +178,13 @@ select:-webkit-autofill:focus {
     width:235px;
     position:fixed;
     top:60px;
-    left: -400px !important;
-    height:100%;
+    left: -400px;
+    height: max-content;
     box-shadow:0 2px 8px rgba(0,0,0,0.2);
     padding-top:90px;
     transition:all 0.3s ease-out;
     width: max-content !important;
+    min-height: 400px;
   }
 
   .preview .nav-header {
