@@ -14,9 +14,8 @@ display: none !important;
 display: none;
 }
 
-.preview .content .form-type-heading {
-  display: none !important;
-}.preview div[role="form"][aria-label="Container"] {
+
+.preview div[role="form"][aria-label="Container"] {
 height: 100%;
 }
 

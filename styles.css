@@ -891,4 +891,6 @@ select:-webkit-autofill:focus {
   border: none;
 }
 
-
+.preview .content .form-type-heading {
+  display: none !important;
+}
