@@ -174,10 +174,12 @@ select:-webkit-autofill:focus {
     position: relative;
   }
 
-  .preview .nav-header {
+  .preview .card-header {
+    position: absolute;
+    top: 15px;
     left: 400px;
   }
-  
+
   .preview .nav-header {
     background: #383838;
     color: #fff;
