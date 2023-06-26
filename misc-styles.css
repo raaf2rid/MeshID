@@ -1,0 +1,62 @@
+/* Dutch Banking */
+  
+.glossary{
+  padding: 1em;
+  padding-bottom:3em;
+  height: 1400px;
+}
+
+.arrow{
+display: none !important;
+}
+
+.carousel-indicators{
+display: none;
+}
+
+.preview .content .form-type-heading {
+  display: none !important;
+}.preview div[role="form"][aria-label="Container"] {
+height: 100%;
+}
+
+.form-type-heading:nth-child(1) {
+display: none !important;
+}
+
+.glossary-panel .text-muted{
+  color: #DD6921 !important;
+  font-size: 25px !important;
+}
+
+.glossary-panel .card-title{
+  display: block !important;
+  text-align: center !important;
+}
+
+.preview .get-started button{
+  background-color: #DD6921;
+  border: 3px solid #DD6921;
+  box-shadow: none !important;
+}
+
+.preview .get-started button {
+  width: 250px;
+  height: 65px;
+  border-radius: 50px !important;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.preview .get-started button:hover,
+.preview .get-started button:active {
+  background: #fff !important;
+  border: 3px solid #DD6921 !important;
+  color: #DD6921 !important;
+}
+
+.middle .pen span:before {
+  content:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='36' height='36'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M15.728 9.686l-1.414-1.414L5 17.586V19h1.414l9.314-9.314zm1.414-1.414l1.414-1.414-1.414-1.414-1.414 1.414 1.414 1.414zM7.242 21H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 21z' fill='%23ddc69d'/%3E%3C/svg%3E");
+  ;
+}
