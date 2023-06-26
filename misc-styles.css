@@ -63,21 +63,6 @@ display: none !important;
 
 
 
-.card-animation {
-  animation-name: card-animation;
-  animation-duration: 0.8s;
-}
-
-@keyframes card-animation {
-  from {
-    transform: translate(-1%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0%);
-    opacity: 1;
-  }
-}
 
 .next {
   animation-name: left-to-right-animation;

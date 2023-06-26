@@ -970,3 +970,20 @@ a svg {
 .sidebarshow {
   left:0 !important;
 }
+
+
+.card-animation {
+  animation-name: card-animation;
+  animation-duration: 0.8s;
+}
+
+@keyframes card-animation {
+  from {
+    transform: translate(-1%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
