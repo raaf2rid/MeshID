@@ -175,9 +175,15 @@ select:-webkit-autofill:focus {
   }
 
   .preview .card-header {
-    position: absolute;
-    top: 15px;
-    left: 400px;
+    background:#fff;
+    width:235px;
+    position:fixed;
+    top:0;
+    left:-235px;
+    height:100%;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    padding-top:90px;
+    transition:all 0.3s ease-out;
   }
 
   .preview .nav-header {
