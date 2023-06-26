@@ -310,7 +310,7 @@ select:-webkit-autofill:focus {
   height: 0;
   top: 0;
   background-color: #383838;
-  transition: width .4s;
+  transition: width .7s;
   z-index: -1;
   transform: translateX(-18px);
 }
