@@ -71,6 +71,7 @@ select:-webkit-autofill:focus {
   background: linear-gradient(315deg, #c8c8c8, #eeeeee);
   box-shadow:  -7px -7px 12px #9e9e9e,
              7px 7px 12px #ffffff;
+  z-index: 1000;
   }
 
   .preview .content .card-header{
@@ -202,7 +203,7 @@ select:-webkit-autofill:focus {
 
 .preview .nav-tabs .nav-link.active{
   background-color: transparent!important;
-  color: #383838!important;
+  color: #fff!important;
 }
 .preview .nav-tabs .nav-item.active{
   background-color: #00a86b;
@@ -243,8 +244,8 @@ select:-webkit-autofill:focus {
 }
 
 .preview .nav-link:hover {
-  color: #fff;
-  transition: all .7s;
+  color: #383838;
+  transition: all .3s;
 }
 
 .preview .nav-link.active:hover::after {
