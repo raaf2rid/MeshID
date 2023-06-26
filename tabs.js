@@ -250,17 +250,21 @@ $(document).ready(function() {
 });
 
 
-// Get the header code
-var headerCode = '<header class="header">' +
-   '<div class="header_in">' +
-     '<button type="button" class="toggle" id="toggle">' +
-       '<span></span>' +
-      '</button>' +
-  '</div>' +
-'</header>';
+// Check if the header code has already been added to '.card'
+if ($('.card .header').length === 0) {
+  // Get the header code
+  var headerCode = '<header class="header">' +
+     '<div class="header_in">' +
+       '<button type="button" class="toggle" id="toggle">' +
+         '<span></span>' +
+        '</button>' +
+    '</div>' +
+  '</header>';
 
-// Prepend the header code to the first occurrence of '.card' element
-$('.card:first').prepend(headerCode);
+  // Prepend the header code to '.card'
+  $('.card').prepend(headerCode);
+}
+
 
 
 var btn = document.querySelector('.toggle');
