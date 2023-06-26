@@ -53,7 +53,7 @@ select:-webkit-autofill:focus {
     display: flex !important;
     height: 100vh;
     overflow-x: hidden;
-    background: #7a7a7a;
+    background: #dedede;
     width: 100vw;
     justify-content: center;
 }
@@ -66,12 +66,10 @@ select:-webkit-autofill:focus {
   border: none;
   border-radius: 0 !important;
   min-height: max-content !important;
-  border-radius: 50px;
-  border-radius: 46px;
-  border-radius: 48px;
-  background: linear-gradient(45deg, #6e6e6e, #838383);
-  box-shadow:  28px -28px 57px #5d5d5d,
-             -28px 28px 57px #979797;
+ border-radius: 48px;
+background: linear-gradient(45deg, #c8c8c8, #eeeeee);
+box-shadow:  28px -28px 57px #a9a9a9,
+             -28px 28px 57px #ffffff;
   z-index: 1000;
   font-family: "Lato", sans-serif;
   transition: all 0.7s;
@@ -911,7 +909,7 @@ a svg {
 
 
 .header {
-  background:#c1c1c1;
+  background:#c8c8c8;
   box-shadow:0 2px 5px rgba(0,0,0,0.2);
   padding: 15px 20px;
   width:100%;
