@@ -259,8 +259,8 @@ var headerCode = '<header class="header">' +
   '</div>' +
 '</header>';
 
-// Prepend the header code to the '.card' element
-$('.card').prepend(headerCode);
+// Prepend the header code to the first occurrence of '.card' element
+$('.card:first').prepend(headerCode);
 
 
 var btn = document.querySelector('.toggle');
