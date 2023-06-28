@@ -147,15 +147,15 @@ const formio = document.querySelector('.preview .content .wrapper formio');
 function animate() {
 
 
-  cardBody.forEach(tab=>{
+  cardBody.forEach((tab, i)=>{
     if(tab.classList.contains('active')){
-      tab.classList.add("card-animation");
+      cardBody[i-1].classList.add("card-animation");
       disableButtons();
       setTimeout(removeAnimation, 800);
     
       function removeAnimation() {
         enableButtons();
-        tab.classList.remove("card-animation");
+        cardBody[i-1].classList.remove("card-animation");
       }
     }
   })
