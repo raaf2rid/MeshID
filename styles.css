@@ -995,18 +995,17 @@ a svg {
 
 
 .card-animation {
-  animation: card-animation 1s ease-in-out both;
-
+  animation: card-animation 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) both;
 }
 
 @keyframes card-animation {
   0% {
     opacity: 0;
     transform: translateX(-100%);
-
   }
   100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
