@@ -18,6 +18,7 @@ const errorFields = document.querySelectorAll(".tab-pane:not(:last-child) .custo
 
 const formio = document.querySelector('.preview .content .wrapper formio');
   
+console.log(activeTab)
   
   
     cardBody[0].classList.remove('active')
