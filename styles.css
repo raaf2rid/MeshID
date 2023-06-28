@@ -993,8 +993,8 @@ a svg {
 
 
 .card-animation {
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.2, 0.4, 0.8, 1);
   animation-fill-mode: both;
   animation-delay: 0.2s;
   animation-name: card-animation;
@@ -1004,12 +1004,13 @@ a svg {
 @keyframes card-animation {
   0% {
     opacity: 1;
-    filter: blur(0);
+    transform: translateX(0) rotate(0);
+    filter: blur(0) brightness(1);
   }
   100% {
     opacity: 0;
-    filter: blur(20px);
-    transform: scale(0.5);
+    transform: translateX(-200px) rotate(-180deg);
+    filter: blur(10px) brightness(0.5);
   }
 }
 
