@@ -27,14 +27,17 @@ if (!cssLink) {
         cssLink.rel = "stylesheet";
         cssLink.href = "https://raaf2rid.github.io/MeshID/styles.css";
         document.head.appendChild(cssLink);
-        contentElement.style.display = 'flex'
-        logo.style.display = 'none'
+        return Promise.resolve();
       } else {
         throw new Error('Failed to fetch CSS file');
       }
     })
+    .then(() => {
+      logo.style.display = 'none';
+      contentElement.style.display = 'flex';
+    })
     .catch(error => {
       console.log('Error fetching or appending CSS:', error);
     });
-} 
+}
 
