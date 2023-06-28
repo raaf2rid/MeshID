@@ -29,6 +29,10 @@ if (!cssLink) {
         cssLink.addEventListener("load", () => {
           contentElement.style.display = "flex";
         });
+        logo.addEventListener("animationend", () => {
+          logo.style.display = "none";
+        });
+      
 
       } else {
         throw new Error('Failed to fetch CSS file');
