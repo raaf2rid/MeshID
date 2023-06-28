@@ -855,6 +855,7 @@ a svg {
 }
 
 .preview .meshid-custom .custom-mobile div.form-control {
+  border-right: none;
   border-bottom-right-radius: 0 !important;
 }
 
