@@ -21,14 +21,21 @@ select:-webkit-autofill:focus {
 .fade-out {
   opacity: 1;
   animation-name: fadeOut;
-  animation-duration: 2s;
+  animation-duration: 1s; /* Reduce the animation duration to 1s */
+  animation-delay: 1s; /* Add a delay of 1s before starting the animation */
   animation-fill-mode: forwards;
 }
 
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; display: none; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
+
 
 .preview .nav-tabs .nav-item:first-child{
   display: none !important;
