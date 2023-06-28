@@ -1,7 +1,6 @@
 const previewElement = document.querySelector(".preview");
 const contentElement = document.querySelector(".content");
 let cssLink = document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]');
-const logo = document.querySelector(".preview .fade-out")
 
 // Check if the image has already been prepended
 if (!logo) {
@@ -29,6 +28,8 @@ if (!cssLink) {
         document.head.appendChild(cssLink);
 
         setTimeout(()=>{
+          const logo = document.querySelector(".preview .fade-out")
+          const contentElement = document.querySelector(".content");
           logo.style.display = 'none'; // Hide the element after the animation completes
           contentElement.style.display = 'flex';
         },3000)
