@@ -706,7 +706,7 @@ a svg {
     font-size: 15px;
     transition: border-color .3s;
     appearance: none;
-    background-color: transparent;
+    background-color: #eeeeee;
 }
 
   .preview .meshid-custom .formio-component-textarea .form-control{
@@ -805,10 +805,12 @@ a svg {
     text-indent: 30px;
   }
 
-  .preview .meshid-custom .input-group-append span{
+  .preview .meshid-custom .input-group-append span,
+  .preview .meshid-custom .input-group-prepend span{
     min-height: 50px;
     border: none;
     background: rgb(128 128 128 / 30%);
+    z-index: 1;
   }
 
   .preview .is-active {
