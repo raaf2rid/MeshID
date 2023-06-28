@@ -28,6 +28,7 @@ if (!cssLink) {
         cssLink.href = "https://raaf2rid.github.io/MeshID/styles.css";
         document.head.appendChild(cssLink);
         contentElement.style.display = 'flex'
+        logo.style.display = 'none'
       } else {
         throw new Error('Failed to fetch CSS file');
       }
