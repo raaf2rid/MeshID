@@ -8,7 +8,7 @@ if (!logo) {
   // Create the image element
   const logoImage = document.createElement("img");
   logoImage.classList.add("logo", "fade-out");
-  logoImage.src = "https://i.postimg.cc/jjsSDv1H/new-gif-animation-logo.gif";
+  logoImage.src = "https://i.postimg.cc/wBmpBgcs/ezgif-com-gif-maker-1.gif";
   logoImage.alt = "";
 
   // Prepend the image element to the .preview element

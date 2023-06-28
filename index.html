@@ -1,177 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Navbar Toggle</title>
+  <title>Remove White Background from GIF</title>
   <style>
-    * {
-  margin:0;
-  padding:0;
-}
+    /* Optional CSS styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
 
-body {
-  background:#e1e1e1;
-}
+    h1 {
+      margin-bottom: 20px;
+    }
 
-.header {
-  background:#fff;
-  box-shadow:0 2px 5px rgba(0,0,0,0.2);
-  padding: 15px 20px;
-  width:100%;
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:9;
-}
+    input {
+      margin-bottom: 10px;
+    }
 
-button {
-  background:transparent;
-  border:none;
-  width:30px;
-  height:30px;
-  cursor:pointer; 
-  outline:0;
-}
-
-.toggle span {
-  width:100%;
-  height:3px;
-  background:#555;
-  display:block;
-  position:relative;
-  coursor:pointer;
-}
-
-.toggle span:before,
-.toggle span:after {
-  content:'';
-  position:absolute;
-  left:0;
-  width:100%;
-  height:100%;
-  background:#555;
-  transition: all 0.3s ease-out;
-}
-
-.toggle span:before {
-  top:-8px;
-}
-
-.toggle span:after {
-  top:8px;
-}
-
-.toggle span.toggle {
-  background:transparent;
-}
-
-.toggle span.toggle:before {
-  top:0;
-  transform:rotate(-45deg);
-  background:#4CAF50;
-  
-}
-
-.toggle span.toggle:after {
-  top:0;
-  transform:rotate(45deg);
-  background:#4CAF50;
-}
-
-.sidebar {
-  background:#fff;
-  width:235px;
-  position:fixed;
-  top:0;
-  left:-235px;
-  height:100%;
-  box-shadow:0 2px 8px rgba(0,0,0,0.2);
-  padding-top:90px;
-  transition:all 0.3s ease-out;
-}
-
-.sidebar ul {
-  list-style:none;
-}
-
-.sidebar ul li {
-  display:block;
-}
-
-.sidebar ul li a {
-  padding:8px 15px;
-  font-size:16px;
-  color:#222;
-  font-family:arial;
-  text-decoration:none;
-  display:block;
-  position:relative;
-  z-index:1;
-  transition:all 0.3s ease-out;
-  font-weight:500;
-}
-
-.sidebar ul li a:before {
-  content:'';
-  position:absolute;
-  bottom:0;
-  left:50%;
-  right:50%;
-  transform:translate(-50%,-50%);
-  width:0;
-  height:1px;
-  background:#4CAF50;
-  z-index:-1;
-  transition:all 0.3s ease-out;
-}
-
-.sidebar ul li a:hover:before {
-  width:100%;
-}
-
-.sidebar ul li a:hover {
-  color:#4CAF50;
-}
-
-.sidebarshow {
-  left:0;
-}
-
+    button {
+      padding: 10px 20px;
+    }
   </style>
 </head>
 <body>
-  
-  <header class="header">
-    <div class="header_in">
-      <button type="button" class="toggle" id="toggle">
-        <span></span>
-       </button>
-   </div>
- </header>
+  <h1>Remove White Background from GIF</h1>
+
+  <label for="inputFile">Upload GIF:</label>
+  <input type="file" id="inputFile" accept=".gif" required>
+
+  <label for="outputFileName">Output Filename:</label>
+  <input type="text" id="outputFileName" placeholder="Enter Output Filename" required>
+
+  <button onclick="removeWhiteBackground()">Remove Background</button>
+
+  <div id="resultDiv"></div>
+
+  <script src="https://cdn.rawgit.com/buzzfeed/libgif-js/0.2.0/libgif.js"></script>
+
  
- <div class="sidebar" id='sidebar'>
-   <ul>
-     <li><a href="">Home</a></li>
-      <li><a href="">About</a></li>
-       <li><a href="">Contact</a></li>
-   </ul>
- </div>
+  <script>
+    function removeWhiteBackground() {
+  var inputFile = document.getElementById('inputFile').files[0];
 
+  var reader = new FileReader();
 
- <script>
-  var btn = document.querySelector('.toggle');
-var btnst = true;
-btn.onclick = function() {
-  if(btnst == true) {
-    document.querySelector('.toggle span').classList.add('toggle');
-    document.getElementById('sidebar').classList.add('sidebarshow');
-    btnst = false;
-  }else if(btnst == false) {
-    document.querySelector('.toggle span').classList.remove('toggle');
-    document.getElementById('sidebar').classList.remove('sidebarshow');
-    btnst = true;
-  }
+  reader.onload = function(e) {
+    var img = document.createElement('img');
+    img.src = e.target.result;
+
+    img.onload = function() {
+      var canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+
+      var ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+
+      var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      var data = imageData.data;
+
+      for (var i = 0; i < data.length; i += 4) {
+        var red = data[i];
+        var green = data[i + 1];
+        var blue = data[i + 2];
+        var alpha = data[i + 3];
+
+        if (red === 255 && green === 255 && blue === 255) {
+          data[i + 3] = 0;
+        }
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+
+      var modifiedDataURL = canvas.toDataURL('image/gif');
+
+      var resultDiv = document.getElementById('resultDiv');
+      resultDiv.innerHTML = ''; // Clear previous result if any
+
+      var resultImg = document.createElement('img');
+      resultImg.src = modifiedDataURL;
+      resultDiv.appendChild(resultImg);
+    };
+  };
+
+  reader.readAsDataURL(inputFile);
 }
- </script>
 
+
+  </script>
 </body>
 </html>
