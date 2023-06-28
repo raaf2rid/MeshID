@@ -20,21 +20,25 @@ select:-webkit-autofill:focus {
 
 .fade-out {
   opacity: 1;
-  transition-property: opacity;
-  transition-duration: 3s;
-  transition-delay: 2s;
+  animation-name: fadeOut;
+  animation-duration: 3s; /* Reduce the animation duration to 1s */
+  animation-delay: 2s; /* Add a delay of 1s before starting the animation */
+  animation-fill-mode: forwards;
 }
 
-.fade-out.fade-out-hidden {
-  opacity: 0;
-  display: none;
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-
 
 .fade-in {
   opacity: 0;
   animation-name: fadeIn;
-  animation-duration: 2s;
+  animation-duration: s;
   animation-fill-mode: forwards;
 }
 
