@@ -1,6 +1,7 @@
 // MeshID Custom
 const cardHeader = document.querySelector(".card-header");
 const card = document.querySelector(".card");
+const activeTab = document.querySelector(".card :not(.card-header)");
 const cardBody = document.querySelectorAll(".tab-pane");
 const navBar = document.querySelector(".card-header-tabs");
 const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
@@ -146,22 +147,16 @@ const formio = document.querySelector('.preview .content .wrapper formio');
 
 function animate() {
 
-
-  cardBody.forEach((tab, i)=>{
-    if(tab.classList.contains('active')){
-      cardBody[i-1].classList.add("card-animation");
+      activeTab.classList.add("card-animation");
       disableButtons();
       setTimeout(removeAnimation, 800);
     
       function removeAnimation() {
         enableButtons();
-        cardBody[i-1].classList.remove("card-animation");
+        activeTab.classList.remove("card-animation");
       }
-    }
-  })
+    
 
-
-  
 }
 
 /////
