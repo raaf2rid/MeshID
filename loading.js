@@ -38,8 +38,8 @@ if (!cssLink) {
 
       if(logo.style.opacity == '0'){
         logo.style.display = 'none';
+        contentElement.style.display = 'flex';
       }
-      contentElement.style.display = 'flex';
     })
     .catch(error => {
       console.log('Error fetching or appending CSS:', error);
