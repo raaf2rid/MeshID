@@ -1,6 +1,8 @@
 const previewElement = document.querySelector(".preview");
 const contentElement = document.querySelector(".content");
+const logo = document.querySelector(".preview .fade-out")
 let cssLink = document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]');
+
 
 // Check if the image has already been prepended
 if (!logo) {
