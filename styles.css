@@ -274,7 +274,7 @@ select:-webkit-autofill:focus {
 
 .preview .nav-link:hover {
   color: #f3f3f3;
-  transition: all .3s;
+  transition: all .7s;
 }
 
 .preview .nav-link.active:hover::after {
