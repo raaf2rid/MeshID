@@ -155,7 +155,7 @@ function animate() {
     
       function removeAnimation() {
         enableButtons();
-        activeTab.classList.remove("card-animation");
+        tab.classList.remove("card-animation");
       }
     }
   })
