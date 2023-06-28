@@ -810,7 +810,7 @@ a svg {
     min-height: 50px;
     border: none;
     background: rgb(128 128 128 / 30%);
-    z-index: 1;
+    z-index: 10;
   }
 
   .preview .is-active {
