@@ -147,18 +147,29 @@ const formio = document.querySelector('.preview .content .wrapper formio');
 function animate() {
 
 
-  cardBody.forEach(tab=>{
-    if(tab.classList.contains('active')){
+  for (let i = 0; i < cardBody.length; i++) {
+    const tab = cardBody[i];
+    const previousTab = cardBody[i - 1];
+  
+    if (tab.classList.contains('active')) {
       tab.classList.add("card-animation");
       disableButtons();
+      if (previousTab) {
+        previousTab.classList.add("card-animation");
+      }
       setTimeout(removeAnimation, 800);
-    
+  
       function removeAnimation() {
         enableButtons();
         tab.classList.remove("card-animation");
+        if (previousTab) {
+          previousTab.classList.remove("card-animation");
+        }
       }
+      break;
     }
-  })
+  }
+  
 
 
   
