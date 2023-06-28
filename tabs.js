@@ -2,7 +2,6 @@
 const cardHeader = document.querySelector(".card-header");
 const card = document.querySelector(".card");
 const cardBody = document.querySelectorAll(".tab-pane");
-const activeTab = document.querySelector(".tab-pane.active");
 const navBar = document.querySelector(".card-header-tabs");
 const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
 const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
@@ -148,14 +147,21 @@ const formio = document.querySelector('.preview .content .wrapper formio');
 function animate() {
 
 
-  activeTab.classList.add("card-animation");
-  disableButtons();
-  setTimeout(removeAnimation, 800);
+  cardBody.forEach(tab=>{
+    if(tab.classList.contains('active')){
+      tab.classList.add("card-animation");
+      disableButtons();
+      setTimeout(removeAnimation, 800);
+    
+      function removeAnimation() {
+        enableButtons();
+        activeTab.classList.remove("card-animation");
+      }
+    }
+  })
 
-  function removeAnimation() {
-    enableButtons();
-    activeTab.classList.remove("card-animation");
-  }
+
+  
 }
 
 /////
