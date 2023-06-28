@@ -98,7 +98,7 @@ select:-webkit-autofill:focus {
   border-radius: 48px;
   background: linear-gradient(315deg, #c8c8c8, #eeeeee);
   box-shadow:  -7px -7px 12px #9e9e9e,
-             7px 7px 12px #ffffff;
+             7px 7px 12px #f3f3f3;
   z-index: 1000;
   }
 
