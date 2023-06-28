@@ -996,7 +996,6 @@ a svg {
 
 .card-animation {
   animation: card-animation 1s ease-in-out both;
-  animation-duration: 0.8s;
 }
 
 @keyframes card-animation {
