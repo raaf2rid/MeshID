@@ -36,7 +36,9 @@ if (!cssLink) {
       const contentElement = document.querySelector(".content");
       const logo = document.querySelector(".preview .logo")
 
-      logo.style.display = 'none';
+      if(logo.style.opacity == '0'){
+        logo.style.display = 'none';
+      }
       contentElement.style.display = 'flex';
     })
     .catch(error => {
