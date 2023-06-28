@@ -1000,7 +1000,7 @@ a svg {
 
 @keyframes card-animation {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   100% {
     opacity: 0;
