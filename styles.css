@@ -258,7 +258,7 @@ select:-webkit-autofill:focus {
   height: 0;
   top: 0;
   background-color: #383838;
-  transition: width 0.3s ease-out;
+  transition: width 0.7s ease-out;
   z-index: -1;
   transform: translateX(-18px);
 }
@@ -273,7 +273,7 @@ select:-webkit-autofill:focus {
 }
 
 .preview .nav-link:hover {
-  color: #383838;
+  color: #f3f3f3;
   transition: all .3s;
 }
 
