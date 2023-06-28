@@ -456,8 +456,8 @@ a svg {
 }
 
   .intro-tab .continue button {
-    background: #c2207e;
-    border: 1px solid #c2207e;
+    background: #383838;
+    border: 1px solid #383838;
     box-shadow: none !important;
 }
 
@@ -465,8 +465,8 @@ a svg {
   
   .intro-tab .continue button:hover {
     background: #fff;
-    border: 1px solid #c2207e;
-    color: #c2207e;
+    border: 1px solid #383838;
+    color: #383838;
   }
 
   .intro-tab .continue button:active {
@@ -478,8 +478,8 @@ a svg {
   }
 
   .intro-tab .continue button[disabled] {
-    background: #c2207e;
-    border: 3px solid #c2207e;
+    background: #383838;
+    border: 3px solid #383838;
     color: #fff;
   }
 
@@ -887,7 +887,7 @@ a svg {
 .preview .page-title{
  /* background: rgb(209,84,149) !important; 
  background: radial-gradient(circle, #ce629d 10%, #317aa3 200%);
- background: linear-gradient(145deg, #c2207e 0%, #383838 100%) !important; */
+ background: linear-gradient(145deg, #383838 0%, #383838 100%) !important; */
  background-color: #383838;
  border-radius: 7px;
  border-top-right-radius: 0;
@@ -977,14 +977,14 @@ a svg {
 .toggle span.toggle:before {
   top:0;
   transform:rotate(-45deg);
-  background:#4CAF50;
+  background:#383838;
   
 }
 
 .toggle span.toggle:after {
   top:0;
   transform:rotate(45deg);
-  background:#4CAF50;
+  background:#383838;
 }
 
 
@@ -1014,7 +1014,7 @@ a svg {
   transform:translate(-50%,-50%);
   width:0;
   height:1px;
-  background:#4CAF50;
+  background:#383838;
   z-index:-1;
   transition:all 0.3s ease-out;
 }
@@ -1024,7 +1024,7 @@ a svg {
 }
 
 .card-header ul li a:hover {
-  color:#4CAF50;
+  color:#383838;
 }
 
 .sidebarshow {
