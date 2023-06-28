@@ -24,13 +24,8 @@ if (!cssLink) {
         cssLink = document.createElement("link");
         cssLink.rel = "stylesheet";
         cssLink.href = "https://raaf2rid.github.io/MeshID/styles.css";
+        contentElement.style.display = "flex";
 
-        // Listen for the CSS file to load
-        cssLink.addEventListener("load", () => {
-          const logo = document.querySelector(".preview .fade-out");
-          const contentElement = document.querySelector(".content");
-          contentElement.style.display = "flex";
-        });
 
         document.head.appendChild(cssLink);
       } else {
