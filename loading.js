@@ -28,10 +28,10 @@ if (!cssLink) {
         cssLink.href = "https://raaf2rid.github.io/MeshID/styles.css";
         document.head.appendChild(cssLink);
 
-        logo.addEventListener('animationend', () => {
+        setTimeout(()=>{
           logo.style.display = 'none'; // Hide the element after the animation completes
           contentElement.style.display = 'flex';
-        });
+        },3000)
         
       } else {
         throw new Error('Failed to fetch CSS file');
