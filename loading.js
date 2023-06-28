@@ -1,6 +1,6 @@
-let cssLink = document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]');
 const previewElement = document.querySelector(".preview");
 const contentElement = document.querySelector(".content");
+let cssLink = document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]');
 const logo = document.querySelector(".preview .logo")
 
 // Check if the image has already been prepended
@@ -27,22 +27,18 @@ if (!cssLink) {
         cssLink.rel = "stylesheet";
         cssLink.href = "https://raaf2rid.github.io/MeshID/styles.css";
         document.head.appendChild(cssLink);
-        return Promise.resolve();
+
+        logo.addEventListener('animationend', () => {
+          logo.style.display = 'none'; // Hide the element after the animation completes
+          contentElement.style.display = 'flex';
+        });
+        
       } else {
         throw new Error('Failed to fetch CSS file');
-      }
-    })
-    .then(() => {
-      const contentElement = document.querySelector(".content");
-      const logo = document.querySelector(".preview .logo")
-
-      if(logo.style.opacity == '0'){
-        logo.style.display = 'none';
-        contentElement.style.display = 'flex';
       }
     })
     .catch(error => {
       console.log('Error fetching or appending CSS:', error);
     });
-}
+} 
 
