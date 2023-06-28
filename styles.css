@@ -790,7 +790,25 @@ a svg {
   }
 
   .preview .meshid-custom .input-group-append{
-    display: none;
+    position: absolute;
+    right: 0;
+  }
+  .preview .meshid-custom .input-group-prepend{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+
+  .preview .meshid-custom .input-group-prepend + input{
+    text-indent: 30px;
+  }
+
+  .preview .meshid-custom .input-group-append span{
+    min-height: 50px;
+    border: none;
+    background: rgb(128 128 128 / 30%);
   }
 
   .preview .is-active {
