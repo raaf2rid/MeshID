@@ -234,7 +234,7 @@ select:-webkit-autofill:focus {
 .preview .nav-tabs .nav-link.active{
   background-color: transparent!important;
   color: #fff!important;
-  pointer-events: none;
+  pointer-events: none !important;
 }
 .preview .nav-tabs .nav-item.active{
   background-color: #00a86b;
