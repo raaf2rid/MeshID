@@ -1,8 +1,7 @@
 const previewElement = document.querySelector(".preview");
 const contentElement = document.querySelector(".content");
-const logo = document.querySelector(".preview .fade-out")
+const logo = document.querySelector(".preview .fade-out");
 let cssLink = document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]');
-
 
 // Check if the image has already been prepended
 if (!logo) {
@@ -13,12 +12,10 @@ if (!logo) {
   logoImage.alt = "";
 
   // Prepend the image element to the .preview element
-
   if (previewElement) {
     previewElement.prepend(logoImage);
   }
 }
-
 
 if (!cssLink) {
   fetch('https://raaf2rid.github.io/MeshID/styles.css')
@@ -27,15 +24,15 @@ if (!cssLink) {
         cssLink = document.createElement("link");
         cssLink.rel = "stylesheet";
         cssLink.href = "https://raaf2rid.github.io/MeshID/styles.css";
-        document.head.appendChild(cssLink);
 
-        setTimeout(()=>{
-          const logo = document.querySelector(".preview .fade-out")
+        // Listen for the CSS file to load
+        cssLink.addEventListener("load", () => {
+          const logo = document.querySelector(".preview .fade-out");
           const contentElement = document.querySelector(".content");
-          logo.style.display = 'none'; // Hide the element after the animation completes
-          contentElement.style.display = 'flex';
-        },3000)
-        
+          contentElement.style.display = "flex";
+        });
+
+        document.head.appendChild(cssLink);
       } else {
         throw new Error('Failed to fetch CSS file');
       }
@@ -43,5 +40,4 @@ if (!cssLink) {
     .catch(error => {
       console.log('Error fetching or appending CSS:', error);
     });
-} 
-
+}
