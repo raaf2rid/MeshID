@@ -21,8 +21,8 @@ select:-webkit-autofill:focus {
 .fade-out {
   opacity: 1;
   animation-name: fadeOut;
-  animation-duration: 1s; /* Reduce the animation duration to 1s */
-  animation-delay: 1s; /* Add a delay of 1s before starting the animation */
+  animation-duration: 3s; /* Reduce the animation duration to 1s */
+  animation-delay: 2s; /* Add a delay of 1s before starting the animation */
   animation-fill-mode: forwards;
 }
 
