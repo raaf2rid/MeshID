@@ -1,24 +1,39 @@
-// Create the image element
-const logoImage = document.createElement("img");
-logoImage.className = "logo";
-logoImage.src = "https://i.postimg.cc/jjsSDv1H/new-gif-animation-logo.gif";
-logoImage.alt = "";
-
-// Prepend the image element to the .preview element
 const previewElement = document.querySelector(".preview");
 const contentElement = document.querySelector(".content");
+const cssLink = document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]');
+const logo = document.querySelector(".preview .logo")
 
-if (previewElement) {
-  previewElement.prepend(logoImage);
+// Check if the image has already been prepended
+if (!logo) {
+  // Create the image element
+  const logoImage = document.createElement("img");
+  logoImage.classList.add("logo", "fade-out");
+  logoImage.src = "https://i.postimg.cc/jjsSDv1H/new-gif-animation-logo.gif";
+  logoImage.alt = "";
+
+  // Prepend the image element to the .preview element
+
+  if (previewElement) {
+    previewElement.prepend(logoImage);
+  }
 }
 
-document.querySelector('.preview').style.display = 'flex';
 
+if (!cssLink) {
+  fetch('https://raaf2rid.github.io/MeshID/styles.css')
+    .then(response => {
+      if (response.ok) {
+        cssLink = document.createElement("link");
+        cssLink.rel = "stylesheet";
+        cssLink.href = "https://raaf2rid.github.io/MeshID/styles.css";
+        document.head.appendChild(cssLink);
+        contentElement.style.display = 'flex'
+      } else {
+        throw new Error('Failed to fetch CSS file');
+      }
+    })
+    .catch(error => {
+      console.log('Error fetching or appending CSS:', error);
+    });
+} 
 
-setTimeout(()=>{
-  logoImage.classList.add('fade-out')
-  setTimeout(()=>{
-    logoImage.style.display = 'none'
-    contentElement.style.display = 'flex'
-  },2000)
-},2000)
