@@ -1004,12 +1004,15 @@ a svg {
 }
 
 @keyframes card-animation {
-  from {
-
+  0% {
     opacity: 0;
+    transform: scale(0.8) rotateY(90deg);
   }
-  to {
-
+  50% {
     opacity: 1;
+    transform: scale(1.2) rotateY(0deg);
+  }
+  100% {
+    transform: scale(1) rotateY(0deg);
   }
 }
