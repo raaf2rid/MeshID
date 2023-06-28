@@ -706,6 +706,7 @@ a svg {
     font-size: 15px;
     transition: border-color .3s;
     appearance: none;
+    background-color: transparent;
 }
 
   .preview .meshid-custom .formio-component-textarea .form-control{
