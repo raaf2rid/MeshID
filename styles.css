@@ -850,6 +850,16 @@ a svg {
 
 .preview .meshid-custom .custom-mobile .fieldset-body .formio-component-number .form-control {
   border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.preview .meshid-custom .custom-mobile div.form-control {
+  border-bottom-right-radius: 0;
+}
+
+.preview .meshid-custom .custom-mobile .fieldset-body .formio-component-number .form-control {
+  border-left: none;
 }
 
 .preview .meshid-custom .custom-mobile .fieldset-body .formio-component-number .form-control.is-invalid {
