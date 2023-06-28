@@ -1,6 +1,6 @@
+let cssLink = document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]');
 const previewElement = document.querySelector(".preview");
 const contentElement = document.querySelector(".content");
-let cssLink = document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]');
 const logo = document.querySelector(".preview .logo")
 
 // Check if the image has already been prepended
@@ -33,6 +33,9 @@ if (!cssLink) {
       }
     })
     .then(() => {
+      const contentElement = document.querySelector(".content");
+      const logo = document.querySelector(".preview .logo")
+
       logo.style.display = 'none';
       contentElement.style.display = 'flex';
     })
