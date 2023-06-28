@@ -37,6 +37,11 @@ select:-webkit-autofill:focus {
 }
 
 
+.logo{
+  position: absolute;
+  z-index: 1000000;
+}
+
 .preview .nav-tabs .nav-item:first-child{
   display: none !important;
 }
