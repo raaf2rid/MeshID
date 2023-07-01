@@ -292,11 +292,14 @@ btn.onclick = function() {
 
 
 
+
 radioLabels.forEach((label) => {
-  const div = document.createElement('div');
-  div.className = 'check';
-  const insideDiv = document.createElement('div');
-  insideDiv.className = 'inside';
-  div.appendChild(insideDiv);
-  label.appendChild(div);
+  if (!label.querySelector('.check')) {
+    const div = document.createElement('div');
+    div.className = 'check';
+    const insideDiv = document.createElement('div');
+    insideDiv.className = 'inside';
+    div.appendChild(insideDiv);
+    label.appendChild(div);
+  }
 });
