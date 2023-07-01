@@ -1067,8 +1067,8 @@ a svg {
   display: block;
   position: relative;
   font-weight: 300;
-  font-size: 1.35em;
-  padding: 25px 80px;
+  font-size: 1rem;
+  padding: 0px 40px;
   padding-bottom: 0;
   margin: 10px auto;
   z-index: 9;
