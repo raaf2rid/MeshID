@@ -105,7 +105,7 @@ multiFields.forEach(function (input) {
 
 radio.forEach(item=>{
 
-  item.querySelector('.form-check, .form-check-inline').forEach(element=>{
+  item.querySelectorAll('.form-check, .form-check-inline').forEach(element=>{
     element.classList.add('custom-meshid-radio')
   })
 
