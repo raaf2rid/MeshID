@@ -37,7 +37,7 @@ if (!logo) {
 
         const logo = document.querySelector(".preview .fade-out");
         logo.addEventListener("animationend", () => {
-          logo.style.display = "none";
+          logo.remove()
         });
       
 
