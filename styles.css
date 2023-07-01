@@ -1073,7 +1073,7 @@ a svg {
   margin: 10px auto;
   z-index: 9;
   cursor: pointer;
-  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 
 .preview .formio-component-radio .form-check label:hover span{
