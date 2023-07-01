@@ -294,7 +294,7 @@ btn.onclick = function() {
 
 radio.forEach(item=>{
 
-    item.querySelector('.form-check, .form-check-inline').classList.add('.custom-meshid-radio')
+    item.querySelector('.form-check, .form-check-inline').classList.add('custom-meshid-radio')
 
 })
 
