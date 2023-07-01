@@ -291,9 +291,8 @@ btn.onclick = function() {
   }
 }
 
-radio.forEach((item) => {
-  console.log(item)
-});
+  console.log(radio)
+
 
 
 radioLabels.forEach((label) => {
