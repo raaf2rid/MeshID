@@ -1041,7 +1041,7 @@ a svg {
 
 
   
-.preview .form-check{
+.preview .formio-component-radio .form-check{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1049,7 +1049,7 @@ a svg {
   
 }
 
-.preview .form-check label{
+.preview .formio-component-radio .form-check label{
   color: #AAAAAA;
   display: block;
   position: relative;
@@ -1058,12 +1058,12 @@ a svg {
 
 }
 
-.preview .form-check label input[type=radio]{
+.preview .formio-component-radio .form-check label input[type=radio]{
   position: absolute;
   visibility: hidden;
 }
 
-.preview .form-check label span{
+.preview .formio-component-radio .form-check label span{
   display: block;
   position: relative;
   font-weight: 300;
@@ -1076,7 +1076,7 @@ a svg {
   -webkit-transition: all 0.25s linear;
 }
 
-.preview .form-check label:hover span{
+.preview .formio-component-radio .form-check label:hover span{
   color: #00a86b;
 }
 
@@ -1094,11 +1094,11 @@ a svg {
   -webkit-transition: border .25s linear;
 }
 
-.preview .form-check label:hover .check {
+.preview .formio-component-radio .form-check label:hover .check {
   border: 5px solid #00a86b;
 }
 
-.preview .form-check label .check::before {
+.preview .formio-component-radio .form-check label .check::before {
   display: block;
   position: absolute;
   content: '';
@@ -1112,15 +1112,15 @@ a svg {
   -webkit-transition: background 0.25s linear;
 }
 
-.preview input[type=radio]:checked ~ .check {
+.preview .formio-component-radio input[type=radio]:checked ~ .check {
   border: 5px solid #0b814c;
 }
 
-.preview input[type=radio]:checked ~ .check::before{
+.preview .formio-component-radio input[type=radio]:checked ~ .check::before{
   background: #0b814c;
 }
 
-.preview input[type=radio]:checked ~ span{
+.preview .formio-component-radio input[type=radio]:checked ~ span{
   color: #0b814c;
 }
 
