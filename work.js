@@ -315,4 +315,6 @@ else if(data.tabContainerComp.selectALanguage == 'dutch'){
 
 
 
-document.querySelector(".card").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+setTimeout(()=>{
+  document.querySelector(".card").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+},700)
