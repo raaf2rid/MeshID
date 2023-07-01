@@ -12,6 +12,8 @@ const tabs = document.querySelector(".wrapper");
 const formioWrapper = document.querySelector(".formio-wrapper");
 let parent = document.querySelector(".formio-component-form").parentElement;
 const child = document.querySelector(".formio-component-form");
+const radioLabels = document.querySelectorAll('.form-check-label')
+
 
 const errorFields = document.querySelectorAll(".tab-pane:not(:last-child) .custom-error")
 
@@ -287,3 +289,14 @@ btn.onclick = function() {
     btnst = true;
   }
 }
+
+
+
+radioLabels.forEach((label) => {
+  const div = document.createElement('div');
+  div.className = 'check';
+  const insideDiv = document.createElement('div');
+  insideDiv.className = 'inside';
+  div.appendChild(insideDiv);
+  label.appendChild(div);
+});
