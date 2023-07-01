@@ -1013,10 +1013,10 @@ a svg {
 
 @keyframes right-to-left-animation {
   0% {
-    transform: translateX(-5%) rotate3d(1, 1, 1, 362deg);
+    transform: translateX(-5%);
   }
   100% {
-    transform: translateX(0) rotate3d(1, 1, 1, 360deg);
+    transform: translateX(0);
   }
 }
 
@@ -1027,9 +1027,9 @@ a svg {
 
 @keyframes left-to-right-animation {
   0% {
-    transform: translateX(-5%) rotate3d(1, 1, 1, 358deg);
+    transform: translateX(5%);
   }
   100% {
-    transform: translateX(0) rotate3d(1, 1, 1, 360deg);
+    transform: translateX(0);
   }
 }
