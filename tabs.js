@@ -291,7 +291,9 @@ btn.onclick = function() {
   }
 }
 
-
+radio.forEach((item) => {
+  console.log(item)
+});
 
 
 radioLabels.forEach((label) => {
@@ -306,6 +308,4 @@ radioLabels.forEach((label) => {
 
 });
 
-radio.forEach((item) => {
-  console.log(item)
-});
+
