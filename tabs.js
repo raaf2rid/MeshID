@@ -12,8 +12,7 @@ const tabs = document.querySelector(".wrapper");
 const formioWrapper = document.querySelector(".formio-wrapper");
 let parent = document.querySelector(".formio-component-form").parentElement;
 const child = document.querySelector(".formio-component-form");
-const radioLabels = document.querySelectorAll('.formio-component-radio .form-check-label')
-const radio = document.querySelectorAll('.formio-component-radio')
+
 
 
 const errorFields = document.querySelectorAll(".tab-pane:not(:last-child) .custom-error")
@@ -260,6 +259,8 @@ $(document).ready(function() {
 });
 
 
+// Sidebar 
+
 // Check if the header code has already been added to '.card'
 if ($('.content .header').length === 0) {
   // Get the header code
@@ -292,23 +293,6 @@ btn.onclick = function() {
 }
 
 
-radio.forEach(item=>{
 
-    item.querySelector('.form-check, .form-check-inline').classList.add('custom-meshid-radio')
-
-})
-
-
-radioLabels.forEach((label) => {
-  if (!label.querySelector('.check')) {
-    const div = document.createElement('div');
-    div.className = 'check';
-    const insideDiv = document.createElement('div');
-    insideDiv.className = 'inside';
-    div.appendChild(insideDiv);
-    label.appendChild(div);
-  }
-
-});
 
 

@@ -1,3 +1,6 @@
+const radioLabels = document.querySelectorAll('.formio-component-radio .form-check-label')
+const radio = document.querySelectorAll('.formio-component-radio')
+
 // Fields Animation 
 
 const textFields = document.querySelectorAll(
@@ -97,6 +100,34 @@ multiFields.forEach(function (input) {
   }
 });
 
+
+// Radio Component Style 
+
+radio.forEach(item=>{
+
+  item.querySelector('.form-check, .form-check-inline').forEach(element=>{
+    element.classList.add('custom-meshid-radio')
+  })
+
+})
+
+
+radioLabels.forEach((label) => {
+if (!label.querySelector('.check')) {
+  const div = document.createElement('div');
+  div.className = 'check';
+  const insideDiv = document.createElement('div');
+  insideDiv.className = 'inside';
+  div.appendChild(insideDiv);
+  label.appendChild(div);
+}
+
+});
+
+
+//Button Style
+
+
 const backBtn = document.querySelectorAll(
   ".navigation-back > .navigation-back"
 );
@@ -104,11 +135,6 @@ const nextBtn = document.querySelectorAll(
   ".navigation-next > .navigation-next"
 );
 
-
-
-
-
-//Button Style
 
 backBtn.forEach((item) => {
   item.classList.remove("btn", "btn-secondary", "btn-md", "btn-block");
