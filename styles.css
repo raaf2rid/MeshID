@@ -1007,3 +1007,29 @@ a svg {
 }
 
 
+.back {
+  animation: right-to-left-animation 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+@keyframes right-to-left-animation {
+  0% {
+    transform: translateX(-5%) rotate3d(1, 1, 1, 362deg);
+  }
+  100% {
+    transform: translateX(0) rotate3d(1, 1, 1, 360deg);
+  }
+}
+
+
+.next {
+  animation: left-to-right-animation 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+@keyframes left-to-right-animation {
+  0% {
+    transform: translateX(-5%) rotate3d(1, 1, 1, 358deg);
+  }
+  100% {
+    transform: translateX(0) rotate3d(1, 1, 1, 360deg);
+  }
+}
