@@ -1,5 +1,5 @@
 const radioLabels = document.querySelectorAll('.form-check-label')
-const radio = document.querySelectorAll('.formio-component-radio')
+const radio = document.querySelectorAll('.formio-component-radio, .formio-component-selectboxes')
 
 // Fields Animation 
 
