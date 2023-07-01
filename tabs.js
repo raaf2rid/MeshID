@@ -15,8 +15,6 @@ const child = document.querySelector(".formio-component-form");
 const radioLabels = document.querySelectorAll('.formio-component-radio .form-check-label')
 const radio = document.querySelectorAll('.formio-component-radio')
 
-console.log(radio)
-
 
 const errorFields = document.querySelectorAll(".tab-pane:not(:last-child) .custom-error")
 
@@ -294,7 +292,11 @@ btn.onclick = function() {
 }
 
 
-
+radio.forEach(item=>{
+  if(item.querySelector('.custom-meshid-radio')){
+    item.querySelector('.form-check, .form-check-inline').classList.add('.custom-meshid-radio')
+  }
+})
 
 
 radioLabels.forEach((label) => {
