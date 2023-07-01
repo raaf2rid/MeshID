@@ -194,10 +194,16 @@ function displayTab() {
 
   collection[currentTab].style.display = "none";
   collection[nextTab].style.display = "block";
-  collection[nextTab].querySelector('input').focus()
+
+  setTimeout(()=>{
+   collection[nextTab].querySelector(".formio-component-number input[type='text']").focus()
+
+  },500)
+
 
   collection[currentTab].classList.remove("active");
   collection[nextTab].classList.add("active");
+
 
   cardHeaderItem[currentTab].classList.remove("active");
   cardHeaderItem[nextTab].classList.add("active");
@@ -230,14 +236,12 @@ function getCurrentTab() {
 // ANIMATION
 
 function animation() {
-  let collection = document.getElementsByClassName("card");
-  collection[0].classList.remove("back");
-  collection[0].classList.add("next");
+
+  collection[nextTab].classList.add("next");
   disableButtons();
   setTimeout(removeAnimation, 700);
   function removeAnimation() {
-    let collection = document.getElementsByClassName("card");
-    collection[0].classList.remove("next");
+    collection[nextTab].classList.remove("next");
     enableButtons();
   }
 }
@@ -310,4 +314,5 @@ else if(data.tabContainerComp.selectALanguage == 'dutch'){
 }
 
 
-document.querySelector(".card .tab-pane.active").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+
+document.querySelector(".card").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
