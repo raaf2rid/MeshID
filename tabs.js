@@ -13,6 +13,7 @@ const formioWrapper = document.querySelector(".formio-wrapper");
 let parent = document.querySelector(".formio-component-form").parentElement;
 const child = document.querySelector(".formio-component-form");
 const radioLabels = document.querySelectorAll('.formio-component-radio .form-check-label')
+const radio = document.querySelectorAll('.formio-component-radio .form-check')
 
 
 const errorFields = document.querySelectorAll(".tab-pane:not(:last-child) .custom-error")
@@ -301,5 +302,11 @@ radioLabels.forEach((label) => {
     insideDiv.className = 'inside';
     div.appendChild(insideDiv);
     label.appendChild(div);
+  }
+
+});
+radio.forEach((item) => {
+  if (!item.querySelector('.custom-meshid-radio')) {
+    item.querySelector('.form-check').classList.add('.custom-meshid-radio')
   }
 });
