@@ -767,7 +767,7 @@ a svg {
 
   .preview .meshid-custom .has-error label{
     color: #e00303 !important;
-    transform: 0 !important;
+    transform: none !important;
   }
 
   .preview .meshid-custom .formio-error-wrapper{
