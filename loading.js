@@ -17,6 +17,7 @@ if (!logo) {
   }
 }
 
+if (!cssLink) {
 
   fetch('https://raaf2rid.github.io/MeshID/styles.css')
     .then(response => {
@@ -25,9 +26,7 @@ if (!logo) {
         cssLink.rel = "stylesheet";
         cssLink.href = "https://raaf2rid.github.io/MeshID/styles.css";
 
-        if (!cssLink) {
         document.head.appendChild(cssLink);
-        }
 
         // Listen for the CSS file to load
         cssLink.addEventListener("load", () => {
@@ -48,3 +47,14 @@ if (!logo) {
     .catch(error => {
       console.log('Error fetching or appending CSS:', error);
     });
+
+  }
+  else{
+
+    const logo = document.querySelector(".preview .fade-out");
+    logo.addEventListener("animationend", () => {
+      logo.remove()
+    });
+    contentElement.style.display = "flex";
+
+  }
