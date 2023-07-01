@@ -999,10 +999,10 @@ a svg {
 
 @keyframes card-animation {
   0% {
-    transform: translateX(-5%) rotate3d(1, 1, 1, 357deg);
+    transform: translateY(-5%);
   }
   100% {
-    transform: translateX(0) rotate3d(1, 1, 1, 360deg);
+    transform: translateX(0);
   }
 }
 
