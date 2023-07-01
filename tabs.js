@@ -13,7 +13,7 @@ const formioWrapper = document.querySelector(".formio-wrapper");
 let parent = document.querySelector(".formio-component-form").parentElement;
 const child = document.querySelector(".formio-component-form");
 const radioLabels = document.querySelectorAll('.formio-component-radio .form-check-label')
-const radio = document.querySelectorAll('.formio-component-radio .form-check')
+const radio = document.querySelectorAll('.formio-component-radio')
 
 
 const errorFields = document.querySelectorAll(".tab-pane:not(:last-child) .custom-error")
