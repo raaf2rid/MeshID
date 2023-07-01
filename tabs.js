@@ -305,8 +305,7 @@ radioLabels.forEach((label) => {
   }
 
 });
+
 radio.forEach((item) => {
-  if (!item.querySelector('.custom-meshid-radio')) {
-    item.querySelector('.form-check').classList.add('.custom-meshid-radio')
-  }
+  console.log(item)
 });
