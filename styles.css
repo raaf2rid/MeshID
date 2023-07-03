@@ -1047,7 +1047,8 @@ a svg {
   width: max-content;
 }
 
-.preview .custom-meshid-radio label input[type=radio]{
+.preview .custom-meshid-radio label input[type=radio],
+.preview .custom-meshid-radio label input[type=checkbox]{
   position: absolute;
   visibility: hidden;
 }
