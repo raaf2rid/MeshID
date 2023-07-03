@@ -297,3 +297,16 @@ display: none !important;
 .intro-tab .invalid-feedback {
   display: none !important;
 }
+
+
+
+.preview .title-div .fieldset-body {
+  display: flex;
+}
+.preview .title-div .fieldset-body .formio-component-select {
+  width: 100%;
+}
+
+.preview .title-div .fieldset-body .hide-label input {
+  border: none;
+}

@@ -654,17 +654,6 @@ tr[ref="row"]:first-of-type
 
 /* Custom Phone Number */
 
-/* 
-.preview .title-div .fieldset-body {
-  display: flex;
-}
-.preview .title-div .fieldset-body .formio-component-select {
-  width: 100%;
-}
-
-.preview .title-div .fieldset-body .hide-label input {
-  border: none;
-} */
 
 /* Dropdown */
 
