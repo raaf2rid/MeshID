@@ -380,6 +380,10 @@ figure td {
   transition: all 1s;
 }
 
+.preview .get-started button:hover{
+  transform: translateY(-2px);
+} 
+
 .preview .get-started button:active {
   border-radius: 50px;
   padding: 1rem 3rem;
@@ -388,6 +392,7 @@ figure td {
   color: #383838 !important;
   font-weight: 700;
   box-shadow: inset -14px 14px 20px 0px #f0f0f0, inset 14px -7px 5px #979797 !important;
+  transform: translateY(0px);
 }
 
 .navigation-back svg,
