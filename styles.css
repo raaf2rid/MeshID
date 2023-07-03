@@ -289,7 +289,8 @@ figure td {
   min-height: max-content !important;
   border-radius: 48px;
   border-radius: 48px;
-  background: linear-gradient(315deg, #c8c8c8, #e3e3e3);
+  /* background: linear-gradient(315deg, #c8c8c8, #e3e3e3); */
+  background: #dbdbdb;
   box-shadow: 0px -14px 12px #e3e3e3, 7px 0px 14px #a9a9a9, 0px 14px 12px #e3e3e3, -7px 0px 14px #a9a9a9;
   z-index: 1000;
   overflow: hidden;
