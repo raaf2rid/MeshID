@@ -93,3 +93,207 @@ display: none !important;
     opacity: 1;
   }
 }
+
+
+
+
+
+
+/* Introduction + Type of Entity  */
+
+.intro-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro strong {
+  display: block;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1em;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.intro-box {
+  display: block;
+}
+
+.intro .field-required::after {
+  content: " ";
+  color: "#fff";
+}
+
+.middle {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle input[type="radio"] {
+  display: none;
+}
+
+.middle input[type="radio"]:checked + .intro-box {
+  background: #383838;
+  color: #fff;
+}
+
+.middle input[type="radio"]:checked + .intro-box span {
+  color: white;
+  transform: translateY(70px);
+}
+
+.middle input[type="radio"]:checked + .intro-box span:before {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.middle .intro-box {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(139, 139, 139, 0.1);
+  border-radius: 25px;
+  transition: all 250ms ease;
+  will-change: transition;
+  display: flex;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.middle .intro-box:active {
+  transform: translateY(10px);
+}
+.middle .intro-box:hover {
+  background-color: rgba(206, 98, 157, 0.8);
+}
+.middle input[type="radio"]:hover + .intro-box {
+  color: #fff;
+}
+
+.middle .intro-box span {
+  position: absolute;
+  transform: translate(0, 60px);
+  left: 0;
+  right: 0;
+
+  transition: all 300ms ease;
+  font-size: 1.5em;
+  user-select: none;
+  color: #dd6921;
+}
+
+.middle .intro-box span:before {
+  font-size: 1.2em;
+  display: block;
+  transform: translateY(-80px);
+  opacity: 0;
+  bottom: 30px;
+  transition: all 300ms ease-in-out;
+  font-weight: normal;
+  color: white;
+}
+
+.middle .individual span:before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='36' height='36'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M20 22H4v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2zm-8-9a6 6 0 1 1 0-12 6 6 0 0 1 0 12z' fill='%23ddc69d'/%3E%3C/svg%3E");
+}
+
+.middle .entity span:before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='36' height='36'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M21 19h2v2H1v-2h2V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v15h2V9h3a1 1 0 0 1 1 1v9zM7 11v2h4v-2H7zm0-4v2h4V7H7z' fill='%23ddc69d'/%3E%3C/svg%3E");
+}
+
+.custom-type-of-entity .middle .intro-box {
+  width: 230px;
+  height: 60px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.custom-type-of-entity .middle .intro-box span {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: none;
+  transition: all 300ms ease;
+  font-size: 0.8rem;
+  font-weight: bold;
+  user-select: none;
+  color: #143250;
+}
+
+.custom-type-of-entity .middle .intro-box span:before {
+  display: none;
+}
+
+.custom-type-of-entity .middle input[type="radio"]:checked + .intro-box span {
+  color: white;
+  transform: translateY(18px);
+}
+
+.intro-tab .fieldset-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-tab td {
+  transform: translateY(-50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-tab .continue {
+  border-radius: 50px;
+  width: 160px;
+  padding: 12px;
+  margin-left: -13px;
+  font-weight: 500;
+  border: none;
+  transition: 0.5s ease-in-out;
+  font-size: 18px;
+}
+
+.intro-tab .continue button {
+  background: #383838;
+  border: 1px solid #383838;
+  box-shadow: none !important;
+}
+
+.intro-tab .continue button:hover {
+  background: #fff;
+  border: 1px solid #383838;
+  color: #383838;
+}
+
+.intro-tab .continue button:active {
+  transform: scale(0.95);
+  background: #383838 !important;
+  border: 1px solid #fff !important;
+  color: #fff !important;
+}
+
+.intro-tab .continue button[disabled] {
+  background: #383838;
+  border: 3px solid #383838;
+  color: #fff;
+}
+
+.intro-tab .invalid-feedback {
+  display: none !important;
+}
