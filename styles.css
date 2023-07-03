@@ -1039,24 +1039,12 @@ a svg {
   display: none;
 }
 
-
-
-  
-
-.preview .custom-meshid-radio{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: auto;
-  
-}
-
 .preview .custom-meshid-radio label{
   color: 383838;
   display: block;
   position: relative;
   float: left;
-  width: 100%;
+  width: max-content;
 }
 
 .preview .custom-meshid-radio label input[type=radio]{
