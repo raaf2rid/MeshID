@@ -55,7 +55,6 @@ const formio = document.querySelector('.preview .content .wrapper formio');
   
     if (navBar) {
       navBar.style.flexDirection = "column";
-  
     }
   
   
