@@ -93,7 +93,7 @@ figure td {
   display: flex !important;
   height: 100vh;
   overflow-x: hidden;
-  background: #dedede;
+  background: #dbdbdb;
   width: 100vw;
   justify-content: center;
 }
