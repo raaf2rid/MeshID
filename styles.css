@@ -1085,6 +1085,10 @@ a svg {
   -webkit-transition: border .25s linear;
 }
 
+.preview .form-check-inline label .check{
+  top: 9px;
+}
+
 .preview .formio-component-selectboxes label .check{
   border-radius: 0;
 } 
