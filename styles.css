@@ -92,7 +92,8 @@ select:-webkit-autofill:focus {
 
   .preview .content .card {
   border: none;
-  border-radius: 0 !important;
+  border-radius: 7px !important;
+  border-top-right-radius: 0 !important;
   min-height: max-content !important;
   border-radius: 48px;
   border-radius: 48px;
