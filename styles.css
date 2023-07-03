@@ -1120,7 +1120,7 @@ border-radius: 0;
 /* Checked Radio Button Styles */
 .preview input[type="radio"]:checked ~ .check,
 .preview input[type="checkbox"]:checked ~ .check {
-  border: 5px solid #0b814c;
+  border: 4px solid #0b814c;
 }
 
 .preview input[type="radio"]:checked ~ .check::before,
