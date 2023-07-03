@@ -559,6 +559,18 @@ tr[ref="row"]:first-of-type
 }
 
 
+.preview .formio-component-multiple .choices__input {
+  background: transparent;
+}
+
+.preview .formio-component-multiple .table-bordered,
+.preview .formio-component-multiple .table-bordered th,
+.preview .formio-component-multiple .table-bordered td {
+  border: none;
+  padding-left: 0;
+}
+
+
 /* Formio-component-multiple */
 
 
@@ -642,18 +654,7 @@ tr[ref="row"]:first-of-type
 
 /* Custom Phone Number */
 
-
-.preview .formio-component-multiple .choices__input {
-  background: transparent;
-}
-
-.preview .formio-component-multiple .table-bordered,
-.preview .formio-component-multiple .table-bordered th,
-.preview .formio-component-multiple .table-bordered td {
-  border: none;
-  padding-left: 0;
-}
-
+/* 
 .preview .title-div .fieldset-body {
   display: flex;
 }
@@ -663,7 +664,7 @@ tr[ref="row"]:first-of-type
 
 .preview .title-div .fieldset-body .hide-label input {
   border: none;
-}
+} */
 
 /* Dropdown */
 
