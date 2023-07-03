@@ -364,7 +364,14 @@ figure td {
 /* Buttons  */
 
 .preview .get-started {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview .get-started button{
   border-radius: 25px;
+  padding: 1rem 4rem;
 }
 
 .navigation-back svg,
