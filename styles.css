@@ -1041,6 +1041,7 @@ a svg {
 
 .preview .custom-meshid-radio {
   padding-left: 0;
+  margin-right: 0;
 }
 .preview .custom-meshid-radio label{
   color: #383838;
