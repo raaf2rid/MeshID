@@ -1043,7 +1043,6 @@ a svg {
   color: #383838;
   display: block;
   position: relative;
-  float: left;
   width: max-content;
 }
 
