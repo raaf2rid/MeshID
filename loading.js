@@ -25,7 +25,10 @@ if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles
         cssLink.rel = "stylesheet";
         cssLink.href = "https://raaf2rid.github.io/MeshID/styles.css";
 
-        document.head.appendChild(cssLink);
+        if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]')){
+          document.head.appendChild(cssLink);
+        }
+
 
         // Listen for the CSS file to load
         cssLink.addEventListener("load", () => {
