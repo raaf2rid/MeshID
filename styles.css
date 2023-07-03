@@ -1043,7 +1043,7 @@ a svg {
 
   
 
-.preview .formio-component-radio .custom-meshid-radio{
+.preview .custom-meshid-radio{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1051,7 +1051,7 @@ a svg {
   
 }
 
-.preview .formio-component-radio .custom-meshid-radio label{
+.preview .custom-meshid-radio label{
   color: #AAAAAA;
   display: block;
   position: relative;
@@ -1060,12 +1060,12 @@ a svg {
 
 }
 
-.preview .formio-component-radio .custom-meshid-radio label input[type=radio]{
+.preview .custom-meshid-radio label input[type=radio]{
   position: absolute;
   visibility: hidden;
 }
 
-.preview .formio-component-radio .custom-meshid-radio label span{
+.preview .custom-meshid-radio label span{
   display: block;
   position: relative;
   font-weight: 300;
@@ -1079,11 +1079,11 @@ a svg {
   transition: all 0.25s linear;
 }
 
-.preview .formio-component-radio .custom-meshid-radio label:hover span{
+.preview .custom-meshid-radio label:hover span{
   color: #00a86b;
 }
 
-.preview .custom-meshid-radio label .check{
+.preview label .check{
   display: block;
   position: absolute;
   border: 5px solid #AAAAAA;
@@ -1097,11 +1097,11 @@ a svg {
   -webkit-transition: border .25s linear;
 }
 
-.preview .formio-component-radio .custom-meshid-radio label:hover .check {
+.preview .custom-meshid-radio label:hover .check {
   border: 5px solid #00a86b;
 }
 
-.preview .formio-component-radio .custom-meshid-radio label .check::before {
+.preview .custom-meshid-radio label .check::before {
   display: block;
   position: absolute;
   content: '';
