@@ -1114,18 +1114,18 @@ a svg {
 }
 
 /* Checked Radio Button Styles */
-.preview .formio-component-radio input[type="radio"]:checked ~ .check,
-.preview .formio-component-checkbox input[type="checkbox"]:checked ~ .check {
+.preview input[type="radio"]:checked ~ .check,
+.preview input[type="checkbox"]:checked ~ .check {
   border: 5px solid #0b814c;
 }
 
-.preview .formio-component-radio input[type="radio"]:checked ~ .check::before,
-.preview .formio-component-checkbox input[type="checkbox"]:checked ~ .check::before {
+.preview input[type="radio"]:checked ~ .check::before,
+.preview input[type="checkbox"]:checked ~ .check::before {
   background: #0b814c;
 }
 
-.preview .formio-component-radio input[type="radio"]:checked ~ span,
-.preview .formio-component-checkbox input[type="checkbox"]:checked ~ span {
+.preview input[type="radio"]:checked ~ span,
+.preview input[type="checkbox"]:checked ~ span {
   color: #0b814c;
 }
 
