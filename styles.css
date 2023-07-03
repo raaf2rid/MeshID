@@ -1131,3 +1131,6 @@ border-radius: 0;
   color: #0b814c;
 }
 
+label {
+  font-weight: 700 !important;
+}
