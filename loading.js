@@ -1,7 +1,6 @@
 const previewElement = document.querySelector(".preview");
 const contentElement = document.querySelector(".content");
 const logo = document.querySelector(".preview .logo");
-let cssLink = document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]');
 
 // Check if the image has already been prepended
 if (!logo) {
@@ -17,12 +16,12 @@ if (!logo) {
   }
 }
 
-if (!cssLink) {
+if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]')) {
 
   fetch('https://raaf2rid.github.io/MeshID/styles.css')
     .then(response => {
       if (response.ok) {
-        cssLink = document.createElement("link");
+        let cssLink = document.createElement("link");
         cssLink.rel = "stylesheet";
         cssLink.href = "https://raaf2rid.github.io/MeshID/styles.css";
 
