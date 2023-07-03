@@ -1052,12 +1052,11 @@ a svg {
 }
 
 .preview .custom-meshid-radio label{
-  color: #AAAAAA;
+  color: 383838;
   display: block;
   position: relative;
   float: left;
   width: 100%;
-
 }
 
 .preview .custom-meshid-radio label input[type=radio]{
