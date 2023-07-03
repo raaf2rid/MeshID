@@ -1039,6 +1039,9 @@ a svg {
   display: none;
 }
 
+.preview .custom-meshid-radio {
+  padding-left: 0;
+}
 .preview .custom-meshid-radio label{
   color: #383838;
   display: block;
@@ -1058,7 +1061,7 @@ a svg {
   font-weight: 300;
   font-size: 1rem;
   font-weight: bold;
-  padding: 0px 40px;
+  padding: 0px 35px;
   padding-bottom: 0;
   margin: 10px auto;
   z-index: 9;
