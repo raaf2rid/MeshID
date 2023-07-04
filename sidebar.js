@@ -15,18 +15,7 @@ const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
 const formio = document.querySelector('.preview .content .wrapper formio');
 
 
-navItems[1].classList.add('active');
-navLinks[1].classList.add('active');
-
-
-cardBody.forEach((tab, i)=>{
-    
-  if(i !== 0 && i !== 1 && tab.classList.contains('active')){
-  navItems[1].classList.remove('active');
-  navLinks[1].classList.remove('active');
-  }
-
-})
+navItems[1].remove()
 
 
   
