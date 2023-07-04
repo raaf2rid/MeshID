@@ -16,12 +16,12 @@ $(function() {
 if ($('.content .header').length === 0) {
   let headerCode = '<header class="header">' +
      '<div class="toggle-div">' +
-       '<input class="toggle-switch" type="checkbox">' +
-       '<label class="toggle" for="checkbox">' +
+       '<button class="toggle-switch">' +
+       '<div class="toggle" for="checkbox">' +
          '<div id="bar1" class="bars"></div>' +
          '<div id="bar2" class="bars"></div>' +
          '<div id="bar3" class="bars"></div>' +
-       '</label>' +
+       '</div>' +
      '</div>' +
   '</header>';
 
