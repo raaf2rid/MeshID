@@ -19,13 +19,7 @@ const formio = document.querySelector('.preview .content .wrapper formio');
 
 
 navLinks.forEach((item) => {
-  item.style.fontSize = "1.2rem";
-  item.style.fontWeight = "700";
-  item.style.border = "0";
-  item.style.width = "100%";
-  item.style.borderRadius = "0";
-  item.style.borderRadius = "0";
-  item.style.pointerEvents = "auto";
+  
   item.addEventListener("click", () => {
     animate();
   });

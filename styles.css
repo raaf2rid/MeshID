@@ -197,6 +197,11 @@ figure td {
 
 .preview .nav-link {
   padding-left: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: 0;
+  width: 100%;
+  pointer-events: auto;
 }
 
 .preview .nav-item::after {
