@@ -34,14 +34,14 @@ if ($('.content .header').length === 0) {
 
 $('.toggle-div').click(function() {
   let sidebar = $('.card-header');
-  let toggleSpan = $('.toggle span');
+  let toggleSwitch = $('.toggle-switch');
 
   if (sidebar.hasClass('sidebarshow')) {
     sidebar.removeClass('sidebarshow');
-    toggleSpan.removeClass('toggle');
+    toggleSwitch.removeClass('toggled');
   } else {
     sidebar.addClass('sidebarshow');
-    toggleSpan.addClass('toggle');
+    toggleSwitch.addClass('toggled');
   }
 });
 
