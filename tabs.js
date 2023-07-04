@@ -4,7 +4,6 @@ const builder = document.querySelectorAll(".builder-component");
 const snackbar = document.querySelector("#snackbar");
 const tabs = document.querySelector(".wrapper");
 const formioWrapper = document.querySelector(".formio-wrapper");
-let parent = document.querySelector(".formio-component-form").parentElement;
 const child = document.querySelector(".formio-component-form");
 
 const cardHeader = document.querySelector(".card-header");
