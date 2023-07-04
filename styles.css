@@ -81,6 +81,10 @@ figure td {
   border-top-right-radius: 0;
 }
 
+.preview .wrapper formio {
+ width: 55%;
+}
+
 
 /* Global */
 
