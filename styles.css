@@ -146,6 +146,10 @@ figure td {
   position: relative;
 }
 
+.preview .nav-tabs .nav-item:first-child {
+  display: block;
+}
+
 .preview .card-header {
   background: #dbdbdb;
   width: 235px;
