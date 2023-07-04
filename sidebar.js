@@ -12,6 +12,7 @@ const cardHeaderUl = document.querySelector(".card-header > ul");
 const navBar = document.querySelector(".card-header-tabs");
 const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
 const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
+const formio = document.querySelector('.preview .content .wrapper formio');
 
 
 navItems[1].classList.add('active');

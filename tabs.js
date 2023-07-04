@@ -14,8 +14,6 @@ const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
 const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
 
 
-
-const errorFields = document.querySelectorAll(".tab-pane:not(:last-child) .custom-error")
 const formio = document.querySelector('.preview .content .wrapper formio');
   
   
