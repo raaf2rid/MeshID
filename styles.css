@@ -145,7 +145,7 @@ figure td {
 }
 
 .preview .card-header {
-  background: transparent;
+  background: #dbdbdb;
   width: 235px;
   position: fixed;
   top: 60px;
@@ -535,7 +535,7 @@ figure td {
   .formio-component-select:not(.formio-component-code)
   label {
   transition: 250ms;
-  z-index: 1001;
+  z-index: 1;
   font-weight: 700;
   position: relative;
   transform: translate(20px, 43px);
