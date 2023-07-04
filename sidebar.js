@@ -29,16 +29,16 @@ if ($('.content .header').length === 0) {
 // Sidebar Show/Hide
 
 
-$('.toggle-switch').click(function() {
+$('.toggle-icon').click(function() {
   let sidebar = $('.card-header');
-  let toggleSwitch = $('.toggle-switch');
+  let toggleIcon = $('.toggle-icon');
 
   if (sidebar.hasClass('sidebarshow')) {
     sidebar.removeClass('sidebarshow');
-    toggleSwitch.removeClass('toggled');
+    toggleIcon.removeClass('toggled');
   } else {
     sidebar.addClass('sidebarshow');
-    toggleSwitch.addClass('toggled');
+    toggleIcon.addClass('toggled');
   }
 });
 
