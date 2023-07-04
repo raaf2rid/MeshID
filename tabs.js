@@ -76,47 +76,7 @@ const formio = document.querySelector('.preview .content .wrapper formio');
       });
     }
   
-    if (cardHeaderUl) {
-      cardHeader.style.padding = "0";
-      cardHeader.style.borderBottom = "0";
-      cardHeader.style.background = "transparent;"
-  
-      if (!cardHeaderUl.classList.contains("loaded")) {
-        cardHeaderUl.style.margin = "0";
-        cardHeaderUl.classList.add("loaded");
-        cardHeaderUl.insertAdjacentHTML(
-          "beforebegin",
-          '<p class="nav-header">All Pages</p>'
-        );
-        const navHeader = document.querySelector(".nav-header");
-  
-        mediaQueriesHeader(navHeader);
-  
-        window.addEventListener("resize", () => {
-          mediaQueriesHeader(navHeader);
-        });
-      }
-    }
-    navItems.forEach((item, i) => {
-
-      item.style.width = "100%";
-      navItems[0].style.display = 'none'
-      navItems[0].classList.remove('active') 
-     
-    });
-  
-    navLinks.forEach((item) => {
-      item.style.fontSize = "1.2rem";
-      item.style.fontWeight = "700";
-      item.style.border = "0";
-      item.style.width = "100%";
-      item.style.borderRadius = "0";
-      item.style.borderRadius = "0";
-      item.style.pointerEvents = "auto";
-      item.addEventListener("click", () => {
-        animate();
-      });
-    });
+   
   
 
 

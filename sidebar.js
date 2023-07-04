@@ -15,7 +15,8 @@ const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
 const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
 const formio = document.querySelector('.preview .content .wrapper formio');
 
-
+$(".card-header > ul").before('<p class="nav-header">All Pagess</p>');
+$('li.nav-item a[href="#admin"]').parent().remove();
 
 
 navLinks.forEach((item) => {
