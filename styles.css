@@ -254,7 +254,7 @@ figure td {
 }
 
 
-.toggle {
+.toggle-icon {
   position: relative;
   width: 40px;
   height: 40px;
@@ -286,29 +286,29 @@ figure td {
   width: 75%;
 }
 
-.toggle-switch.toggled + .toggle .bars {
+.toggle-icon.toggled + .toggle-icon .bars {
   position: absolute;
   transition-duration: .5s;
 }
 
-.toggle-switch.toggled + .toggle #bar2 {
+.toggle-icon.toggled + .toggle-icon #bar2 {
   transform: scaleX(0);
   transition-duration: .1s;
 }
 
-.toggle-switch.toggled + .toggle #bar1 {
+.toggle-icon.toggled + .toggle-icon #bar1 {
   width: 100%;
   transform: rotate(45deg);
   transition-duration: .5s;
 }
 
-.toggle-switch.toggled + .toggle #bar3 {
+.toggle-icon.toggled + .toggle-icon #bar3 {
   width: 100%;
   transform: rotate(-45deg);
   transition-duration: .5s;
 }
 
-.toggle-switch.toggled + .toggle {
+.toggle-icon.toggled + .toggle-icon {
   transition-duration: .5s;
   transform: rotate(180deg);
 }
