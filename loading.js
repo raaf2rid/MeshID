@@ -35,7 +35,13 @@ if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles
 
         // Listen for the CSS file to load
         cssLink.addEventListener("load", () => {
-          contentElement.style.display = "flex";
+          contentElement.style.display = "flex";            
+          $(cardBody[0]).hide()
+          $(cardBody[0]).removeClass("active");
+          $(cardBody[1]).show()
+          $(cardBody[1]).addClass("active");
+          $(navItems[1]).addClass("active");
+          $(navLinks[1]).addClass("active");
         });
 
 
@@ -60,16 +66,15 @@ if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles
     logo.addEventListener("animationend", () => {
       logo.remove()
     });
-    contentElement.style.display = "flex";
+    contentElement.style.display = "flex";      
+    $(cardBody[0]).hide()
+    $(cardBody[0]).removeClass("active");
+    $(cardBody[1]).show()
+    $(cardBody[1]).addClass("active");
+    $(navItems[1]).addClass("active");
+    $(navLinks[1]).addClass("active");
 
   }
 
 
 
-  
-  $(cardBody[0]).hide()
-  $(cardBody[0]).removeClass("active");
-  $(cardBody[1]).show()
-  $(cardBody[1]).addClass("active");
-  $(navItems[1]).addClass("active");
-  $(navLinks[1]).addClass("active");
