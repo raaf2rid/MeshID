@@ -15,15 +15,6 @@ const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
 const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
 const formio = document.querySelector('.preview .content .wrapper formio');
 
-let isInserted = false;
-if (!isInserted) {
-  $(".card-header > ul").before('<p class="nav-header">All Pages</p>');
-  isInserted = true;
-}
-
-
-$('li.nav-item a[href="#admin"]').parent().remove();
-
 
 
 
