@@ -1,6 +1,9 @@
 const previewElement = document.querySelector(".preview");
 const contentElement = document.querySelector(".content");
 const logo = document.querySelector(".preview .logo");
+const cardBody = $(".tab-pane");
+const navItems = $(".nav-tabs > .nav-item");
+const navLinks = $(".nav-tabs > .nav-item > .nav-link");
 
 // Check if the image has already been prepended
 if (!logo) {
@@ -60,3 +63,13 @@ if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles
     contentElement.style.display = "flex";
 
   }
+
+
+
+  
+  $(cardBody[0]).hide()
+  $(cardBody[0]).removeClass("active");
+  $(cardBody[1]).show()
+  $(cardBody[1]).addClass("active");
+  $(navItems[1]).addClass("active");
+  $(navLinks[1]).addClass("active");
