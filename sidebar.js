@@ -32,7 +32,7 @@ if ($('.content .header').length === 0) {
 // Sidebar Show/Hide
 
 
-$('.toggle-div').click(function() {
+$('.toggle-switch').click(function() {
   let sidebar = $('.card-header');
   let toggleSwitch = $('.toggle-switch');
 
