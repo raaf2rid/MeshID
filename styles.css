@@ -285,29 +285,29 @@ figure td {
   width: 75%;
 }
 
-.toggle-icon.toggled + .toggle-icon .bars {
+.toggle-icon.toggled .bars {
   position: absolute;
   transition-duration: .5s;
 }
 
-.toggle-icon.toggled + .toggle-icon #bar2 {
+.toggle-icon.toggled #bar2 {
   transform: scaleX(0);
   transition-duration: .1s;
 }
 
-.toggle-icon.toggled + .toggle-icon #bar1 {
+.toggle-icon.toggled #bar1 {
   width: 100%;
   transform: rotate(45deg);
   transition-duration: .5s;
 }
 
-.toggle-icon.toggled + .toggle-icon #bar3 {
+.toggle-icon.toggled #bar3 {
   width: 100%;
   transform: rotate(-45deg);
   transition-duration: .5s;
 }
 
-.toggle-icon.toggled + .toggle-icon {
+.toggle-icon.toggled {
   transition-duration: .5s;
   transform: rotate(180deg);
 }
