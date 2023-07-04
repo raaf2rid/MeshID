@@ -156,11 +156,11 @@ figure td {
   left: -400px;
   height: max-content;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  padding-top: 90px;
   transition: all 0.7s ease-out;
   width: max-content !important;
   min-height: 400px;
   z-index: 2;
+  padding: 0;
 }
 
 .preview .nav-header {
