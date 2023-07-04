@@ -14,17 +14,20 @@ $(function() {
 
 
 if ($('.content .header').length === 0) {
-  var headerCode = '<header class="header">' +
+  let headerCode = '<header class="header">' +
      '<div class="toggle-div">' +
-       '<button type="button" class="toggle" id="toggle">' +
-         '<span></span>' +
-        '</button>' +
-    '</div>' +
+       '<input id="toggle-switch" type="checkbox">' +
+       '<label class="toggle" for="checkbox">' +
+         '<div id="bar1" class="bars"></div>' +
+         '<div id="bar2" class="bars"></div>' +
+         '<div id="bar3" class="bars"></div>' +
+       '</label>' +
+     '</div>' +
   '</header>';
 
-  // Prepend the header code to '.card'
-  $('.content').prepend(headerCode);
+    $('.content').prepend(headerCode);
 }
+
 
 // Sidebar Show/Hide
 
