@@ -1,3 +1,4 @@
+
 const card = document.querySelector(".card");
 const cardBody = document.querySelectorAll(".tab-pane");
 const builder = document.querySelectorAll(".builder-component");
@@ -14,6 +15,8 @@ const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
 const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
 const formio = document.querySelector('.preview .content .wrapper formio');
 
+
+$('li.nav-item a[href="#admin"]').parent().remove();
 
 
   
