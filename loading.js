@@ -1,9 +1,6 @@
 const previewElement = document.querySelector(".preview");
 const contentElement = document.querySelector(".content");
 const logo = document.querySelector(".preview .logo");
-const cardBody = $(".tab-pane");
-const navItems = $(".nav-tabs > .nav-item");
-const navLinks = $(".nav-tabs > .nav-item > .nav-link");
 
 // Check if the image has already been prepended
 if (!logo) {
@@ -36,12 +33,7 @@ if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles
         // Listen for the CSS file to load
         cssLink.addEventListener("load", () => {
           contentElement.style.display = "flex";            
-          $(cardBody[0]).hide()
-          $(cardBody[0]).removeClass("active");
-          $(cardBody[1]).css("display", "block");
-          $(cardBody[1]).addClass("active");
-          $(navItems[1]).addClass("active");
-          $(navLinks[1]).addClass("active");
+          addHeaderHideAdminTab()
         });
 
 
@@ -67,6 +59,22 @@ if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles
       logo.remove()
     });
     contentElement.style.display = "flex";      
+    addHeaderHideAdminTab()
+  }
+
+
+  function addHeaderHideAdminTab(){
+
+    const cardBody = $(".tab-pane");
+    const navItems = $(".nav-tabs > .nav-item");
+    const navLinks = $(".nav-tabs > .nav-item > .nav-link");
+
+    if ($(".nav-header").length === 0) {
+      $(".card-header > ul").before('<p class="nav-header">All Pages</p>');
+    }
+    
+    $('li.nav-item a[href="#admin"]').parent('li.nav-item').removeClass('active');
+    $('li.nav-item a[href="#admin"]').removeClass('active');
     $(cardBody[0]).hide()
     $(cardBody[0]).removeClass("active");
     $(cardBody[1]).css("display", "block");
@@ -77,4 +85,4 @@ if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles
   }
 
 
-
+  

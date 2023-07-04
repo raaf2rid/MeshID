@@ -1,23 +1,8 @@
-
-const card = document.querySelector(".card");
-const cardBody = document.querySelectorAll(".tab-pane");
-
-const cardHeader = document.querySelector(".card-header");
-const cardHeaderUl = document.querySelector(".card-header > ul");
-const navBar = document.querySelector(".card-header-tabs");
-const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
-const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
+// Sidebar Header & Admin Nav Remove
 
 
 
-if ($(".nav-header").length === 0) {
-  $(".card-header > ul").before('<p class="nav-header">All Pages</p>');
-}
-
-$('li.nav-item a[href="#admin"]').parent('li.nav-item').removeClass('active');
-$('li.nav-item a[href="#admin"]').removeClass('active');
-
-
+// Hover Animation 
 
 $(document).ready(function() {
   $('.nav-link').hover(function() {
@@ -28,11 +13,11 @@ $(document).ready(function() {
 });
 
 
-// Sidebar 
 
-// Check if the header code has already been added to '.card'
+// Hamburger Icon 
+
+
 if ($('.content .header').length === 0) {
-  // Get the header code
   var headerCode = '<header class="header">' +
      '<div class="header_in">' +
        '<button type="button" class="toggle" id="toggle">' +
@@ -45,6 +30,7 @@ if ($('.content .header').length === 0) {
   $('.content').prepend(headerCode);
 }
 
+// Sidebar Show/Hide
 
 
 $('.toggle').click(function() {
