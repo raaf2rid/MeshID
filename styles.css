@@ -136,6 +136,10 @@ figure td {
   display: none !important;
 }
 
+.preview .card-header-tabs {
+  flex-direction: column;
+}
+
 .preview .nav-tabs {
   position: relative;
 }
