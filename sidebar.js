@@ -21,13 +21,6 @@ $('li.nav-item a[href="#admin"]').parent().remove();
 
 
 
-navItems.forEach((item, i) => {
-
-  item.style.width = "100%";
-  navItems[0].style.display = 'none'
-  navItems[0].classList.remove('active') 
- 
-});
 
 navLinks.forEach((item) => {
   item.style.fontSize = "1.2rem";
