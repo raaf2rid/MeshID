@@ -15,32 +15,11 @@ const navItems = document.querySelectorAll(".nav-tabs > .nav-item");
 const navLinks = document.querySelectorAll(".nav-tabs> .nav-item > .nav-link");
 const formio = document.querySelector('.preview .content .wrapper formio');
 
-
+$(".card-header > ul").before('<p class="nav-header">All Pages</p>');
 $('li.nav-item a[href="#admin"]').parent().remove();
 
 
-  
-if (cardHeaderUl) {
-  cardHeader.style.padding = "0";
-  cardHeader.style.borderBottom = "0";
-  cardHeader.style.background = "transparent;"
 
-  if (!cardHeaderUl.classList.contains("loaded")) {
-    cardHeaderUl.style.margin = "0";
-    cardHeaderUl.classList.add("loaded");
-    cardHeaderUl.insertAdjacentHTML(
-      "beforebegin",
-      '<p class="nav-header">All Pages</p>'
-    );
-    const navHeader = document.querySelector(".nav-header");
-
-    mediaQueriesHeader(navHeader);
-
-    window.addEventListener("resize", () => {
-      mediaQueriesHeader(navHeader);
-    });
-  }
-}
 navItems.forEach((item, i) => {
 
   item.style.width = "100%";
