@@ -139,6 +139,7 @@ figure td {
 
 .preview .card-header-tabs {
   flex-direction: column;
+  margin: 0;
 }
 
 .preview .nav-tabs {
