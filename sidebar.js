@@ -1,5 +1,3 @@
-
-
 // Hover Animation 
 
 $(function() {
@@ -17,7 +15,7 @@ $(function() {
 
 if ($('.content .header').length === 0) {
   var headerCode = '<header class="header">' +
-     '<div class="header_in">' +
+     '<div class="toggle-div">' +
        '<button type="button" class="toggle" id="toggle">' +
          '<span></span>' +
         '</button>' +
@@ -31,7 +29,7 @@ if ($('.content .header').length === 0) {
 // Sidebar Show/Hide
 
 
-$('.toggle').click(function() {
+$('.toggle-div').click(function() {
   let sidebar = $('.card-header');
   let toggleSpan = $('.toggle span');
 
