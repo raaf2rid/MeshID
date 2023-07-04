@@ -22,7 +22,9 @@ if ($(".nav-header").length === 0) {
   $(".card-header > ul").before('<p class="nav-header">All Pages</p>');
 }
 
-// $('li.nav-item a[href="#admin"]').parent().remove();
+$('li.nav-item a[href="#admin"]').parent('li.nav-item').removeClass('active');
+$('li.nav-item a[href="#admin"]').removeClass('active');
+
 
 
 navLinks.forEach((item) => {

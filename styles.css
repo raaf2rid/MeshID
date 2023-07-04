@@ -136,9 +136,6 @@ figure td {
 
 /* Sidebar  */
 
-.preview .nav-tabs .nav-item:first-child {
-  display: none !important;
-}
 
 .preview .card-header-tabs {
   flex-direction: column;
