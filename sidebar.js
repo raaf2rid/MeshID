@@ -33,13 +33,8 @@ $('.toggle-icon').click(function() {
   let sidebar = $('.card-header');
   let toggleIcon = $('.toggle-icon');
 
-  if (sidebar.hasClass('sidebarshow')) {
-    sidebar.removeClass('sidebarshow');
-    toggleIcon.removeClass('toggled');
-  } else {
-    sidebar.addClass('sidebarshow');
-    toggleIcon.addClass('toggled');
-  }
+  sidebar.toggleClass('sidebarshow');
+  toggleIcon.toggleClass('toggled');
 });
 
 
