@@ -147,7 +147,7 @@ figure td {
 }
 
 .preview .nav-tabs .nav-item:first-child {
-  display: block;
+  display: none;
 }
 
 .preview .card-header {
