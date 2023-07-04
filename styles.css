@@ -251,6 +251,11 @@ figure td {
   z-index: 1001;
 }
 
+.toggle-div{
+  display: inline-block;
+  cursor: pointer;
+}
+
 .toggle {
   background: transparent;
   border: none;
