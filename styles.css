@@ -156,6 +156,7 @@ figure td {
   transition: all 0.7s ease-out;
   width: max-content !important;
   min-height: 400px;
+  z-index: 1;
 }
 
 .preview .nav-header {
@@ -234,6 +235,7 @@ figure td {
   padding: 15px 20px;
   width: 100%;
   position: fixed;
+  z-index: 1001;
 }
 
 .toggle {
