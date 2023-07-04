@@ -38,8 +38,10 @@ navLinks.forEach((item) => {
 function animate() {
 
 
-  cardBody.forEach(tab=>{
+  cardBody.forEach((tab,i)=>{
     if(tab.classList.contains('active')){
+      navLinks[i].classList.add('active')
+      navItems[i].classList.add('active')
       tab.classList.add("card-animation");
       disableButtons();
       setTimeout(removeAnimation, 800);

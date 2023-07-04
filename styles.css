@@ -185,6 +185,7 @@ figure td {
   color: #fff !important;
   pointer-events: none !important;
 }
+
 .preview .nav-tabs .nav-item.active {
   background-color: #00a86b;
 }
