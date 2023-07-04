@@ -47,16 +47,15 @@ if ($('.content .header').length === 0) {
 
 
 
-var btn = document.querySelector('.toggle');
-var btnst = true;
-btn.onclick = function() {
-  if(btnst == true) {
-    document.querySelector('.toggle span').classList.add('toggle');
-    document.querySelector('.card-header').classList.add('sidebarshow');
-    btnst = false;
-  }else if(btnst == false) {
-    document.querySelector('.toggle span').classList.remove('toggle');
-    document.querySelector('.card-header').classList.remove('sidebarshow');
-    btnst = true;
+$('.toggle').click(function() {
+  let sidebar = $('.card-header');
+  let toggleSpan = $('.toggle span');
+
+  if (sidebar.hasClass('sidebarshow')) {
+    sidebar.removeClass('sidebarshow');
+    toggleSpan.removeClass('toggle');
+  } else {
+    sidebar.addClass('sidebarshow');
+    toggleSpan.addClass('toggle');
   }
-}
+});
