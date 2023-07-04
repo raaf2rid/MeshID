@@ -16,7 +16,7 @@ $(function() {
 if ($('.content .header').length === 0) {
   let headerCode = '<header class="header">' +
      '<div class="toggle-div">' +
-       '<input id="toggle-switch" type="checkbox">' +
+       '<input class="toggle-switch" type="checkbox">' +
        '<label class="toggle" for="checkbox">' +
          '<div id="bar1" class="bars"></div>' +
          '<div id="bar2" class="bars"></div>' +
