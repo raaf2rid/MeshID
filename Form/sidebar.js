@@ -1,8 +1,6 @@
 // Hover Animation 
 
 
-console.log('executed')
-
 $(function() {
   $('.nav-link').hover(function() {
     $(this).parent('.nav-item').addClass('hovered');
@@ -12,21 +10,6 @@ $(function() {
 });
 
 
-
-// Hamburger Icon 
-
-
-if ($('.content .header').length === 0) {
-  let headerCode = '<header class="header">' +
-       '<div class="toggle-icon">' +
-         '<div id="bar1" class="bars"></div>' +
-         '<div id="bar2" class="bars"></div>' +
-         '<div id="bar3" class="bars"></div>' +
-       '</div>' +
-  '</header>';
-
-    $('.content').prepend(headerCode);
-}
 
 
 // Sidebar Show/Hide
