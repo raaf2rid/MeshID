@@ -28,7 +28,7 @@ if ($('.content .header').length === 0) {
 
 // Sidebar Show/Hide
 
-$('.toggle-icon').first().click(function() {
+$('.toggle-icon').click(function() {
   let sidebar = $('.card-header');
   let toggleIcon = $(this);
 
@@ -43,7 +43,10 @@ $('.toggle-icon').first().click(function() {
     toggleIcon.addClass('toggled');
     console.log('added');
   }
+
+  return false; // Add this line to prevent event propagation
 });
+
 
 
 
