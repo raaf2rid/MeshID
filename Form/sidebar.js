@@ -18,7 +18,7 @@ if ($('.content .header').length === 0) {
   `<header class="header">
       <div class="switch-holder">
       <div class="switch-label">
-      <i class="fa-solid fa-sidebar"></i><span>All Pages</span>
+      <i class="fa-solid fa-paperclip" style="color: #383838;"></i><span>All Pages</span>
       </div>
       <div class="switch-toggle">
           <input type="checkbox" id="all-pages">
