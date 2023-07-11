@@ -27,7 +27,7 @@ if ($('.card .header').length === 0) {
     </div>
   </header>`;
 
-    $('.content').prepend(headerCode);
+    $('.card').prepend(headerCode);
 }
 
 
