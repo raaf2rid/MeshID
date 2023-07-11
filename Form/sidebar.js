@@ -13,7 +13,7 @@ $(function() {
 // Hamburger Icon 
 
 
-if ($('.content .header').length === 0) {
+if ($('.card .header').length === 0) {
   let headerCode = 
   `<header class="header">
       <div class="switch-holder">
@@ -37,7 +37,7 @@ $('.switch-toggle input[type="checkbox"]').click(function() {
   let sidebar = $('.card-header');
   let toggleIcon = $('.switch-toggle');
 
-  console.log(toggleIcon);
+
 
   sidebar.toggleClass('sidebarshow');
   toggleIcon.toggleClass('toggled');

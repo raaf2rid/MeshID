@@ -154,15 +154,17 @@ figure td {
   background: #dbdbdb;
   width: 235px;
   position: fixed;
-  top: 130px;
-  left: -400px;
+  top: -100vh;
+  left: 33px;
   height: max-content;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.7s ease-out;
-  width: max-content !important;
+  transition: all 1s ease-out;
+  width: 280px!important;
   min-height: 400px;
   z-index: 100;
   padding: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .preview .nav-header {
@@ -313,7 +315,7 @@ figure td {
 
 
 .sidebarshow {
-  left: 0 !important;
+  top: 90px !important;
 }
 
 
@@ -1080,6 +1082,7 @@ tr[ref="row"]:first-of-type
 
 
 .switch-holder {
+  width: 280px;
   display: flex;
   padding: 10px 20px;
   border-radius: 10px;
@@ -1092,7 +1095,8 @@ tr[ref="row"]:first-of-type
 }
 
 .switch-label {
-  padding: 0 20px 0 10px
+  padding: 0 20px 0 10px;
+  font-size: 1.3rem;
 }
 
 .switch-label i {

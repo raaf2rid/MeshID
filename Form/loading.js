@@ -77,10 +77,7 @@ if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/Form/s
     const navItems = $(".nav-tabs > .nav-item");
     const navLinks = $(".nav-tabs > .nav-item > .nav-link");
 
-    if ($(".nav-header").length === 0) {
-      $(".card-header > ul").before('<p class="nav-header">All Pages</p>');
-    }
-    
+  
     $('li.nav-item a[href="#admin"]').parent('li.nav-item').removeClass('active');
     $('li.nav-item a[href="#admin"]').removeClass('active');
     $(cardBody[0]).hide()
