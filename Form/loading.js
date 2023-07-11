@@ -10,6 +10,8 @@ if (!logo) {
   logoImage.src = "https://i.postimg.cc/wBmpBgcs/ezgif-com-gif-maker-1.gif";
   logoImage.alt = "";
 
+
+
   // Prepend the image element to the .preview element
   if (previewElement) {
     previewElement.prepend(logoImage);
@@ -25,8 +27,14 @@ if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/Form/s
         cssLink.rel = "stylesheet";
         cssLink.href = "https://raaf2rid.github.io/MeshID/Form/styles.css";
 
+        var script = document.createElement('script');
+        script.src = 'https://kit.fontawesome.com/7615e5cc93.js';
+        script.crossOrigin = 'anonymous';
+
+  
+
         if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/Form/styles.css"]')){
-          document.head.appendChild(cssLink);
+          document.head.append(cssLink, script);
         }
 
 

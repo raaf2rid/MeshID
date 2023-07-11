@@ -35,7 +35,7 @@ if ($('.content .header').length === 0) {
 
 $('.switch-toggle').click(function() {
   let sidebar = $('.card-header');
-  let toggleIcon = $('.toggle-icon');
+  let toggleIcon = $('.switch-toggle');
 
   sidebar.toggleClass('sidebarshow');
   toggleIcon.toggleClass('toggled');
