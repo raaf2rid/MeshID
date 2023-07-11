@@ -28,9 +28,9 @@ if ($('.content .header').length === 0) {
 
 // Sidebar Show/Hide
 
-$('.toggle-icon').first().click(function(event) {
+$('.header').first().click(function(event) {
   let sidebar = $('.card-header');
-  let toggleIcon = $(this);
+  let toggleIcon = $('.toggle-icon');
 
   console.log('Clicked on toggle-icon');
 
