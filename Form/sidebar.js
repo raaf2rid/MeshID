@@ -28,12 +28,13 @@ if ($('.content .header').length === 0) {
 
 // Sidebar Show/Hide
 
-$('.header').first().click(function(event) {
-  let sidebar = $('.card-header');
-  let toggleIcon = $('.toggle-icon');
+document.querySelector('.header').addEventListener('click', function(event) {
+  let sidebar = document.querySelectorAll('.card-header');
+  let toggleIcon = document.querySelectorAll('.toggle-icon');
 
-  console.log(toggleIcon)
+  console.log(toggleIcon);
 });
+
 
 
 
