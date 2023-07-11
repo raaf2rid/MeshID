@@ -28,14 +28,22 @@ if ($('.content .header').length === 0) {
 
 // Sidebar Show/Hide
 
-
 $('.toggle-icon').click(function() {
   let sidebar = $('.card-header');
   let toggleIcon = $('.toggle-icon');
 
-  sidebar.toggleClass('sidebarshow');
-  toggleIcon.toggleClass('toggled');
+  switch (true) {
+    case sidebar.hasClass('sidebarshow'):
+      sidebar.removeClass('sidebarshow');
+      toggleIcon.removeClass('toggled');
+      break;
+    default:
+      sidebar.addClass('sidebarshow');
+      toggleIcon.addClass('toggled');
+      break;
+  }
 });
+
 
 
 // Card Animation 
