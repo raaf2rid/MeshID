@@ -1,6 +1,5 @@
 // Hover Animation 
 
-
 $(function() {
   $('.nav-link').hover(function() {
     $(this).parent('.nav-item').addClass('hovered');
@@ -29,13 +28,26 @@ if ($('.content .header').length === 0) {
 
 // Sidebar Show/Hide
 
-document.querySelector('.nav-header').addEventListener('click', function(event) {
+$('.header').first().click(function(event) {
+  let sidebar = $('.card-header');
+  let toggleIcon = $('.toggle-icon');
 
-  let toggleIcon = document.querySelectorAll('.toggle-icon');
+  console.log(toggleIcon)
 
-  console.log(toggleIcon);
+  console.log('Clicked on toggle-icon');
+
+  if (sidebar.hasClass('sidebarshow')) {
+    sidebar.removeClass('sidebarshow');
+    toggleIcon.removeClass('toggled');
+    console.log('Removed sidebarshow');
+  } else {
+    sidebar.addClass('sidebarshow');
+    toggleIcon.addClass('toggled');
+    console.log('Added sidebarshow');
+  }
+
+  event.stopPropagation();
 });
-
 
 
 
