@@ -28,24 +28,25 @@ if ($('.content .header').length === 0) {
 
 // Sidebar Show/Hide
 
-$('.header .toggle-icon').click(function() {
+$('.toggle-icon').first().click(function(event) {
   let sidebar = $('.card-header');
   let toggleIcon = $(this);
 
-  console.log('clicked');
+  console.log('Clicked on toggle-icon');
 
   if (sidebar.hasClass('sidebarshow')) {
     sidebar.removeClass('sidebarshow');
     toggleIcon.removeClass('toggled');
-    console.log('removed');
+    console.log('Removed sidebarshow');
   } else {
     sidebar.addClass('sidebarshow');
     toggleIcon.addClass('toggled');
-    console.log('added');
+    console.log('Added sidebarshow');
   }
 
-  return false; // Add this line to prevent event propagation
+  event.stopPropagation();
 });
+
 
 
 
