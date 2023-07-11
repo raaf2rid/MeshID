@@ -37,6 +37,8 @@ $('.switch-toggle').click(function() {
   let sidebar = $('.card-header');
   let toggleIcon = $('.switch-toggle');
 
+  console.log(toggleIcon)
+
   sidebar.toggleClass('sidebarshow');
   toggleIcon.toggleClass('toggled');
 });
