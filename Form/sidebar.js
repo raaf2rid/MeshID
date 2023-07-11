@@ -14,13 +14,18 @@ $(function() {
 
 
 if ($('.content .header').length === 0) {
-  let headerCode = '<header class="header">' +
-       '<div class="toggle-icon">' +
-         '<div id="bar1" class="bars"></div>' +
-         '<div id="bar2" class="bars"></div>' +
-         '<div id="bar3" class="bars"></div>' +
-       '</div>' +
-  '</header>';
+  let headerCode = 
+  `<header class="header">
+      <div class="switch-holder">
+      <div class="switch-label">
+          <i class="fa fa-bluetooth-b"></i><span>Bluetooth</span>
+      </div>
+      <div class="switch-toggle">
+          <input type="checkbox" id="bluetooth">
+          <label for="bluetooth"></label>
+      </div>
+    </div>
+  '</header>`;
 
     $('.content').prepend(headerCode);
 }
