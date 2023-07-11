@@ -25,7 +25,7 @@ if ($('.card .header').length === 0) {
           <label for="all-pages"></label>
       </div>
     </div>
-  '</header>`;
+  </header>`;
 
     $('.content').prepend(headerCode);
 }
