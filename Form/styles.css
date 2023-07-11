@@ -152,14 +152,13 @@ figure td {
 
 .preview .card-header {
   background: #dbdbdb;
-  width: 235px;
   position: fixed;
   top: -100vh;
-  left: 33px;
+  left: 1.2rem;
   height: max-content;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: all 1s ease-out;
-  width: 280px!important;
+  width: 275px!important;
   min-height: 400px;
   z-index: 100;
   padding: 0;
@@ -248,9 +247,8 @@ figure td {
 .preview .header {
   position: fixed;
   z-index: 1001;
-  margin: 1rem;
   padding: 0.9rem 1rem;
-  border-radius: 7px 0 7px 7px;
+  padding-bottom: 0;
 }
 
 
@@ -315,7 +313,7 @@ figure td {
 
 
 .sidebarshow {
-  top: 90px !important;
+  top: 70px !important;
 }
 
 
