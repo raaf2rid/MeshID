@@ -35,7 +35,7 @@ if ($('.card .header').length === 0) {
 
 $('.switch-toggle input[type="checkbox"]').click(function() {
   let sidebar = $('.card-header');
-  let toggleIcon = $('.switch-toggle');
+  let toggleIcon = $('.switch-holder');
 
 
 
