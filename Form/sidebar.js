@@ -11,11 +11,26 @@ $(function() {
 
 
 
+// Hamburger Icon 
+
+
+if ($('.content .header').length === 0) {
+  let headerCode = '<header class="header">' +
+       '<div class="toggle-icon">' +
+         '<div id="bar1" class="bars"></div>' +
+         '<div id="bar2" class="bars"></div>' +
+         '<div id="bar3" class="bars"></div>' +
+       '</div>' +
+  '</header>';
+
+    $('.content').prepend(headerCode);
+}
+
 
 // Sidebar Show/Hide
 
-document.querySelector('.header').addEventListener('click', function(event) {
-  let sidebar = document.querySelectorAll('.card-header');
+document.querySelector('.nav-header').addEventListener('click', function(event) {
+
   let toggleIcon = document.querySelectorAll('.toggle-icon');
 
   console.log(toggleIcon);

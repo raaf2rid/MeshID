@@ -2,8 +2,6 @@ const previewElement = document.querySelector(".preview");
 const contentElement = document.querySelector(".content");
 const logo = document.querySelector(".preview .logo");
 
-
-
 // Check if the image has already been prepended
 if (!logo) {
   // Create the image element
@@ -83,24 +81,6 @@ if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/Form/s
     $(cardBody[1]).addClass("active");
     $(navItems[1]).addClass("active");
     $(navLinks[1]).addClass("active");
-
-    
-    // Hamburger Icon 
-
-
-    if ($('.content .header').length === 0) {
-      let headerCode = '<header class="header">' +
-          '<div class="toggle-icon">' +
-            '<div id="bar1" class="bars"></div>' +
-            '<div id="bar2" class="bars"></div>' +
-            '<div id="bar3" class="bars"></div>' +
-          '</div>' +
-      '</header>';
-
-        $('.content').prepend(headerCode);
-    }
-
-
 
   }
 
