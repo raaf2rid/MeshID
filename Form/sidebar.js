@@ -32,19 +32,7 @@ $('.header').first().click(function(event) {
   let sidebar = $('.card-header');
   let toggleIcon = $('.toggle-icon');
 
-  console.log('Clicked on toggle-icon');
-
-  if (sidebar.hasClass('sidebarshow')) {
-    sidebar.removeClass('sidebarshow');
-    toggleIcon.removeClass('toggled');
-    console.log('Removed sidebarshow');
-  } else {
-    sidebar.addClass('sidebarshow');
-    toggleIcon.addClass('toggled');
-    console.log('Added sidebarshow');
-  }
-
-  event.stopPropagation();
+  console.log(toggleIcon)
 });
 
 
