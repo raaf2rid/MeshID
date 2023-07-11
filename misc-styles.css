@@ -310,3 +310,17 @@ display: none !important;
 .preview .title-div .fieldset-body .hide-label input {
   border: none;
 }
+
+
+
+
+.intro-tab .continue button:hover {
+  background: #fff;
+  border: 1px solid #02341D;
+  color: #115155;
+}
+
+
+.preview .meshid-custom .choices__list--dropdown .choices__list .choices__item:first-child {
+  display: none;
+}

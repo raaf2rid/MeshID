@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Alpha</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+  <!-- font-family: 'Rubik', sans-serif; -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <!-- font-family: 'Lato', sans-serif; -->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <!-- font-family: 'PT Sans', sans-serif; -->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&family=PT+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
+  <!-- font-family: 'PT Sans Narrow', sans-serif; -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+    @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+    html,
+    body {
+      max-width: 1120px;
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    figure {
+      display: flex;
+    }
+
+    #output svg {
+      transform: translateY(-2px);
+    }
+
+    /* standard first page */
+    .grey-bg-header {
+      font-family: 'PT Sans', sans-serif;
+      font-size: 32px;
+      margin-top: 84px;
+      background-color: #f5f5f5;
+      min-height: 280px;
+      position: relative;
+      margin-bottom: -20px;
+    }
+
+    .grey-bg-header .header-title {
+      padding-top: 59px;
+    }
+
+    .grey-bg-header .header-elements .header-element {
+      margin-right: 65px;
+      position: relative;
+    }
+
+    .grey-bg-header .header-elements .header-element:after {
+      position: absolute;
+      top: 15px;
+      right: -53px;
+      content: ' ';
+      width: 35px;
+      height: 2px;
+      background-color: #d5d5d5;
+    }
+
+    .grey-bg-header .header-elements .header-element:last-child:after {
+      display: none;
+    }
+
+    .grey-bg-header .header-elements .header-element .header-element-icon {
+      display: flex;
+      margin-right: 20px;
+    }
+
+    .grey-bg-header .header-elements .header-element .header-element-icon img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .grey-bg-header .header-elements .header-element .header-element-right .header-element-title {
+      font-weight: 700;
+      font-size: 0.750em;
+      line-height: 1;
+    }
+
+    .grey-bg-header .header-elements .header-element .header-element-right .header-element-content {
+      margin-top: 16px;
+      font-size: 0.625em;
+      color: #767676;
+      line-height: 1.6;
+    }
+
+    .grey-bg-header .top-borders:before,
+    .grey-bg-header .top-borders:after,
+    .grey-bg-header .bottom-borders:before,
+    .grey-bg-header .bottom-borders:after {
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      border-color: rgba(31, 148, 165, 0.19);
+      /* or whatever colour */
+      border-style: solid;
+      /* or whatever style */
+      content: ' ';
+    }
+
+    .grey-bg-header .top-borders:before {
+      top: 0;
+      left: 0;
+      border-width: 6px 0 0 6px;
+    }
+
+    .grey-bg-header .top-borders:after {
+      top: 0;
+      right: 0;
+      border-width: 6px 6px 0 0;
+    }
+
+    .grey-bg-header .bottom-borders:before {
+      bottom: 0;
+      right: 0;
+      border-width: 0 6px 6px 0;
+    }
+
+    .grey-bg-header .bottom-borders:after {
+      bottom: 0;
+      left: 0;
+      border-width: 0 0 6px 6px;
+    }
+
+    .potential-hits-container {
+      padding-top: 83px;
+      font-size: 32px;
+      font-family: 'PT Sans', sans-serif;
+    }
+
+    .potential-hits-container:nth-child(2n+2) {
+      padding-top: 40px;
+    }
+
+    .potential-hits-container .hit-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .potential-hits-container .hit-list h2 {
+      margin-bottom: 30px;
+    }
+
+    .potential-hits-container .hit-list .hit {
+      max-height: 250px;
+      min-width: 33.33%;
+      flex-wrap: wrap;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .potential-hits-container .hit-list .hit .hit-title {
+      font-size: 0.750em;
+      font-weight: 700;
+      margin-bottom: 25px;
+      margin-top: 25px;
+    }
+
+    .potential-hits-container .hit-list .hit .hit-wrapper {
+      width: 100%;
+      flex-wrap: wrap;
+      display: flex;
+      flex-direction: row;
+      gap: 0.5em;
+      margin-bottom: 15px;
+    }
+
+    .potential-hits-container .hit-list .hit .hit-wrapper .hit-property-label {
+      font-size: 0.625em;
+    }
+
+    .potential-hits-container .hit-list .hit .hit-wrapper .hit-property-value {
+      font-weight: 700;
+      font-size: 0.625em;
+      margin-left: 10px;
+    }
+
+
+    .verification-info {
+      font-size: 32px;
+      margin: 29px 0 18px 0;
+      padding: 47px 80px 41px 80px;
+      border: solid 2px #1a93a5;
+      background-color: #1a93a5;
+      font-family: 'Lato', sans-serif;
+      width: 100vw;
+      left: 0;
+    }
+
+
+    .verification-info h2 {
+      font-family: 'PT Sans Narrow', sans-serif;
+      font-size: 0.750em;
+      font-weight: 400;
+    }
+
+    .verification-info h3 {
+      font-size: 0.813em;
+      font-weight: 700;
+    }
+
+    .verification-info h2,
+    .verification-info h3,
+    .verification-info div,
+    .verification-info a {
+      color: #fff;
+    }
+
+
+    /* eof: standard first page */
+
+    .content {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 300px;
+    }
+
+    .content .form-header h6 {
+      font-weight: bold;
+    }
+
+    .content .form-header .small-text {
+      font-size: 0.45rem;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .content .form-header .small-text:nth-of-type(1) {
+      margin-top: 90px;
+      margin-bottom: 30px;
+    }
+
+    .content .form-header .quadrum-text.f1 {
+      margin-left: 90px;
+      font-weight: bold;
+      font-size: 0.7rem;
+    }
+
+    .content .form-header .small-text.second {
+      margin-top: 30px;
+    }
+
+    .content .form-header .img-quadrum {
+      text-align: center;
+    }
+
+    .footer {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .form {
+      width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 90px;
+      page-break-inside: avoid;
+    }
+
+    .form .tg {
+      width: 800px;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .form .tg td {
+      border-style: solid;
+      border-width: 1px;
+      font-size: 0.500rem;
+      overflow: hidden;
+      padding: 5px 5px;
+      word-break: normal;
+    }
+
+    .form .tg td span.small {
+      font-weight: 500;
+      font-style: italic;
+      font-size: 0.625rem;
+    }
+
+    .form .tg td .checkbox {
+      font-weight: 500;
+    }
+
+    .form .tg td .checkbox img {
+      margin-right: 40px;
+    }
+
+    .form .tg td .hr hr {
+      margin-top: 18px;
+      margin-bottom: 2px;
+      width: 189px;
+      margin-left: 0px;
+      border-top: 1px solid black;
+    }
+
+    .form .tg td.colspan .checkbox {
+      width: 50%;
+      display: inline;
+    }
+
+    .form .tg td.colspan .checkbox:nth-of-type(2) {
+      float: right;
+    }
+
+    .form .tg td.colspan .text {
+      font-weight: 500;
+    }
+
+    .form .tg td.colspan .text hr {
+      margin-top: 18px;
+      margin-bottom: 2px;
+      width: 284px;
+      border-top: 1px solid black;
+      margin-bottom: 0px;
+      display: inline-block;
+      margin-left: 40px;
+    }
+
+    .form .tg td.colspan .text.second hr {
+      margin-left: 66.3px;
+    }
+
+    .form .tg th {
+      border-style: solid;
+      border-width: 1px;
+      font-size: 0.875rem;
+      font-weight: normal;
+      overflow: hidden;
+      padding: 10px 5px;
+      word-break: normal;
+    }
+
+    .form .tg .tg-fymr {
+      width: 340px;
+      border-color: inherit;
+      font-weight: bold;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .form .tg .tg-fymr {
+      border-color: inherit;
+      font-weight: bold;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .form .tg .tg-0pky {
+      border-color: inherit;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .form .text-after-form {
+      font-size: 0.875rem;
+      max-width: 542px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+
+    .form .tg.second {
+      width: 541.13px;
+    }
+
+    .form .tg.second .tg-0pky {
+      padding-right: 242px;
+    }
+
+    .form .delete {
+      font-size: 0.625rem;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+
+    section.text {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1em;
+      max-width: 80%;
+    }
+
+    section.text p,
+    section.text ol li {
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+      font-family: Bahnschrift
+    }
+
+    .pbd-0 {
+      padding-left: 15px;
+    }
+
+    .pbd-2 {
+      padding-left: 65px;
+    }
+
+    .breaked-div {
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    section.text ol {
+      padding-left: 15px;
+      counter-reset: item;
+    }
+
+    section.text ol.reset23 {
+      counter-reset: item 1;
+    }
+
+    section.text ol.reset23 ol {
+      counter-reset: item 2;
+    }
+
+    section.text ol.reset3 {
+      counter-reset: item 2;
+    }
+
+    section.text ol.reset4 {
+      counter-reset: item 3;
+    }
+
+    section.text ol.reset5 {
+      counter-reset: item 4;
+    }
+
+    section.text ol.reset6 {
+      counter-reset: item 5;
+    }
+
+    section.text ol.reset7 {
+      counter-reset: item 6;
+    }
+
+    section.text ol.reset8 {
+      counter-reset: item 7;
+    }
+
+    section.text ol.reset9 {
+      counter-reset: item 8;
+    }
+
+    section.text ol.reset10 {
+      counter-reset: item 9;
+    }
+
+    section.text ol.reset11 {
+      counter-reset: item 10;
+    }
+
+    section.text ol.reset12 {
+      counter-reset: item 11;
+    }
+
+    section.text ol>li {
+      display: block;
+    }
+
+    section.text ol>li:before {
+      content: counters(item, ".") " ";
+      counter-increment: item;
+      font-weight: 700;
+      position: absolute;
+    }
+
+    section.text ol li ol,
+    section.text li ul {
+      padding-left: 0px;
+      margin-top: 15px;
+    }
+
+    section.text ol li div {
+      margin-left: 50px;
+    }
+
+    section.text ul {
+      counter-reset: list;
+    }
+
+    section.text ul li {
+      list-style: none;
+    }
+
+    section.text ul li:before {
+      padding-right: 15px;
+      content: "(" counter(list, lower-roman) ") ";
+      counter-increment: list;
+      font-weight: 500;
+    }
+
+    section.text .footnote hr {
+      margin-top: 18px;
+      margin-bottom: 2px;
+      width: 189px;
+      margin-left: 0px;
+      border-top: 1px solid black;
+    }
+
+    section.text .footnote p {
+      font-size: 0.625rem;
+    }
+
+    ol.roman-numerals li:before {
+      content: counters(item, ".", lower-roman) !important;
+      /* by specifying the upper-roman as style the output would be in roman numbers */
+    }
+
+    /* For numbering and sub-numbering the main headings into 1.0, 1.1, 1.2, 2.0, 2.1, 2.2, 2.3, etc. */
+    ol.mainheadings {
+      counter-reset: item;
+      /*counter-increment: item;*/
+    }
+
+
+
+    ol.mainheadings>li {
+      display: block;
+      position: relative;
+    }
+
+    ol.mainheadings>li:before {
+      content: counters(item, ".") " ";
+      counter-increment: item;
+      margin-left: -35px;
+      position: absolute;
+      top: 0;
+      font-weight: 400;
+      font-size: 1em;
+    }
+
+    ol.mainheadings>li>h3 {
+
+      padding-left: 0px;
+      line-height: 1.25;
+
+    }
+
+    /* styling the big top headings */
+    ol.topheadings>li:before {
+
+      font-weight: 500;
+      font-size: 1.55rem;
+    }
+
+    /* Checked and unchecked bullet list items */
+    li.checked {
+
+      list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='24' height='24' viewBox='0 -1 24 20'><path d='M18.25%2C3%20C19.7687831%2C3%2021%2C4.23121694%2021%2C5.75%20L21%2C18.25%20C21%2C19.7687831%2019.7687831%2C21%2018.25%2C21%20L5.75%2C21%20C4.23121694%2C21%203%2C19.7687831%203%2C18.25%20L3%2C5.75%20C3%2C4.23121694%204.23121694%2C3%205.75%2C3%20L18.25%2C3%20Z%20M18.25%2C4.5%20L5.75%2C4.5%20C5.05964406%2C4.5%204.5%2C5.05964406%204.5%2C5.75%20L4.5%2C18.25%20C4.5%2C18.9403559%205.05964406%2C19.5%205.75%2C19.5%20L18.25%2C19.5%20C18.9403559%2C19.5%2019.5%2C18.9403559%2019.5%2C18.25%20L19.5%2C5.75%20C19.5%2C5.05964406%2018.9403559%2C4.5%2018.25%2C4.5%20Z%20M10%2C14.4393398%20L16.4696699%2C7.96966991%20C16.7625631%2C7.6767767%2017.2374369%2C7.6767767%2017.5303301%2C7.96966991%20C17.7965966%2C8.23593648%2017.8208027%2C8.65260016%2017.6029482%2C8.94621165%20L17.5303301%2C9.03033009%20L10.5303301%2C16.0303301%20C10.2640635%2C16.2965966%209.84739984%2C16.3208027%209.55378835%2C16.1029482%20L9.46966991%2C16.0303301%20L6.46966991%2C13.0303301%20C6.1767767%2C12.7374369%206.1767767%2C12.2625631%206.46966991%2C11.9696699%20C6.73593648%2C11.7034034%207.15260016%2C11.6791973%207.44621165%2C11.8970518%20L7.53033009%2C11.9696699%20L10%2C14.4393398%20L16.4696699%2C7.96966991%20L10%2C14.4393398%20Z'/></svg>");
+      /*
+			list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='16' height='16' viewBox='0 0 24 24'><path d='M18.25,3 C19.7687831,3 21,4.23121694 21,5.75 L21,18.25 C21,19.7687831 19.7687831,21 18.25,21 L5.75,21 C4.23121694,21 3,19.7687831 3,18.25 L3,5.75 C3,4.23121694 4.23121694,3 5.75,3 L18.25,3 Z M18.25,4.5 L5.75,4.5 C5.05964406,4.5 4.5,5.05964406 4.5,5.75 L4.5,18.25 C4.5,18.9403559 5.05964406,19.5 5.75,19.5 L18.25,19.5 C18.9403559,19.5 19.5,18.9403559 19.5,18.25 L19.5,5.75 C19.5,5.05964406 18.9403559,4.5 18.25,4.5 Z M10,14.4393398 L16.4696699,7.96966991 C16.7625631,7.6767767 17.2374369,7.6767767 17.5303301,7.96966991 C17.7965966,8.23593648 17.8208027,8.65260016 17.6029482,8.94621165 L17.5303301,9.03033009 L10.5303301,16.0303301 C10.2640635,16.2965966 9.84739984,16.3208027 9.55378835,16.1029482 L9.46966991,16.0303301 L6.46966991,13.0303301 C6.1767767,12.7374369 6.1767767,12.2625631 6.46966991,11.9696699 C6.73593648,11.7034034 7.15260016,11.6791973 7.44621165,11.8970518 L7.53033009,11.9696699 L10,14.4393398 L16.4696699,7.96966991 L10,14.4393398 Z'/></svg>");
+			*/
+    }
+
+    li.unchecked {
+
+      list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='24' height='24' viewBox='0 -1 24 20'><path d='M5.75%2C3%20L18.25%2C3%20C19.7687831%2C3%2021%2C4.23121694%2021%2C5.75%20L21%2C18.25%20C21%2C19.7687831%2019.7687831%2C21%2018.25%2C21%20L5.75%2C21%20C4.23121694%2C21%203%2C19.7687831%203%2C18.25%20L3%2C5.75%20C3%2C4.23121694%204.23121694%2C3%205.75%2C3%20Z%20M5.75%2C4.5%20C5.05964406%2C4.5%204.5%2C5.05964406%204.5%2C5.75%20L4.5%2C18.25%20C4.5%2C18.9403559%205.05964406%2C19.5%205.75%2C19.5%20L18.25%2C19.5%20C18.9403559%2C19.5%2019.5%2C18.9403559%2019.5%2C18.25%20L19.5%2C5.75%20C19.5%2C5.05964406%2018.9403559%2C4.5%2018.25%2C4.5%20L5.75%2C4.5%20Z'/></svg>");
+      /*
+			list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='16' height='16' viewBox='0 0 24 24'><path d='M5.75,3 L18.25,3 C19.7687831,3 21,4.23121694 21,5.75 L21,18.25 C21,19.7687831 19.7687831,21 18.25,21 L5.75,21 C4.23121694,21 3,19.7687831 3,18.25 L3,5.75 C3,4.23121694 4.23121694,3 5.75,3 Z M5.75,4.5 C5.05964406,4.5 4.5,5.05964406 4.5,5.75 L4.5,18.25 C4.5,18.9403559 5.05964406,19.5 5.75,19.5 L18.25,19.5 C18.9403559,19.5 19.5,18.9403559 19.5,18.25 L19.5,5.75 C19.5,5.05964406 18.9403559,4.5 18.25,4.5 L5.75,4.5 Z'/></svg>");
+			*/
+    }
+
+    #output .custom-sign {
+      font-family: 'Sacramento', cursive !important;
+      font-style: italic !important;
+      background: none !important;
+      color: black !important;
+      font-size: 2rem !important;
+      font-weight: normal !important;
+      padding: 0 !important;
+      border-bottom: 1px solid #000000;
+    }
+
+    .form-container {
+      padding: 1em;
+    }
+
+    .uline {
+      border-bottom: 1px solid #000000;
+      width: max-content;
+      min-width: 5%;
+      display: inline-block;
+      text-align: center;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-left: 3px;
+      margin-right: 3px;
+      font-weight: 700 !important;
+      padding-bottom: 0;
+    }
+
+    .due {
+      background-color: #efeded;
+      padding: 8px;
+      font-weight: bold;
+      display: inline-block;
+      width: max-content;
+      min-width: 200px;
+      margin-top: 8px;
+    }
+
+    .custom-table td {
+      padding: 1em;
+      text-align: center;
+    }
+
+    .meshid-info-div {
+      display: flex;
+      margin-bottom: 2.5em;
+      border: 3px solid black;
+    }
+
+    .meshid-info-column {
+      background-color: white;
+      position: relative;
+    }
+
+    .cell {
+      width: 100%;
+      min-height: 80px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+    }
+
+
+    .uk-statement li {
+      margin-bottom: 1em;
+    }
+
+    .uk-statement span {
+      margin-right: 1em;
+    }
+
+
+    .meshid {
+      padding-top: 2em;
+    }
+
+    .meshid .cell {
+      font-size: 0.9rem;
+    }
+
+    .meshid-info-column .cell {
+      border-bottom: 2px solid black;
+      border-left: 2px solid black;
+    }
+
+    .meshid-info-div .meshid-info-column:first-child .cell {
+      border-left: none;
+    }
+
+    .meshid-info-column .cell:last-child {
+      border-bottom: none;
+    }
+
+    .misc .meshid-info-column:first-child .cell {
+      border-left: 3px solid black;
+    }
+
+    .misc .meshid-info-column div:first-child {
+      border-bottom: 3px solid black;
+    }
+
+    .misc .meshid-info-column .cell:last-child {
+      border-bottom: 3px solid black;
+    }
+
+    .misc .meshid-info-column:last-child .cell {
+      border-right: 3px solid black;
+    }
+
+    #output .title-div {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    .title-p {
+      color: #2E4F4F;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .title-logo {
+      width: 17%;
+      transform: translateX(10px);
+
+    }
+
+    .meshid-source-of-funds {
+      display: flex;
+      width: 100%;
+      height: 250px;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .meshid-source-of-funds svg {
+      transform: translateY(-2px);
+    }
+
+    .meshid-table {
+      border: 3px solid black;
+      border-collapse: collapse;
+      margin-bottom: 3em;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+
+    .meshid-table td {
+      border: 2px solid black;
+      padding: 10px 15px;
+    }
+
+    .meshid-table th {
+      border: 2px solid black;
+      padding: 1em 15px;
+    }
+
+    .form-wrapper {
+      max-width: 1080px !important;
+    }
+
+    #output input[type='text'],
+    #output input[type='text']:disabled,
+    #output .custom-textarea {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 12px 0px;
+      text-indent: 10px;
+      min-height: 50px;
+      border-top: none;
+      border-right: none;
+      border-bottom: none;
+      border-left: 9px solid;
+      border-color: #383838;
+      border-radius: 0px !important;
+      background: rgb(54 121 161 / 4%) !important;
+      color: #383838;
+      font-size: 16px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      transition: border-color .3s;
+      appearance: none;
+    }
+
+    #output .custom-textarea{
+      text-indent: 0px !important;
+      padding: 12px;
+
+    }
+
+    #output .info-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    #output label{
+      font-size: 1rem;
+      font-weight: 700;
+      /* pointer-events: none !important; */
+      color: #383838;
+    }
+
+    #output input[type='radio']{
+      accent-color: #383838!important;
+      height: 15px;
+      width: 15px;
+      transform: translateY(3px);
+      
+      /* pointer-events: none !important; */
+    }
+
+#output .custom-radio{
+ position: relative;
+}
+
+
+#output .radio-input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#output .radio-label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+#output .radio-label {
+  font-weight: normal;
+}
+
+#output .radio-label:before{
+  content: "";
+  position: absolute;
+  top: 4px ;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 2px solid #383838;
+  border-radius: 50%;
+}
+
+
+#output table .radio-label:before{
+  top: 8px;
+}
+
+#output table th, #output table tr td:first-child {
+  font-weight: 700;
+}
+
+#output .radio-input:checked + .radio-label:before {
+  background-color: #fff;
+  border: 6px solid #383838;
+}
+
+#output .custom-checkbox.radio-label:before{
+  border-radius: 0%;
+}
+#output .page-title{
+  background: linear-gradient(90deg, rgba(17,81,85,1) 0%, rgba(18,93,98,1) 50%, rgb(118 176 180) 100%) !important;
+  padding: 10px;
+  width: 450px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 50px;
+}
+
+#output .page-title h4{
+  font-size: 1.1rem;
+  text-align: left;
+}
+  
+#output textarea{
+  width: 100%;
+  padding: 0;
+}
+
+
+#output th,
+#output td{
+      border: 3px solid;
+      border-color: #383838;
+      border-radius: 0px !important;
+      background: rgb(54 121 161 / 4%) !important;
+      padding: 10px;
+}
+
+#output td .radio-label::before {
+    transform: translate(25%, 50%);
+    top: 0px;
+}
+
+#output .target td .radio-label::before {
+    transform: translate(25%, -50%);
+}
+
+#output .custom-russian td .radio-label::before {
+  top: -4px;
+}
+
+#output th, tr,td{
+  color: #383838;
+
+}
+
+#output .page-logo{
+  display: flex;
+  margin-bottom: 25px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+
+
+
+/* Rating  */
+  
+.custom-rating input { display: none; } 
+ .custom-rating span:before { 
+   margin: 5px;
+   font-size: 2.25rem;
+   font-family: FontAwesome;
+   display: inline-block;
+   content: "\f005";
+ }
+
+
+ .custom-rating span { 
+   color: #ddd; 
+   pointer-events: none;
+ }
+
+
+ /***** CSS Magic to Highlight Stars on Hover *****/
+ .custom-rating .full span,
+ .custom-rating input:checked ~ span, /* show gold star when clicked */
+ .custom-rating:not(:checked) span:hover, /* hover current star */
+ .custom-rating:not(:checked) span:hover ~ span { color: #FFD700;  } /* hover previous stars in list */
+
+ 
+ .custom-rating .full span:hover,
+ .custom-rating input:checked + span:hover, /* hover current star when changing rating */
+ .custom-rating input:checked ~ span:hover,
+ .custom-rating span:hover ~ input:checked ~ span, /* lighten current selection */
+ .custom-rating input:checked ~ span:hover ~ span { color: #FFED85;  }
+    
+  </style>
+</head>
+
+
+
+<body class="content">
+
+  <section id="output">
+
+
+
+
+
+    <!-- !!! STANDARD FIRST PAGE !!! -->
+    <section>
+      <!-- GRAY HEADER -->
+      <section class="grey-bg-header mx-4 hide-in-app">
+        <h2 class="header-title mx-4">Signing log</h2>
+        <div class="header-elements mt-3  d-flex mx-4">
+          <div class="header-element d-flex">
+            <div class="header-element-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 18 19">
+                <g fill="none" fill-rule="evenodd">
+                  <g fill="#1F94A5" fill-rule="nonzero" stroke="#FFF">
+                    <g>
+                      <path
+                        d="M8 4.5c2.348 0 4.473.96 6.012 2.51 1.537 1.55 2.488 3.692 2.488 6.057s-.951 4.506-2.488 6.056c-1.539 1.552-3.664 2.511-6.012 2.511-2.348 0-4.473-.959-6.012-2.51C.451 17.573-.5 15.431-.5 13.066s.951-4.506 2.488-6.056C3.527 5.459 5.652 4.5 8 4.5zm3.568 5.3l-4.809 4.848-2.266-2.286-.71.715L6.76 16.08l5.518-5.565-.71-.716z"
+                        transform="translate(-47 -175) translate(48 171)" />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="header-element-right">
+              <div class="header-element-title">Contract generated</div>
+              <div class="header-element-content">{{createdOn}}</div>
+            </div>
+          </div>
+          <div class="header-element d-flex">
+            <div class="header-element-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 18 19">
+                <g fill="none" fill-rule="evenodd">
+                  <g fill="#1F94A5" fill-rule="nonzero" stroke="#FFF">
+                    <g>
+                      <path
+                        d="M8 4.5c2.348 0 4.473.96 6.012 2.51 1.537 1.55 2.488 3.692 2.488 6.057s-.951 4.506-2.488 6.056c-1.539 1.552-3.664 2.511-6.012 2.511-2.348 0-4.473-.959-6.012-2.51C.451 17.573-.5 15.431-.5 13.066s.951-4.506 2.488-6.056C3.527 5.459 5.652 4.5 8 4.5zm3.568 5.3l-4.809 4.848-2.266-2.286-.71.715L6.76 16.08l5.518-5.565-.71-.716z"
+                        transform="translate(-47 -175) translate(48 171)" />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="header-element-right">
+              <div class="header-element-title">Contract signed</div>
+              <div class="header-element-content">{{#if signedOn}}{{signedOn}} {{else}} <em>(Deze wordt ingevuld tijdens het ondertekenen)</em>{{/if}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="top-borders"></div>
+        <div class="bottom-borders"></div>
+      </section>
+
+      <!-- Signer Details -->
+      <section class="mx-5 potential-hits-container hide-in-app">
+        <h2 class="mx-1 mb-3">Personal information of the signer</h2>
+        <div class="hit-list d-flex justify-content-between">
+          <div class="hit px-1">
+
+            <div class="hit-wrapper">
+              <div class="hit-property-label">First name: </div>
+              <div class="hit-property-value">{{tabContainerComp.signeeFirst}}</div>
+            </div>
+
+
+            <div class="hit-wrapper">
+              <div class="hit-property-label">Last name: </div>
+              <div class="hit-property-value">{{tabContainerComp.signeeLast}}</div>
+            </div>
+
+            <div class="hit-wrapper">
+              <div class="hit-property-label">Email: </div>
+              <div class="hit-property-value">{{tabContainerComp.signeeEmail}}</div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <section class="mx-5 potential-hits-container hide-in-app">
+        <h2 class="mx-1  mb-3">Device info of the signer</h2>
+        <div class="hit-list d-flex justify-content-between">
+          <div class="hit px-1">
+            <div class="hit-wrapper">
+              <div class="hit-property-label">IP Address: </div>
+              <div class="hit-property-value">{{ipAddress}}</div>
+            </div>
+            <div class="hit-wrapper">
+              <div class="hit-property-label">User Agent: </div>
+              <div class="hit-property-value">{{userAgent}}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+      <section style="position: absolute; transform: translateY(25px);" class="mt-auto verification-info hide-in-app"  >
+      <h2>Contract unique identifier</h2>
+        <h3>
+          {{verificationKey}}
+        </h3>  
+      </section>
+      <section class="hide-in-app" style="height: 250px;">
+      </section>
+      </section>
+
+
+
+  
+    </section>
+    <!-- !!! EOF: STANDARD FIRST PAGE !!! -->
+
+    <!-- PAGE BREAK  -->
+    <div style="page-break-after:always;" class="hide-in-app"></div>
+    <!----------------->
+
+
+    {{#with tabContainerComp}}
+
+   
+
+<section>
+
+  <div class="page-logo">
+
+       <img src="https://www.alphagroup.com/wp-content/themes/alphafx-v2/images/logo.svg" width="5%">
+
+  </div>
+
+  <h4 class="mt-1 text-center font-weight-bold" style="color: #383838">Onboarding information and documents checklist requirements</h4>
+
+  
+
+        <div class="title-div">
+          <p class="page-title" >General questions
+          </p>
+        </div>
+
+
+
+
+<div class="info-container">
+
+<div>
+  <label>Legal entity name
+  </label> 
+  <input disabled type='text' value="{{MID_LP_Name}}">
+</div>
+
+<div>
+  <label>Entity registration number
+  </label> 
+  <input disabled type='text' value="{{MID_LP_Number}}">
+</div>
+
+</div>
+
+
+
+<div class="info-container">
+
+<div>
+  
+
+  <label>What is the typology of the entity?</label> 
+
+
+  <div>
+
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo MID_LP_Type 'a')}} checked {{/if}} >
+    <label class="radio-label">General Partner (GP)</label>
+  </div>
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo MID_LP_Type 'b')}} checked {{/if}} >
+    <label class="radio-label">Investment Manager/Corporate Service Provider/Fund Administrator</label>
+  </div>
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo MID_LP_Type 'c')}} checked {{/if}} >
+    <label class="radio-label">Limited Partnership (LP)/Fund/Sub-fund/SICAV/Compartment</label>
+  </div>
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo MID_LP_Type 'd')}} checked {{/if}} >
+    <label class="radio-label">Special Purpose Vehicle/Holdco (Fund above structure)</label>
+  </div>
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo MID_LP_Type 'e')}} checked {{/if}} >
+    <label class="radio-label">Special Purpose Vehicle/Holdco (No fund above structure)</label>
+  </div>
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo MID_LP_Type 'f')}} checked {{/if}} >
+    <label class="radio-label">Trust/Foundation/Stichting</label>
+  </div>
+
+  
+  
+</div>
+  
+  
+</div>
+
+</div>
+
+
+
+<div class="info-container">
+
+  <div>
+    <label>Please specify the jurisdiction of incorporation of the entity
+    </label> 
+    <input disabled type='text' value="{{MID_LP_Country_Of_Registration}}">
+  </div>
+  
+  </div>
+
+
+
+</section>
+<!-- PAGE BREAK  -->
+<div style="page-break-after:always;" class="hide-in-app"></div>
+<!----------------->
+<section>
+
+
+        <div class="title-div">
+          <p class="page-title" >Intended payment activity
+          </p>
+    </div>
+
+    <div>
+
+
+    <h5 class="text-center font-weight-bold" style="color: #383838;" >Type of payments you are expecting to receive into the account
+    </h5>
+  <br>
+
+        
+  <div class="info-container">
+    <div>
+      {{#with receive}}
+
+
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th></th>
+          
+          <th style="text-align: center;">Yes</th>
+          
+          <th style="text-align: center;">No</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr> 
+          <td><label id="label_27_row_0">Operational Payments<br><br><span style="display: inline !important;">- Legal, admin/management/performance fees, loan payments</span><br></label></td>
+          
+          <td style="text-align: center;">
+            <input class="radio-input"  ref="input" id="receive-a-yes" value="yes" name="data[tabContainerComp][receive][a]" type="radio" {{#if (equalsTo a 'yes')}} checked {{/if}}>
+            <label class="radio-label"></label>
+
+          </td>
+          
+          
+          <td style="text-align: center;" >
+            <input class="radio-input"  ref="input" id="receive-a-no" value="no" name="data[tabContainerComp][receive][a]" type="radio" {{#if (equalsTo a 'no')}} checked {{/if}}>
+            <label class="radio-label"></label>
+
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td><label id="label_27_row_1"><span style="display: inline !important;">Investors/</span><span style="display: inline !important;">UBOs/</span><span style="display: inline !important;">Lenders directly</span><br><br><span style="display: inline !important;">- Capital calls, subscriptions, commitment from investors, UBOs, note or bond holders</span></label></td>
+          
+          <td style="text-align: center;">
+            <input class="radio-input"  ref="input" id="receive-b-yes" value="yes" name="data[tabContainerComp][receive][b]" type="radio" {{#if (equalsTo b 'yes')}} checked {{/if}}>
+            <label class="radio-label"></label>
+
+          </td>
+          
+          <td  style="text-align: center;">
+            <input class="radio-input"  ref="input" id="receive-b-no" value="no" name="data[tabContainerComp][receive][b]" type="radio" {{#if (equalsTo b 'no')}} checked {{/if}}>
+            <label class="radio-label"></label>
+
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td><label id="label_27_row_2"><span style="display: inline !important;">Investors/</span><span style="display: inline !important;">UBOs/</span><span style="display: inline !important;">Lenders through an intermediate entity in the structure</span><br><br><span style="display: inline !important;">-</span><span style="display: inline !important;"> Capital calls, subscriptions, commitment from investors, UBOs, note or bond holders</span></label></td>
+          
+          <td  style="text-align: center;">
+            <input class="radio-input" ref="input" id="receive-c-yes" value="yes" name="data[tabContainerComp][receive][c]" type="radio" {{#if (equalsTo c 'yes')}} checked {{/if}}>
+            <label class="radio-label"></label>
+
+          </td>
+          
+          <td  style="text-align: center;">
+            <input class="radio-input" ref="input" id="receive-c-no" value="no" name="data[tabContainerComp][receive][c]" type="radio" {{#if (equalsTo c 'no')}} checked {{/if}}>
+            <label class="radio-label"></label>
+
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td><label id="label_27_row_3"><span style="display: inline !important;">Investment Capital/Funding directly</span><br><br><span style="display: inline !important;">- Proceeds from sale of assets, Dividends, Interest, Rental income</span></label></td>
+          
+          <td style="text-align: center;">
+            <input class="radio-input" ref="input" id="receive-d-yes" value="yes" name="data[tabContainerComp][receive][d]" type="radio" {{#if (equalsTo d 'yes')}} checked {{/if}}>
+            <label class="radio-label"></label>
+
+          </td>
+          
+          <td style="text-align: center;">
+            <input class="radio-input" ref="input" id="receive-d-no" value="no" name="data[tabContainerComp][receive][d]" type="radio" {{#if (equalsTo d 'no')}} checked {{/if}}>
+            <label class="radio-label"></label>
+
+          </td>
+          
+        </tr>
+        
+        <tr>
+          <td><label id="label_27_row_4"><span style="display: inline !important;">Investment Capital/Funding</span><span style="display: inline !important;"> through an intermediate entity in the structure</span><br><br><span style="display: inline !important;">- Proceeds from sale of assets, Dividends, Interest, Rental income</span></label></td>
+          
+          <td style="text-align: center;">
+            <input class="radio-input"  ref="input" id="receive-e-yes" value="yes" name="data[tabContainerComp][receive][e]" type="radio" {{#if (equalsTo e 'yes')}} checked {{/if}}>
+            <label class="radio-label"></label>
+
+          </td>
+          
+          <td style="text-align: center;">
+            <input class="radio-input"  ref="input" id="receive-e-no" value="no" name="data[tabContainerComp][receive][e]" type="radio" {{#if (equalsTo e 'no')}} checked {{/if}}>
+            <label class="radio-label"></label>
+
+          </td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+
+       {{/with}}
+    </div>
+
+  </div>
+
+</div>
+
+<div>
+
+
+
+  <h5 class="text-center font-weight-bold" style="color: #383838;" >Type of payments you are expecting to pay out of the account
+  </h5>
+
+  <br>
+
+<div class="info-container">
+  <div>
+    {{#with pay}}
+
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th></th>
+        
+        <th style="text-align: center;">Yes</th>
+        
+        <th style="text-align: center;">No</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr> 
+        <td><label id="label_27_row_0">Operational Payments<br><br><span style="display: inline !important;">- Legal, admin/management/performance fees, loan payments</span><br></label></td>
+        
+        <td style="text-align: center;">
+          <input class="radio-input"  ref="input" id="pay-a-yes" value="yes" name="data[tabContainerComp][pay][a]" type="radio" {{#if (equalsTo a 'yes')}} checked {{/if}}>
+          <label class="radio-label"></label>
+
+        </td>
+        
+        
+        <td style="text-align: center;" >
+          <input class="radio-input"  ref="input" id="pay-a-no" value="no" name="data[tabContainerComp][pay][a]" type="radio" {{#if (equalsTo a 'no')}} checked {{/if}}>
+          <label class="radio-label"></label>
+
+        </td>
+        
+      </tr>
+      
+      <tr>
+        <td><label id="label_27_row_1"><span style="display: inline !important;">Investors/</span><span style="display: inline !important;">UBOs/</span><span style="display: inline !important;">Lenders directly</span><br><br><span style="display: inline !important;">- Capital calls, subscriptions, commitment from investors, UBOs, note or bond holders</span></label></td>
+        
+        <td style="text-align: center;">
+          <input class="radio-input"  ref="input" id="pay-b-yes" value="yes" name="data[tabContainerComp][pay][b]" type="radio" {{#if (equalsTo b 'yes')}} checked {{/if}}>
+          <label class="radio-label"></label>
+
+        </td>
+        
+        <td  style="text-align: center;">
+          <input class="radio-input"  ref="input" id="pay-b-no" value="no" name="data[tabContainerComp][pay][b]" type="radio" {{#if (equalsTo b 'no')}} checked {{/if}}>
+          <label class="radio-label"></label>
+
+        </td>
+        
+      </tr>
+      
+      <tr>
+        <td><label id="label_27_row_2"><span style="display: inline !important;">Investors/</span><span style="display: inline !important;">UBOs/</span><span style="display: inline !important;">Lenders through an intermediate entity in the structure</span><br><br><span style="display: inline !important;">-</span><span style="display: inline !important;">  Redemptions, Return on investments, Dividends, Interest</span></label></td>
+        
+        <td  style="text-align: center;">
+          <input class="radio-input" ref="input" id="pay-c-yes" value="yes" name="data[tabContainerComp][pay][c]" type="radio" {{#if (equalsTo c 'yes')}} checked {{/if}}>
+          <label class="radio-label"></label>
+
+        </td>
+        
+        <td  style="text-align: center;">
+          <input class="radio-input" ref="input" id="pay-c-no" value="no" name="data[tabContainerComp][pay][c]" type="radio" {{#if (equalsTo c 'no')}} checked {{/if}}>
+          <label class="radio-label"></label>
+
+        </td>
+        
+      </tr>
+      
+      <tr>
+        <td><label id="label_27_row_3"><span style="display: inline !important;">Investment Capital/Funding directly</span><br><br><span style="display: inline !important;">- Acquisitions, Investment deals</span></label></td>
+        
+        <td style="text-align: center;">
+          <input class="radio-input" ref="input" id="pay-d-yes" value="yes" name="data[tabContainerComp][pay][d]" type="radio" {{#if (equalsTo d 'yes')}} checked {{/if}}>
+          <label class="radio-label"></label>
+
+        </td>
+        
+        <td style="text-align: center;">
+          <input class="radio-input" ref="input" id="pay-d-no" value="no" name="data[tabContainerComp][pay][d]" type="radio" {{#if (equalsTo d 'no')}} checked {{/if}}>
+          <label class="radio-label"></label>
+
+        </td>
+        
+      </tr>
+      
+      <tr>
+        <td><label id="label_27_row_4"><span style="display: inline !important;">Investment Capital/Funding</span><span style="display: inline !important;"> through an intermediate entity in the structure</span><br><br><span style="display: inline !important;">- Acquisitions, Investment deals</span></label></td>
+        
+        <td style="text-align: center;">
+          <input class="radio-input"  ref="input" id="pay-e-yes" value="yes" name="data[tabContainerComp][pay][e]" type="radio" {{#if (equalsTo e 'yes')}} checked {{/if}}>
+          <label class="radio-label"></label>
+
+        </td>
+        
+        <td style="text-align: center;">
+          <input class="radio-input"  ref="input" id="pay-e-no" value="no" name="data[tabContainerComp][pay][e]" type="radio" {{#if (equalsTo e 'no')}} checked {{/if}}>
+          <label class="radio-label"></label>
+
+        </td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+
+     {{/with}}
+  </div>
+
+</div>
+
+  
+</div>
+  
+  
+</section>
+<!-- PAGE BREAK  -->
+<div style="page-break-after:always;" class="hide-in-app"></div>
+<!----------------->
+<section>
+
+  <div class="title-div">
+    <p class="page-title" >Payment flow
+    </p>
+</div>
+
+
+<div>
+
+
+  <label for="">Do you know the approximate number of transactions and the approximate amount to be funded into the Alpha account within the first year?</label>
+
+<div class="info-container" style="display: flex;">
+
+
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo pfA 'yes')}} checked {{/if}} >
+    <label class="radio-label">Yes</label>
+  </div>
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo pfA 'no')}} checked {{/if}} >
+    <label class="radio-label">No</label>
+  </div>
+
+</div>
+
+</div>
+
+{{#if (equalsTo pfA 'yes')}}  
+
+<div class="info-container">
+
+  <div>
+    <label>For the first year, please provide the approximate number of transactions into the Alpha account 
+    </label> 
+    <input disabled type='text' value="{{numOfTransactions}}">
+  </div>
+  
+  <div>
+    <label>For the first year, please provide the approximate amount to be funded into the Alpha account
+
+    </label> 
+    <input disabled type='text' value="{{total}}">
+  </div>
+  
+</div>
+
+
+{{else}}
+
+
+<div class="info-container">
+
+
+<div ref="html" class=""><p style="background: hsla(152, 93%, 11%, 0.07); padding: 7px; font-weight:700; text-align: justify; color: #383838;">Please note: If not yet known (frequency and approximate value), the account will be restricted until expected payment portfolio is identified.
+</p></div>
+
+</div>
+
+{{/if}}
+
+{{#if detailTransactions}}  
+
+<div>
+  
+  <label>Please specify any further detail on the expected transactions within the first year</label>  
+  <div class="custom-textarea info-container">   
+    {{detailTransactions}}</div>
+</div>
+
+{{/if}}
+
+<div>
+
+
+  <label for="">Is there an upcoming investment, divestment or other type of deal?</label>
+
+<div class="info-container" style="display: flex;">
+
+
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo pfC 'yes')}} checked {{/if}} >
+    <label class="radio-label">Yes</label>
+  </div>
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo pfC 'no')}} checked {{/if}} >
+    <label class="radio-label">No</label>
+  </div>
+
+</div>
+
+</div>
+
+{{#if (equalsTo pfC 'yes')}} 
+
+
+  <div>
+  
+    <label>Please specify any further detail on the expected transactions within the first year</label>  
+    <div class="custom-textarea info-container">   
+      {{pfD}}</div>
+  </div>
+  
+  <div>
+    <label>Approximate deal date
+    </label> 
+    <input disabled type='text' value="{{dealDateFormatted}}">
+  </div>
+  
+</div>
+
+
+{{/if}}
+  
+ </section>
+ <!-- PAGE BREAK  -->
+<div style="page-break-after:always;" class="hide-in-app"></div>
+<!----------------->
+
+<section>
+
+  <div class="title-div">
+    <p class="page-title" >PEP's, Sanctions & State Ownership
+
+    </p>
+</div>
+
+  <div class="info-container">
+
+    <div>
+  
+
+      <label>Please select if any of these are known within the structure</label> 
+    
+    
+      <div>
+    
+      <div style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if pepSancState.a}} checked {{/if}} >
+        <label class="custom-checkbox radio-label">PEP's
+        </label>
+      </div>
+      <div style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if pepSancState.b}} checked {{/if}} >
+        <label class="custom-checkbox radio-label">Sanctions
+        </label>
+      </div>
+      <div style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if pepSancState.c}} checked {{/if}} >
+        <label class="custom-checkbox radio-label">State Ownership
+        </label>
+      </div>
+      <div style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if pepSancState.d}} checked {{/if}} >
+        <label class="custom-checkbox radio-label">Not Applicable
+        </label>
+      </div>
+
+  </div>
+
+  </div>
+
+  </div>
+
+  {{#if pepSancState.a}} 
+
+  <div>
+
+  <div class="title-div">
+    <p class="page-title" >PEP's
+
+    </p>
+</div>
+
+  {{#each pePs}}
+
+  <table style="border: 1px solid #383838; width: 100%; margin-bottom: 10px;">
+    <tr>
+      <th colspan="2">
+        {{pepNo}}
+      </th>
+    </tr>
+    <tr>
+      <td style="width: 20%;">
+        Name
+      </td>
+      <td>
+    {{first}} {{Last}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Ownership 
+      </td>
+      <td>
+        {{ownership}}% 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Direct/Indirect
+      </td>
+      <td>
+        {{type}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Role 
+      </td>
+      <td>
+        {{role}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        PEP Class 
+      </td>
+      <td>
+       {{class}}
+      </td>
+    </tr>
+  </table>
+    
+  {{/each}}
+
+</div>
+
+  {{/if}}
+
+</section>
+
+
+<!-- PAGE BREAK  -->
+<div style="page-break-after:always;" class="hide-in-app"></div>
+<!----------------->
+
+<section>
+
+  {{#if pepSancState.b}} 
+
+  <div>
+
+  <div class="title-div">
+    <p class="page-title" >Sanctions
+    </p>
+</div>
+
+  {{#each sanctions}}
+
+  <table style="border: 1px solid #383838; width: 100%; margin-bottom: 10px;">
+    <tr>
+      <th colspan="2">
+        {{sancNo}}
+      </th>
+    </tr>
+    <tr>
+      <td style="width: 20%;">
+        Name
+      </td>
+      <td>
+    {{first}} {{Last}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Ownership 
+      </td>
+      <td>
+        {{ownership}}% 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Direct/Indirect
+      </td>
+      <td>
+        {{type}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Role 
+      </td>
+      <td>
+        {{role}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Sanction type
+      </td>
+      <td>
+       {{sancType}}
+      </td>
+    </tr>
+  </table>
+    
+  {{/each}}
+
+</div>
+
+  {{/if}}
+  {{#if pepSancState.c}} 
+
+  <div>
+
+  <div class="title-div">
+    <p class="page-title" >State Owned Entity
+    </p>
+</div>
+
+  {{#each state}}
+
+  <table style="border: 1px solid #383838; width: 100%; margin-bottom: 10px;">
+    <tr>
+      <th colspan="2">
+        {{stateNo}}
+      </th>
+    </tr>
+    <tr>
+      <td style="width: 20%;">
+        Name of entity
+      </td>
+      <td>
+        {{name}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        State Ownership
+      </td>
+      <td>
+        {{ownership}}% 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        State of Ownership
+      </td>
+      <td>
+        {{country}}
+      </td>
+    </tr>
+
+  </table>
+
+  {{/each}}
+
+</div>
+
+  {{/if}}
+
+
+</section>
+
+<!-- PAGE BREAK  -->
+<div style="page-break-after:always;" class="hide-in-app"></div>
+<!----------------->
+
+<section>
+
+  
+  <div class="title-div">
+    <p class="page-title" >Russian, Belarusian or Ukrainian involvement
+    </p>
+</div>
+
+<div>
+
+  
+
+  <label for="">Is there any known Russian, Belarusian or Ukrainian involvement?</label>
+
+<div class="info-container" style="display: flex;">
+
+
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo involvement 'yes')}} checked {{/if}} >
+    <label class="radio-label">Yes</label>
+  </div>
+  <div class="custom-radio" style="margin-right: 18px;">
+    <input type="radio" class="radio-input" {{#if (equalsTo involvement 'no')}} checked {{/if}} >
+    <label class="radio-label">No</label>
+  </div>
+
+</div>
+
+</div>
+
+
+{{#if (equalsTo involvement 'yes')}}
+
+
+<h5 class="text-center font-weight-bold" style="color: #383838;" >Roles and Countries
+</h5>
+<br>
+
+{{#each roles}}
+
+<table style="border: 1px solid #383838; width: 100%; margin-bottom: 10px;" class="custom-russian">
+  <tr>
+    <th colspan="2">
+      {{roleNo}}
+    </th>
+  </tr>
+  <tr>
+    <td style="width: 20%;">
+     Role
+    </td>
+    <td>
+      {{role}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Country
+    </td>
+    <td>
+
+
+      {{country}}
+
+    </td>
+
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+ <div style="display: flex; flex-direction: column; justify-content: center; ">
+
+ 
+       
+
+        
+        <div class="custom-radio" style=" display: inline;">
+          <input type="radio" class="radio-input" {{#if pobRes.a}} checked {{/if}} >
+          <label class="custom-checkbox radio-label" style="margin-bottom: 0;">Place of Birth</label>
+        </div>
+        <div class="custom-radio" style=" display: inline;">
+          <input type="radio" class="radio-input" {{#if pobRes.b}} checked {{/if}} >
+          <label class="custom-checkbox radio-label" style="margin-bottom: 0;">Residence</label>
+        </div>
+      
+      
+      </div>
+      </td>
+    </tr>
+    
+     
+
+    
+
+
+</table>
+
+
+
+
+ 
+  {{/each}}
+
+{{/if}}
+
+</section>
+
+<section>
+
+
+  <div class="title-div">
+    <p class="page-title" >Ownership
+    </p>
+</div>
+
+
+  <div>
+
+
+    <label for="">Are any Trusts or Foundations with 25% or more, ownership of the entity?</label>
+  
+  <div class="info-container" style="display: flex;">
+  
+  
+    <div class="custom-radio" style="margin-right: 18px;">
+      <input type="radio" class="radio-input" {{#if (equalsTo ownershipA 'yes')}} checked {{/if}} >
+      <label class="radio-label">Yes</label>
+    </div>
+    <div class="custom-radio" style="margin-right: 18px;">
+      <input type="radio" class="radio-input" {{#if (equalsTo ownershipA 'no')}} checked {{/if}} >
+      <label class="radio-label">No</label>
+    </div>
+  
+  </div>
+  
+  </div>
+
+  <div>
+
+
+    <label for="">Are there any nominee Shareholders, holding 25% or more?</label>
+  
+  <div class="info-container" style="display: flex;">
+  
+  
+    <div class="custom-radio" style="margin-right: 18px;">
+      <input type="radio" class="radio-input" {{#if (equalsTo ownershipB 'yes')}} checked {{/if}} >
+      <label class="radio-label">Yes</label>
+    </div>
+    <div class="custom-radio" style="margin-right: 18px;">
+      <input type="radio" class="radio-input" {{#if (equalsTo ownershipB 'no')}} checked {{/if}} >
+      <label class="radio-label">No</label>
+    </div>
+  
+  </div>
+  
+  </div>
+
+
+  {{#if (equalsTo ownershipB 'yes')}} 
+
+
+  <div class="info-container">
+
+    <div>
+      
+    
+      <label>Please provide nominee shareholder agreement or equivalent, and specify which type of nominee agreement is in place </label> 
+    
+    
+      <div>
+    
+      <div class="custom-radio" style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if (equalsTo nomineeAgreement 'a')}} checked {{/if}} >
+        <label class="radio-label">Individual</label>
+      </div>
+      <div class="custom-radio" style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if (equalsTo nomineeAgreement 'b')}} checked {{/if}} >
+        <label class="radio-label">Corporate Entity</label>
+      </div>
+      <div class="custom-radio" style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if (equalsTo nomineeAgreement 'c')}} checked {{/if}} >
+        <label class="radio-label">Broker Account</label>
+      </div>
+      <div class="custom-radio" style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if (equalsTo nomineeAgreement 'd')}} checked {{/if}} >
+        <label class="radio-label">Nominee Company</label>
+      </div>
+      
+
+      
+    </div>
+      
+      
+    </div>
+    
+    </div>
+
+
+  {{/if}}
+
+
+</section>
+
+<!-- PAGE BREAK  -->
+<div style="page-break-after:always;" class="hide-in-app"></div>
+<!----------------->
+
+<section>
+
+  <div class="title-div">
+    <p class="page-title" >Investments
+    </p>
+  </div>
+
+  <div class="info-container" style="display: flex; flex-direction: column; gap: 0;">
+
+
+  <h5 class="text-center font-weight-bold" style="color: #383838;" >  Existing or target investments of the entity
+  </h5>
+
+  <br>
+
+  {{#with target}}
+
+  <table style="border: 1px solid #383838; width: 100%; margin-bottom: 10px;" class="text-center target">
+    <tr>
+      <th style="width: 30%;">
+      </th>
+      <th style="width: 10%;">
+        Yes
+      </th>
+      <th style="width: 10%;">
+       No
+      </th>
+      <th>
+        Country/Region
+      </th>
+    </tr>
+    <tr>
+      <td class="text-left">
+        Real Estate
+      </td>
+      <td>
+        <div class="custom-radio">
+          <input type="radio" class="radio-input" {{#if (equalsTo real 'a')}} checked {{/if}} >
+          <label class="radio-label"></label>
+        </div>
+      </td>
+      <td>
+        <div class="custom-radio">
+          <input type="radio" class="radio-input" {{#if (equalsTo real 'b')}} checked {{/if}} >
+          <label class="radio-label"></label>
+        </div>
+      </td>
+      <td>
+        {{../realCountry}}
+      </td>
+    </tr>
+    <tr>
+      <td class="text-left">
+        Commodoties
+      </td>
+      <td>
+        <div class="custom-radio">
+          <input type="radio" class="radio-input" {{#if (equalsTo com 'a')}} checked {{/if}} >
+          <label class="radio-label"></label>
+        </div>
+      </td>
+      <td>
+        <div class="custom-radio">
+          <input type="radio" class="radio-input" {{#if (equalsTo com 'b')}} checked {{/if}} >
+          <label class="radio-label"></label>
+        </div>
+      </td>
+      <td>
+        {{../comCountry}}
+      </td>
+    </tr>
+    <tr>
+      <td class="text-left">
+         Equity
+      </td>
+      <td>
+        <div class="custom-radio">
+          <input type="radio" class="radio-input" {{#if (equalsTo eq 'a')}} checked {{/if}} >
+          <label class="radio-label"></label>
+        </div>
+      </td>
+      <td>
+        <div class="custom-radio">
+          <input type="radio" class="radio-input" {{#if (equalsTo eq 'b')}} checked {{/if}} >
+          <label class="radio-label"></label>
+        </div>
+      </td>
+      <td>
+        {{../eqCountry}}
+      </td>
+    </tr>
+    <tr>
+      <td class="text-left">
+        Fixed income
+      </td>
+      <td>
+        <div class="custom-radio">
+          <input type="radio" class="radio-input" {{#if (equalsTo fix 'a')}} checked {{/if}} >
+          <label class="radio-label"></label>
+        </div>
+      </td>
+      <td>
+        <div class="custom-radio">
+          <input type="radio" class="radio-input" {{#if (equalsTo fix 'b')}} checked {{/if}} >
+          <label class="radio-label"></label>
+        </div>
+      </td>
+      <td>
+        {{../fixCountry}}
+      </td>
+    </tr>
+    
+
+  </table>
+
+  {{/with}}
+
+</div>
+
+<br>
+  
+    <div>
+
+    <label for="">Is there any external lenders?</label>
+
+    <div class="info-container" style="display: flex;">
+
+      <div class="custom-radio" style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if (equalsTo external 'yes')}} checked {{/if}} >
+        <label class="radio-label">Yes</label>
+      </div>
+      <div class="custom-radio" style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if (equalsTo external 'no')}} checked {{/if}} >
+        <label class="radio-label">No</label>
+      </div>
+
+    </div>
+  
+  
+    
+  
+  </div>
+  
+
+  {{#if (equalsTo external 'yes')}} 
+
+  <div class="info-container" style="display: flex; flex-direction: column; gap: 0;">
+
+
+    <h5 class="text-center font-weight-bold" style="color: #383838;" >Typology and Countries
+    </h5>
+
+    <br>
+
+    <table style="border: 1px solid #383838; width: 100%; margin-bottom: 10px;" class="custom-russian">
+      <tr>
+        <th>
+          Lender type 	
+        </th>
+        <th>
+          Country/Region 		
+        </th>
+      </tr>
+      {{#each lender}}
+      <tr>
+        <td style="width: 20%; font-weight: normal;">
+         {{lenderType}}
+        </td>
+        <td>
+          {{country}}
+        </td>
+      </tr>
+      {{/each}}
+      
+    
+    </table>
+    
+
+</div>
+
+
+
+  {{/if}}
+
+  {{#if furtherInv}}
+  
+  <div>
+  
+    <label>Please provide any additional information in relation to future investments</label>  
+    <div class="custom-textarea info-container">   
+      {{furtherInv}}</div>
+  </div>
+
+  {{/if}}
+
+</section>
+
+<!-- PAGE BREAK  -->
+<div style="page-break-after:always;" class="hide-in-app"></div>
+<!----------------->
+
+<section>
+
+  <div class="title-div">
+    <p class="page-title" >Location
+    </p>
+  </div>
+
+
+  <div class="info-container" style="display: flex; flex-direction: column; gap: 0;">
+
+    <label for="">Is the entity located inside the European Union? 
+    </label>
+
+    <div class="info-container" style="display: flex;">
+
+      <div class="custom-radio" style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if (equalsTo locA 'yes')}} checked {{/if}} >
+        <label class="radio-label">Yes</label>
+      </div>
+      <div class="custom-radio" style="margin-right: 18px;">
+        <input type="radio" class="radio-input" {{#if (equalsTo locA 'no')}} checked {{/if}} >
+        <label class="radio-label">No</label>
+      </div>
+
+    </div>
+  
+  
+    
+  
+  </div>
+
+  {{#if (equalsTo locA 'yes')}}
+
+  <h5 class="text-center font-weight-bold" style="color: #383838;" >Director details
+  </h5>
+  <br>
+
+  {{#each director}}
+
+  <table style="border: 1px solid #383838; width: 100%; margin-bottom: 10px;">
+    <tbody><tr>
+      <th colspan="2">
+        {{dirNo}}
+      </th>
+    </tr>
+    <tr>
+      <td style="width: 20%;">
+        Name
+      </td>
+      <td>
+        {{firstName}} {{lastName}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Date of Birth
+      </td>
+      <td>
+        {{dateOfBirth}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Address
+      </td>
+      <td>
+        {{address}}
+      </td>
+    </tr>
+
+  </tbody></table>
+
+
+  {{/each}}
+
+  {{/if}}
+
+</section>
+
+<section>
+
+  <div class="title-div">
+    <p class="page-title" >Contact person
+    </p>
+  </div>
+
+  <div class="info-container">
+
+    <div>
+      <label>First Name 
+      </label> 
+      <input disabled type='text' value="{{contactFirst}}">
+    </div>
+    
+    <div>
+      <label>Last Name 
+      </label> 
+      <input disabled type='text' value="{{contactLast}}">
+    </div>
+
+    
+    </div>
+  <div class="info-container">
+
+    <div>
+      <label>E-mail 
+      </label> 
+      <input disabled type='text' value="{{contactEmail}}">
+    </div>
+    
+   
+    </div>
+
+</section>
+
+<!-- PAGE BREAK  -->
+<div style="page-break-after:always;" class="hide-in-app"></div>
+<!----------------->
+
+<section>
+
+  
+
+
+   <div class="title-div">
+        <p class="page-title" >Signature
+        </p>
+  </div>
+
+  <br>
+
+  <div class="info-container">
+
+
+    <div>
+  
+      <label>First name</label> <br>
+      <input disabled type='text' value="{{signeeFirst}}">
+    </div>
+    <div>
+      <label>Last Name </label> <br>
+      <input disabled type='text' value="{{signeeLast}}">
+    </div>
+
+  </div>
+
+
+
+  
+  <div class="info-container">
+
+
+    <div>
+
+      <label>Email </label> <br>
+      <input disabled type='text' value="{{signeeEmail}}">
+    </div>
+
+
+    <div>
+      <label>Position </label> <br>
+      <input disabled type='text' value="{{position}}">
+    </div>
+    
+
+  </div>
+  <div class="info-container" style="margin-bottom: 1em;">
+
+    <div>
+
+      <label>Signature </label> <br>
+      <input disabled type='text' value="{{signature}}" style="font-family: 'Sacramento', cursive !important; font-size: 1.4rem; font-style: italic;">
+    </div>
+
+
+    <div>
+      <label>Date </label> <br>
+      <input disabled type='text' value="{{signingDate}}">
+    </div>
+
+
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <div class="title-div">
+    <p class="page-title" >Rate your experience
+
+    </p>
+</div>
+
+
+<div class="info-container custom-rating" style="display: flex; flex-direction: column; gap: 0;">
+  <label>
+    How would you rate your experience with this form?
+  </label>
+  <div style="display: flex; flex-direction: row-reverse; justify-content: flex-end;">
+
+  <input type="radio" name="" id="" {{#if (equalsTo rating 'a')}} checked {{/if}}>
+  <span></span>
+  <input type="radio" name="" id="" {{#if (equalsTo rating 'b')}} checked {{/if}}>
+  <span></span>
+  <input type="radio" name="" id="" {{#if (equalsTo rating 'c')}} checked {{/if}}>
+  <span></span>
+  <input type="radio" name="" id="" {{#if (equalsTo rating 'd')}} checked {{/if}}>
+  <span></span>
+  <input type="radio" name="" id="" {{#if (equalsTo rating 'e')}} checked {{/if}}>
+  <span></span>
+</div>
+
+</div>
+
+{{#if reason}}
+<div>
+  
+  <label>What is the main reason for your score? (optional)</label>  
+  <div class="custom-textarea info-container">   
+    {{reason}}</div>
+</div>
+
+{{/if}}
+
+  
+</section>
+
+
+      {{/with}}
+
+
+
+
+</body>
+
+
+
+</html>
