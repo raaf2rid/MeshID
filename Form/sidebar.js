@@ -1,5 +1,8 @@
 // Hover Animation 
 
+
+console.log('executed')
+
 $(function() {
   $('.nav-link').hover(function() {
     $(this).parent('.nav-item').addClass('hovered');
