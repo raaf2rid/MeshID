@@ -1094,6 +1094,12 @@ tr[ref="row"]:first-of-type
         inset 10px 10px 10px rgba(0, 0, 0, .2);
   justify-content: space-between;
   align-items: center;
+  transition: all 1s ease-in-out;
+}
+
+.switch-holder.toggled{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .switch-label {
