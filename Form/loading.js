@@ -16,16 +16,16 @@ if (!logo) {
   }
 }
 
-if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]')) {
+if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/Form/styles.css"]')) {
 
-  fetch('https://raaf2rid.github.io/MeshID/styles.css')
+  fetch('https://raaf2rid.github.io/MeshID/Form/styles.css')
     .then(response => {
       if (response.ok) {
         let cssLink = document.createElement("link");
         cssLink.rel = "stylesheet";
-        cssLink.href = "https://raaf2rid.github.io/MeshID/styles.css";
+        cssLink.href = "https://raaf2rid.github.io/MeshID/Form/styles.css";
 
-        if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/styles.css"]')){
+        if (!document.querySelector('link[href="https://raaf2rid.github.io/MeshID/Form/styles.css"]')){
           document.head.appendChild(cssLink);
         }
 
