@@ -246,7 +246,6 @@ figure td {
 .preview .header {
   position: fixed;
   z-index: 1001;
-  box-shadow: 0px -14px 12px #e3e3e3, 7px 0px 14px #a9a9a9, 0px 14px 12px #e3e3e3, -7px 0px 14px #a9a9a9;
   margin: 1rem;
   padding: 0.9rem 1rem;
   border-radius: 7px 0 7px 7px;
