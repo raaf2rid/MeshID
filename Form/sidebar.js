@@ -33,11 +33,11 @@ if ($('.content .header').length === 0) {
 
 // Sidebar Show/Hide
 
-$('.switch-toggle').click(function() {
+$('.switch-toggle input[type="checkbox"]').click(function() {
   let sidebar = $('.card-header');
   let toggleIcon = $('.switch-toggle');
 
-  console.log(toggleIcon)
+  console.log(toggleIcon);
 
   sidebar.toggleClass('sidebarshow');
   toggleIcon.toggleClass('toggled');
