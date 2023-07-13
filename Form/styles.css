@@ -765,7 +765,7 @@ tr[ref="row"]:first-of-type
 }
 
 .preview .formio-component-checkbox{
-  padding-top: 0;
+  padding-top: 1rem;
 }
 
 .preview .formio-component-checkbox .custom-meshid-radio label span{
