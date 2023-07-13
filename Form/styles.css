@@ -72,7 +72,9 @@ figure td {
   display: block !important;
 }
 
-.wrapper .page-title {
+.preview .page-title, 
+.builder .page-title
+{
   background-color: #383838;
   border-radius: 7px;
   border-top-right-radius: 0;
@@ -80,7 +82,8 @@ figure td {
   text-align: center;
 }
 
-.wrapper .page-title p{
+.preview .page-title p,
+.builder .page-title p{
   color: #fff;
   font-size: 1.5rem;
   font-weight: 700;
