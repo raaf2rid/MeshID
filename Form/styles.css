@@ -72,13 +72,20 @@ figure td {
   display: block !important;
 }
 
-.preview .page-title {
-  /* background: rgb(209,84,149) !important; 
- background: radial-gradient(circle, #ce629d 10%, #317aa3 200%);
- background: linear-gradient(145deg, #383838 0%, #383838 100%) !important; */
+.page-title {
   background-color: #383838;
   border-radius: 7px;
   border-top-right-radius: 0;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.page-title p{
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  margin-bottom: 0;
 }
 
 .preview .wrapper formio {
