@@ -765,7 +765,7 @@ tr[ref="row"]:first-of-type
   transition: all 0.25s linear;
 }
 
-.preview .custom-meshid-radio label span:last-child{
+.preview .custom-meshid-radio:last-child label span{
   margin-bottom: 0;
 }
 
