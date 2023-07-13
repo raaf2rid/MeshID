@@ -761,6 +761,10 @@ tr[ref="row"]:first-of-type
   transition: all 0.25s linear;
 }
 
+.preview .formio-component-checkbox .custom-meshid-radio label span{
+  display: inline;
+}
+
 .preview .custom-meshid-radio label:hover span {
   color: #00a86b;
 }
@@ -783,7 +787,8 @@ tr[ref="row"]:first-of-type
   top: 9px;
 }
 
-.preview .formio-component-selectboxes label .check {
+.preview .formio-component-selectboxes label .check,
+.preview .formio-component-checkbox label .check {
   border-radius: 0;
 }
 
