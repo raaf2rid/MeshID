@@ -557,6 +557,7 @@ figure td {
 
 
 .preview .meshid-custom .formio-component-textfield label,
+.preview .meshid-custom .formio-component-number label,
 .preview .meshid-custom .formio-component-datagrid th,
 .preview .meshid-custom .formio-component-textarea label,
 .preview .meshid-custom .formio-component-email label,
@@ -810,6 +811,11 @@ tr[ref="row"]:first-of-type
 
 .preview
   .formio-component-selectboxes
+  .custom-meshid-radio
+  label
+  .check::before,
+.preview
+  .formio-component-checkbox
   .custom-meshid-radio
   label
   .check::before {
