@@ -765,6 +765,10 @@ tr[ref="row"]:first-of-type
   transition: all 0.25s linear;
 }
 
+.preview .custom-meshid-radio label span:last-child{
+  margin-bottom: 0;
+}
+
 .preview .formio-component-checkbox{
   padding-top: 1rem;
 }
