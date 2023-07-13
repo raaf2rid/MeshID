@@ -142,6 +142,10 @@ figure td {
 
 /* Sidebar  */
 
+.tab-error:after{
+  display: none;
+}
+
 
 .preview .card-header-tabs {
   flex-direction: column;
