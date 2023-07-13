@@ -722,9 +722,9 @@ tr[ref="row"]:first-of-type
 
 /* Dropdown */
 
-.preview .choices__item.choices__item--choice[data-id="1"] {
+/* .preview .choices__item.choices__item--choice[data-id="1"] {
   display: none;
-}
+} */
 
 /* Dropdown */
 
@@ -759,6 +759,7 @@ tr[ref="row"]:first-of-type
   padding-right: 0;
   padding-bottom: 0;
   margin: 10px auto;
+  margin-top: 0;
   z-index: 9;
   cursor: pointer;
   transition: all 0.25s linear;
