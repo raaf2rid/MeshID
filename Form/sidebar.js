@@ -36,9 +36,6 @@ if ($('.card .header').length === 0) {
 $('.switch-toggle input[type="checkbox"]').click(function() {
   let sidebar = $('.card-header');
   let toggleIcon = $('.switch-holder');
-
-
-
   sidebar.toggleClass('sidebarshow');
   toggleIcon.toggleClass('toggled');
 });
