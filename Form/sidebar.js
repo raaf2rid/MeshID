@@ -92,6 +92,13 @@ function updateSidebar() {
 updateSidebar();
 
 
+const $card = $('.card');
+
+const observer = new MutationObserver(updateSidebar);
+
+const observerConfig = { childList: true, subtree: true };
+
+observer.observe($card[0], observerConfig);
 
 
 
