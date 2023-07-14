@@ -438,14 +438,14 @@ figure td {
 .preview .navigation{
   position: fixed;
   top: 50vh;
-  z-index: 10000;
+  z-index: 100;
 }
 
 .preview .navigation-back{
-  left: 18vw;
+  left: 13vw;
 }
 .preview .navigation-next{
-  right: 8vw;
+  right: 5vw;
 }
 
 
