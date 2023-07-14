@@ -441,10 +441,10 @@ figure td {
   z-index: 10000;
 }
 
-.preview .navigation-next{
+.preview .navigation-back{
   left: 18vw;
 }
-.preview .navigation-back{
+.preview .navigation-next{
   right: 8vw;
 }
 
