@@ -100,7 +100,7 @@
               "properties": {},
               "allowMultipleMasks": false,
               "tag": "p",
-              "id": "e4kvcra"
+              "id": "eeae29"
             },
             {
               "label": "Loading with stylesheet",
@@ -184,7 +184,7 @@
               "properties": {},
               "allowMultipleMasks": false,
               "inputType": "hidden",
-              "id": "ey1vacl"
+              "id": "e5f9f6n"
             },
             {
               "label": "Tabs",
@@ -268,11 +268,10 @@
               "properties": {},
               "allowMultipleMasks": false,
               "inputType": "hidden",
-              "id": "e79ss4u"
+              "id": "e3y14r6"
             },
             {
               "label": "Sidebar",
-              "calculateValue": "function updateSidebar() {\r\n  const visibleTabs = $('.tab-pane').not(':has(.formio-component:first-child.formio-hidden)');\r\n\r\n  if (visibleTabs.length) {\r\n    const tabIndices = visibleTabs.map((index, element) => $(element).index()).get();\r\n\r\n    $('.card-header .nav-item').each((index, element) => {\r\n      if (tabIndices.includes(index)) {\r\n        $(element).show();\r\n      } else {\r\n        $(element).hide();\r\n      }\r\n    });\r\n  }\r\n}\r\n\r\n\r\n\r\nupdateSidebar()",
               "key": "tabs3",
               "logic": [
                 {
@@ -286,6 +285,20 @@
                       "name": "Sidebar",
                       "type": "customAction",
                       "customAction": "const builder = document.querySelector('.builder')\r\n\r\nif(!builder){\r\n\r\nfetch('https://raaf2rid.github.io/MeshID/Form/sidebar.js')\r\n  .then(response => response.text())\r\n  .then(data => {\r\n    // Wrap the code in an IIFE and pass it to the Function constructor\r\n    new Function(data)();\r\n  })\r\n  .catch(error => {\r\n    console.log('Error:', error);\r\n  });\r\n\r\n}\r\n"
+                    }
+                  ]
+                },
+                {
+                  "name": "Update Sidebar",
+                  "trigger": {
+                    "type": "event",
+                    "event": "change"
+                  },
+                  "actions": [
+                    {
+                      "name": "Update Sidebar",
+                      "type": "customAction",
+                      "customAction": "function updateSidebar() {\r\n  $('.tab-pane').each(function(index) {\r\n    const hasHiddenClass = $(this).children().first().hasClass('formio-hidden');\r\n    const navItem = $('.card-header .nav-item').eq(index);\r\n    const animationOptions = { duration: 'fast', easing: 'linear' };\r\n    hasHiddenClass ? navItem.slideUp(animationOptions) : navItem.slideDown(animationOptions);\r\n  });\r\n}\r\n\r\n\r\nupdateSidebar()"
                     }
                   ]
                 }
@@ -318,6 +331,7 @@
               "autofocus": false,
               "dbIndex": false,
               "customDefaultValue": "",
+              "calculateValue": "",
               "calculateServer": false,
               "widget": {
                 "type": "input"
@@ -351,7 +365,7 @@
               "properties": {},
               "allowMultipleMasks": false,
               "inputType": "hidden",
-              "id": "e1t1685"
+              "id": "ej0w1k8"
             },
             {
               "label": "Custom Components",
@@ -434,7 +448,7 @@
               "properties": {},
               "allowMultipleMasks": false,
               "inputType": "hidden",
-              "id": "ev3s4g9"
+              "id": "e330j0b"
             }
           ]
         },
@@ -506,7 +520,7 @@
               "showWordCount": false,
               "properties": {},
               "allowMultipleMasks": false,
-              "id": "essti6"
+              "id": "eq29dim"
             },
             {
               "label": "Begin",
@@ -581,7 +595,7 @@
               "block": false,
               "disableOnInvalid": false,
               "theme": "primary",
-              "id": "ed02vy"
+              "id": "exmoi6aj"
             }
           ]
         },
@@ -667,7 +681,7 @@
                   "properties": {},
                   "allowMultipleMasks": false,
                   "tag": "p",
-                  "id": "exn7z9a"
+                  "id": "es2joyn"
                 },
                 {
                   "label": "Text Field",
@@ -741,7 +755,7 @@
                   "inputFormat": "plain",
                   "inputMask": "",
                   "spellcheck": true,
-                  "id": "eit0yhj"
+                  "id": "e6433w8"
                 },
                 {
                   "label": "Text Area",
@@ -822,7 +836,7 @@
                   "wysiwyg": false,
                   "editor": "",
                   "fixedSize": true,
-                  "id": "ej09n"
+                  "id": "ekjk8q"
                 },
                 {
                   "label": "Number",
@@ -896,7 +910,7 @@
                   "showWordCount": false,
                   "properties": {},
                   "allowMultipleMasks": false,
-                  "id": "e1i47e9"
+                  "id": "ecx9mlv"
                 },
                 {
                   "label": "Checkbox",
@@ -963,7 +977,7 @@
                   "inputType": "checkbox",
                   "value": "",
                   "name": "",
-                  "id": "e406sfo"
+                  "id": "esan2d"
                 },
                 {
                   "label": "Select Boxes",
@@ -1047,7 +1061,7 @@
                   "allowMultipleMasks": false,
                   "fieldSet": false,
                   "inline": false,
-                  "id": "e24etz8"
+                  "id": "eyt3f44"
                 },
                 {
                   "label": "Select",
@@ -1155,7 +1169,7 @@
                   },
                   "customOptions": {},
                   "useExactSearch": false,
-                  "id": "evqntf66"
+                  "id": "eudgw8n"
                 },
                 {
                   "label": "Radio",
@@ -1236,7 +1250,7 @@
                   "allowMultipleMasks": false,
                   "inputType": "radio",
                   "fieldSet": false,
-                  "id": "elp5mr9"
+                  "id": "ezxd9r8"
                 }
               ],
               "placeholder": "",
@@ -1297,7 +1311,7 @@
               "allowMultipleMasks": false,
               "tree": false,
               "legend": "",
-              "id": "e1ftyxm"
+              "id": "enm3x1"
             }
           ]
         },
@@ -1389,7 +1403,7 @@
                   "properties": {},
                   "allowMultipleMasks": false,
                   "tag": "p",
-                  "id": "ecbt1rg"
+                  "id": "eiea4e"
                 },
                 {
                   "label": "Email",
@@ -1466,7 +1480,7 @@
                   "kickbox": {
                     "enabled": false
                   },
-                  "id": "e3s02f"
+                  "id": "ecsa3gx"
                 }
               ],
               "placeholder": "",
@@ -1521,7 +1535,7 @@
               "allowMultipleMasks": false,
               "tree": false,
               "legend": "",
-              "id": "e4w5kqq"
+              "id": "e7aixv"
             }
           ]
         },
@@ -1607,7 +1621,7 @@
                   "properties": {},
                   "allowMultipleMasks": false,
                   "tag": "p",
-                  "id": "eg12b6l"
+                  "id": "e2dfshh"
                 },
                 {
                   "label": "Data Grid",
@@ -1718,7 +1732,7 @@
                   "allowMultipleMasks": false,
                   "tree": true,
                   "disableAddingRemovingRows": false,
-                  "id": "eiv1wft"
+                  "id": "ezhv69r"
                 }
               ],
               "placeholder": "",
@@ -1779,7 +1793,7 @@
               "allowMultipleMasks": false,
               "tree": false,
               "legend": "",
-              "id": "e0co987"
+              "id": "ek1y8ec"
             }
           ]
         }
@@ -1797,10 +1811,10 @@
             {
               "name": "next action",
               "type": "customAction",
-              "customAction": "nextTab()\r\n\r\nfunction nextTab() {\r\n  const activeTab = $('.tab-pane.active');\r\n\r\n  if (activeTab.length) {\r\n    let nextTab = activeTab.nextAll('.tab-pane').not(':has(.formio-component:first-child.formio-hidden)').first();\r\n\r\n    if (nextTab.length) {\r\n      activeTab.removeClass('active').hide();\r\n      nextTab.addClass('active').show();\r\n      return;\r\n    }\r\n\r\n    // If no next tab without formio-hidden is found, do something (e.g., display a message)\r\n  }\r\n}\r\n\r\n\r\n\r\n\r\n",
-              "isRowSelected": true
+              "customAction": "function nextTab() {\r\n  const activeTab = $('.tab-pane.active');\r\n\r\n  if (activeTab.length) {\r\n    const nextTab = activeTab.nextAll('.tab-pane').not(':has(.formio-component:first-child.formio-hidden)').first();\r\n\r\n    if (nextTab.length) {\r\n      activeTab.slideUp(600, 'linear', function() {\r\n        activeTab.removeClass('active').hide();\r\n        nextTab.addClass('active').slideDown(600, 'linear');\r\n      });\r\n\r\n      const activeIndex = $('.tab-pane').index(nextTab);\r\n      $('.card-header .nav-item').removeClass('active').eq(activeIndex).addClass('active');\r\n      $('.card-header .nav-link').removeClass('active').eq(activeIndex).addClass('active');\r\n      \r\n      return;\r\n    }\r\n\r\n    // If no next tab without formio-hidden is found, do something (e.g., display a message)\r\n  }\r\n}\r\n// Call the nextTab function\r\nnextTab();\r\n"
             }
-          ]
+          ],
+          "isRowSelected": true
         },
         {
           "name": "Back",
@@ -1812,7 +1826,7 @@
             {
               "name": "Back Action",
               "type": "customAction",
-              "customAction": "prevTab()\r\n\r\nfunction prevTab() {\r\n  const activeTab = $('.tab-pane.active');\r\n  \r\n  if (activeTab.length) {\r\n    let prevTab = activeTab.prevAll('.tab-pane').not(':has(.formio-component:first-child.formio-hidden)').first();\r\n\r\n    if (prevTab.length) {\r\n      activeTab.hide().removeClass('active');\r\n      prevTab.show().addClass('active');\r\n      return;\r\n    }\r\n\r\n    // If no previous tab without formio-hidden is found, do something (e.g., display a message)\r\n  }\r\n}"
+              "customAction": "prevTab()\r\n\r\nfunction prevTab() {\r\n  const activeTab = $('.tab-pane.active');\r\n\r\n  if (activeTab.length) {\r\n    const prevTab = activeTab.prevAll('.tab-pane').not(':has(.formio-component:first-child.formio-hidden)').first();\r\n\r\n    if (prevTab.length) {\r\n      activeTab.slideUp(600, 'linear', function() {\r\n        activeTab.removeClass('active').hide();\r\n        prevTab.addClass('active').slideDown(600, 'linear');\r\n      });\r\n\r\n      const activeIndex = $('.tab-pane').index(prevTab);\r\n      $('.card-header .nav-item').removeClass('active').eq(activeIndex).addClass('active');\r\n      $('.card-header .nav-link').removeClass('active').eq(activeIndex).addClass('active');\r\n\r\n      return;\r\n    }\r\n\r\n    // If no previous tab without formio-hidden is found, do something (e.g., display a message)\r\n  }\r\n}\r\n"
             }
           ]
         },
@@ -1920,7 +1934,7 @@
       "properties": {},
       "allowMultipleMasks": false,
       "tree": false,
-      "id": "e64n0sl"
+      "id": "ec6zhi"
     },
     {
       "label": "Columns",
@@ -2000,7 +2014,7 @@
               "size": "md",
               "rightIcon": "",
               "disableOnInvalid": false,
-              "id": "edgiy2e"
+              "id": "eq6k7ht"
             }
           ],
           "width": 6,
@@ -2085,7 +2099,7 @@
               "size": "md",
               "leftIcon": "",
               "disableOnInvalid": false,
-              "id": "eq7a3"
+              "id": "euf1n6e"
             }
           ],
           "width": 6,
@@ -2158,7 +2172,7 @@
       "allowMultipleMasks": false,
       "tree": false,
       "autoAdjust": false,
-      "id": "e3xhj68"
+      "id": "ea3xxy"
     }
   ],
   "keyModified": true,
@@ -2218,5 +2232,5 @@
   "properties": {},
   "allowMultipleMasks": false,
   "tree": true,
-  "id": "e9p8n4w"
+  "id": "ecq8spf"
 }

@@ -439,11 +439,12 @@ figure td {
   position: fixed;
   top: 50vh;
   z-index: 10000;
-  left: 18vw;
 }
 
 .preview .navigation-next{
-  left: 0vw;
+  left: 18vw;
+}
+.preview .navigation-back{
   right: 8vw;
 }
 
