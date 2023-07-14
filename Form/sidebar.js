@@ -54,17 +54,26 @@ $('.card-header .nav-link').click(function() {
 });
 
 
-$(function() {
-  const navLinks = $(".nav-tabs > .nav-item > .nav-link");
-  const cardBody = $(".tab-pane");
-
-  navLinks.on("click", function() {
-    // Get the active card body
-    const activeCardBody = $(".tab-pane.active");
-
-    activeCardBody.slideDown(600);
+$(document).ready(function() {
+  var navItems = $('.nav-tabs .nav-item');
+  
+  // Slide background on click
+  navItems.on('click', function() {
+    var targetItem = $(this);
+    var targetIndex = targetItem.index();
+    
+    navItems.removeClass('active');
+    targetItem.addClass('active');
+    navItems.css('transform', '');
+    
+    // Apply sliding effect
+    if (targetIndex > 0) {
+      var slideDistance = targetIndex * 100 + "%";
+      targetItem.prevAll().css('transform', 'translateY(-' + slideDistance + ')');
+    }
   });
 });
+
 
 
 
