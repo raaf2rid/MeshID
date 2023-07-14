@@ -435,6 +435,14 @@ figure td {
   transform: translateY(0px) !important;
 }
 
+.preview .navigation{
+  position: fixed;
+  top: 50vh;
+  z-index: 10000;
+  left: 18vw;
+}
+
+
 .navigation-back svg,
 .navigation-next svg {
   width: 90px;
