@@ -42,8 +42,6 @@ $('.switch-toggle input[type="checkbox"]').click(function() {
 
 
 
-// Card Animation 
-
 $(function() {
   const navLinks = $(".nav-tabs > .nav-item > .nav-link");
   const cardBody = $(".tab-pane");
@@ -52,11 +50,9 @@ $(function() {
     // Get the active card body
     const activeCardBody = $(".tab-pane.active");
 
-    // Hide all card bodies with animation
-    cardBody.fadeOut(400, function() {
-      // Show the active card body with animation
-      activeCardBody.fadeIn(400);
-    });
+    activeCardBody.slideDown(600);
   });
 });
+
+
 
