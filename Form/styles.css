@@ -369,8 +369,8 @@ figure td {
   overflow: hidden;
 }
 
-.preview .card-body {
-  padding: 0 !important;
+.preview .card-body > .formio-component-fieldset {
+  padding: 2rem 1rem !important;
 }
 
 /* Main form  */
