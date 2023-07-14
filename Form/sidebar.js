@@ -41,7 +41,6 @@ $('.switch-toggle input[type="checkbox"]').click(function() {
 });
 
 
-
 $(function() {
   const navLinks = $(".nav-tabs > .nav-item > .nav-link");
   const cardBody = $(".tab-pane");
@@ -50,11 +49,16 @@ $(function() {
     // Get the active card body
     const activeCardBody = $(".tab-pane.active");
 
-    // Hide all card bodies with animation
-    cardBody.not(activeCardBody).slideUp(400);
+    // Check if the active card body is already visible
+    if (activeCardBody.is(":visible")) {
+      return; // No need to animate if already visible
+    }
 
-    // Toggle the display property of the active card body
-    activeCardBody.slideToggle(400);
+    // Hide all card bodies with animation
+    cardBody.slideUp(400, function() {
+      // Show the active card body with animation
+      activeCardBody.slideDown(400);
+    });
   });
 });
 
