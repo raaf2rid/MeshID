@@ -201,7 +201,7 @@ figure td {
 
 .preview .nav-tabs .nav-item.active {
   /* background-color: #00a86b; */
-  position: absolute;
+  position: relative;
 }
 
 .preview .nav-tabs .nav-item:before {
