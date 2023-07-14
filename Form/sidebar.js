@@ -89,6 +89,8 @@ function updateSidebar() {
   });
 }
 
+updateSidebar();
+
 
 
 // Select the card elements
