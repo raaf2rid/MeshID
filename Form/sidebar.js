@@ -41,6 +41,10 @@ $('.switch-toggle input[type="checkbox"]').click(function() {
 });
 
 
+$(function() {
+  $('.card-header .nav-link').off();
+});
+
 
 $(function() {
   const navLinks = $(".nav-tabs > .nav-item > .nav-link");
