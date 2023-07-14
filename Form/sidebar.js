@@ -49,13 +49,21 @@ $(function() {
   const cardBody = $(".tab-pane");
 
   navLinks.on("click", function() {
-    // Remove card-animation class from all card bodies
-    cardBody.removeClass("card-animation");
-    
     // Get the active card body
     const activeCardBody = $(".tab-pane.active");
 
-    // Add card-animation class to the active card body
-    activeCardBody.addClass("card-animation");
+    // Stop any ongoing animation on the active card body
+    activeCardBody.stop(true, true);
+
+    // Hide the active card body using jQuery animation
+    activeCardBody.hide(600, 'linear', function() {
+      // Show the clicked card body using jQuery animation
+      const targetCardBody = $(this).removeClass("active").siblings(".tab-pane").eq(navLinks.index(this));
+      targetCardBody.show(600, 'linear', function() {
+        // Add the "active" class to the clicked card body
+        $(this).addClass("active");
+      });
+    });
   });
 });
+
