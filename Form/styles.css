@@ -370,7 +370,7 @@ figure td {
 }
 
 .preview .card-body {
-  padding: 2rem 1rem !important;
+  padding: 0 !important;
 }
 
 /* Main form  */
