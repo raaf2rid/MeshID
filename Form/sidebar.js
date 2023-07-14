@@ -41,9 +41,8 @@ $('.switch-toggle input[type="checkbox"]').click(function() {
 });
 
 $('.card-header .nav-link').each(function() {
-  var clonedElement = $(this).clone();
-  clonedElement.removeAttr('href');
-  $(this).parent().replaceWith(clonedElement);
+  var clonedElement = $(this).clone().removeAttr('href');
+  $(this).replaceWith(clonedElement);
 });
 
 
