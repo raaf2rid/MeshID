@@ -47,20 +47,17 @@ $(function() {
   const cardBody = $(".tab-pane");
 
   navLinks.on("click", function() {
-    // Hide all card bodies with animation
-    cardBody.slideUp(400, function() {
-      // Get the active card body
-      const activeCardBody = $(".tab-pane.active");
+    // Get the active card body
+    const activeCardBody = $(".tab-pane.active");
 
-      // Show the active card body with animation
-      activeCardBody.slideDown(400, function() {
-        // Reset display property after animation
-        cardBody.css("display", "");
-        activeCardBody.css("display", "");
-      });
-    });
+    // Hide all card bodies with animation
+    cardBody.not(activeCardBody).slideUp(400);
+
+    // Toggle the display property of the active card body
+    activeCardBody.slideToggle(400);
   });
 });
+
 
 
 
