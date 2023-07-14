@@ -46,21 +46,15 @@ $('.card-header .nav-link').each(function() {
 });
 
 $('.card-header .nav-link').click(function() {
-  // Remove active class from all elements and their parents
+  const clickedIndex = $(this).parent().index();
+  
   $('.card-header .nav-link').removeClass('active').parent().removeClass('active');
-
-  // Add active class to clicked element and its parent
   $(this).addClass('active').parent().addClass('active');
 
-  // Get the index of the clicked element
-  var index = $(this).index();
-
-  // Hide all tab-panes with sliding animation
-  $('.tab-pane').slideUp();
-
-  // Show the active tab-pane with sliding down animation
-  $('.tab-pane').eq(index).slideDown();
+  $('.tab-pane').removeClass('active');
+  $('.tab-pane').eq(clickedIndex).addClass('active');
 });
+
 
 
 

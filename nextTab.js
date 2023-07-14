@@ -1,14 +1,19 @@
-nextTab()
-
 function nextTab() {
   const activeTab = $('.tab-pane.active');
 
   if (activeTab.length) {
-    let nextTab = activeTab.nextAll('.tab-pane').not(':has(.formio-component:first-child.formio-hidden)').first();
+    const nextTab = activeTab.nextAll('.tab-pane').not(':has(.formio-component:first-child.formio-hidden)').first();
 
     if (nextTab.length) {
-      activeTab.removeClass('active').hide();
-      nextTab.addClass('active').show();
+      activeTab.slideToggle('slow', function() {
+        activeTab.removeClass('active');
+        nextTab.addClass('active').slideToggle('slow');
+      });
+
+      const activeIndex = $('.tab-pane').index(nextTab);
+      $('.card-header .nav-item').removeClass('active').eq(activeIndex).addClass('active');
+      $('.card-header .nav-link').removeClass('active').eq(activeIndex).addClass('active');
+
       return;
     }
 
@@ -16,6 +21,5 @@ function nextTab() {
   }
 }
 
-
-
-
+// Call the nextTab function
+nextTab();
