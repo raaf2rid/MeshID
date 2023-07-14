@@ -48,12 +48,12 @@ $(function() {
 
   navLinks.on("click", function() {
     // Hide all card bodies with animation
-    cardBody.hide("slide", { direction: "up" }, 400, function() {
+    cardBody.slideUp(400, function() {
       // Get the active card body
       const activeCardBody = $(".tab-pane.active");
 
       // Show the active card body with animation
-      activeCardBody.show("slide", { direction: "down" }, 400, function() {
+      activeCardBody.slideDown(400, function() {
         // Reset display property after animation
         cardBody.css("display", "none");
         activeCardBody.css("display", "block");
@@ -61,6 +61,7 @@ $(function() {
     });
   });
 });
+
 
 
 
