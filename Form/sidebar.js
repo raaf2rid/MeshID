@@ -54,7 +54,6 @@ $('.card-header .nav-link').click(function() {
 });
 
 
-
 $(function() {
   const navLinks = $(".nav-tabs > .nav-item > .nav-link");
   const cardBody = $(".tab-pane");
