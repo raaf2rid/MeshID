@@ -93,22 +93,6 @@ updateSidebar();
 
 
 
-// Select the card elements
-const cards = document.querySelectorAll('.card');
-
-// Create a new MutationObserver instance for each card
-cards.forEach(card => {
-  const observer = new MutationObserver(function(mutationsList) {
-    // Call the updateSidebar function or perform any desired action
-    updateSidebar();
-  });
-
-  // Configure the observer to monitor childList changes within the card
-  const observerConfig = { childList: true, subtree: true };
-
-  // Start observing the card for mutations
-  observer.observe(card, observerConfig);
-});
 
 
 
