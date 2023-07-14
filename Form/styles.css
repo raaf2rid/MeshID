@@ -203,7 +203,7 @@ figure td {
   position: relative;
 }
 
-.preview .nav-tabs .nav-item.active:before {
+.preview .nav-tabs .nav-item:before {
   content: "";
   position: absolute;
   top: 0;
@@ -215,6 +215,9 @@ figure td {
   transition: transform 0.3s ease;
 }
 
+.preview .nav-tabs .nav-item.active:before{
+  width: 100%;
+}
 
 .preview .nav-item {
   display: inline-block;

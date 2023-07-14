@@ -54,25 +54,6 @@ $('.card-header .nav-link').click(function() {
 });
 
 
-$(document).ready(function() {
-  var navItems = $('.nav-tabs .nav-item');
-  
-  // Slide background on click
-  navItems.on('click', function() {
-    var targetItem = $(this);
-    var targetIndex = targetItem.index();
-    
-    navItems.removeClass('active');
-    targetItem.addClass('active');
-    navItems.css('transform', '');
-    
-    // Apply sliding effect
-    if (targetIndex > 0) {
-      var slideDistance = targetIndex * 100 + "%";
-      targetItem.prevAll().css('transform', 'translateY(-' + slideDistance + ')');
-    }
-  });
-});
 
 
 
