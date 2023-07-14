@@ -49,18 +49,14 @@ $(function() {
     // Get the active card body
     const activeCardBody = $(".tab-pane.active");
 
-    // Check if the active card body is already visible
-    if (activeCardBody.is(":visible")) {
-      return; // No need to animate if already visible
-    }
-
     // Hide all card bodies with animation
-    cardBody.slideUp(400, function() {
-      // Show the active card body with animation
-      activeCardBody.slideDown(400);
-    });
+    cardBody.css("max-height", 0);
+
+    // Show the active card body with animation
+    activeCardBody.css("max-height", activeCardBody[0].scrollHeight);
   });
 });
+
 
 
 
