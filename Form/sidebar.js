@@ -49,14 +49,15 @@ $(function() {
   const cardBody = $(".tab-pane");
 
   navLinks.on("click", function() {
-    // Slide up all card bodies
-    cardBody.slideUp();
+    // Hide all card bodies with animation
+    cardBody.hide("slide", { direction: "up" }, 400);
 
     // Get the active card body
     const activeCardBody = $(".tab-pane.active");
 
-    // Slide down the active card body
-    activeCardBody.slideDown();
+    // Show the active card body with animation
+    activeCardBody.show("slide", { direction: "down" }, 400);
   });
 });
+
 
