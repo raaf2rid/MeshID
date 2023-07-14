@@ -212,7 +212,7 @@ figure td {
   width: 200%;
   height: 100%;
   background: linear-gradient(to right, red, blue);
-  animation: slideBackground 2s linear infinite;
+  animation: slideBackground 2s linear;
 }
 
 @keyframes slideBackground {
