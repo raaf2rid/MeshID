@@ -40,9 +40,12 @@ $('.switch-toggle input[type="checkbox"]').click(function() {
   toggleIcon.toggleClass('toggled');
 });
 
-$('.card-header .nav-link').replaceWith(function() {
-  return $(this).clone();
+$('.card-header .nav-link').each(function() {
+  var clonedElement = $(this).clone();
+  clonedElement.removeAttr('href');
+  $(this).parent().replaceWith(clonedElement);
 });
+
 
 
 $(function() {
