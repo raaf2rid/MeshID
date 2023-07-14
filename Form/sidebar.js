@@ -45,15 +45,40 @@ $('.card-header .nav-link').each(function() {
   $(this).replaceWith(clonedElement);
 });
 
+
+
 $('.card-header .nav-link').click(function() {
   const clickedIndex = $(this).parent().index();
   
   $('.card-header .nav-link').removeClass('active').parent().removeClass('active');
   $(this).addClass('active').parent().addClass('active');
 
-  $('.tab-pane').removeClass('active');
-  $('.tab-pane').eq(clickedIndex).addClass('active');
+  const activeTab = $('.tab-pane.active');
+  const nextTab = $('.tab-pane').eq(clickedIndex);
+
+  const activeTabHeight = activeTab.outerHeight();
+  const nextTabHeight = nextTab.outerHeight();
+
+  activeTab.height(activeTabHeight);
+  activeTab.slideUp('slow', function() {
+    activeTab.removeClass('active');
+    nextTab.css({
+      display: 'block',
+      height: 0
+    }).animate(
+      {
+        height: nextTabHeight
+      },
+      {
+        duration: 'slow',
+        complete: function() {
+          nextTab.addClass('active').css('height', '');
+        }
+      }
+    );
+  });
 });
+
 
 
 
