@@ -55,13 +55,12 @@ $(function() {
       // Show the active card body with animation
       activeCardBody.slideDown(400, function() {
         // Reset display property after animation
-        cardBody.css("display", "none");
-        activeCardBody.css("display", "block");
+        cardBody.css("display", "");
+        activeCardBody.css("display", "");
       });
     });
   });
 });
-
 
 
 
