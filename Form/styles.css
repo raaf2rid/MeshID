@@ -442,6 +442,11 @@ figure td {
   left: 18vw;
 }
 
+.preview .navigation-next{
+  left: 0vw;
+  right: 8vw;
+}
+
 
 .navigation-back svg,
 .navigation-next svg {
