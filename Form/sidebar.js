@@ -45,6 +45,14 @@ $('.card-header .nav-link').each(function() {
   $(this).replaceWith(clonedElement);
 });
 
+$('.card-header .nav-link').click(function() {
+  // Remove active class from all elements and their parents
+  $('.card-header .nav-link').removeClass('active').parent().removeClass('active');
+  
+  // Add active class to clicked element and its parent
+  $(this).addClass('active').parent().addClass('active');
+});
+
 
 
 $(function() {
