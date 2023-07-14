@@ -52,18 +52,38 @@ $(function() {
     // Get the active card body
     const activeCardBody = $(".tab-pane.active");
 
-    // Stop any ongoing animation on the active card body
+    // Remove any ongoing animations and clear queue for the active card body
     activeCardBody.stop(true, true);
 
-    // Hide the active card body using jQuery animation
-    activeCardBody.hide(600, 'linear', function() {
-      // Show the clicked card body using jQuery animation
-      const targetCardBody = $(this).removeClass("active").siblings(".tab-pane").eq(navLinks.index(this));
-      targetCardBody.show(600, 'linear', function() {
-        // Add the "active" class to the clicked card body
-        $(this).addClass("active");
-      });
-    });
+    // Perform the jQuery animation on the active card body
+    activeCardBody.animate(
+      {
+        opacity: 0, // Animate opacity to 0 (fade out)
+        height: 0 // Animate height to 0 (collapse)
+      },
+      600, // Animation duration in milliseconds
+      'linear', // Easing function
+      function() {
+        // After animation is complete, show the clicked card body
+        const targetCardBody = $(this)
+          .removeClass("active")
+          .siblings(".tab-pane")
+          .eq(navLinks.index(this));
+        
+        targetCardBody
+          .css({ opacity: 0, height: 'auto' }) // Set initial CSS properties
+          .animate(
+            { opacity: 1, height: targetCardBody.outerHeight() }, // Animate opacity to 1 and height to target height
+            600, // Animation duration in milliseconds
+            'linear', // Easing function
+            function() {
+              // Add the "active" class to the clicked card body
+              $(this).addClass("active");
+            }
+          );
+      }
+    );
   });
 });
+
 
