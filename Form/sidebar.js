@@ -42,22 +42,25 @@ $('.switch-toggle input[type="checkbox"]').click(function() {
 
 
 
-// Card Animation 
-
 $(function() {
   const navLinks = $(".nav-tabs > .nav-item > .nav-link");
   const cardBody = $(".tab-pane");
 
   navLinks.on("click", function() {
     // Hide all card bodies with animation
-    cardBody.hide("slide", { direction: "up" }, 400);
+    cardBody.hide("slide", { direction: "up" }, 400, function() {
+      // Get the active card body
+      const activeCardBody = $(".tab-pane.active");
 
-    // Get the active card body
-    const activeCardBody = $(".tab-pane.active");
-
-    // Show the active card body with animation
-    activeCardBody.show("slide", { direction: "down" }, 400);
+      // Show the active card body with animation
+      activeCardBody.show("slide", { direction: "down" }, 400, function() {
+        // Reset display property after animation
+        cardBody.css("display", "none");
+        activeCardBody.css("display", "block");
+      });
+    });
   });
 });
+
 
 
