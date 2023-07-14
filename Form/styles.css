@@ -370,7 +370,7 @@ figure td {
 }
 
 .preview .card-body{
-  padding: 0 I !important;
+  padding: 0 !important;
 }
 
 .preview .card-body > .formio-component-fieldset {
