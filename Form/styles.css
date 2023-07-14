@@ -212,11 +212,11 @@ figure td {
   height: 100%;
   background-color: #00a86b;
   z-index: -1;
-  transition: width 0.4s ease-in-out;
 }
 
 .preview .nav-tabs .nav-item.active:before{
   width: 100%;
+  transition: width 0.4s ease-in-out;
 }
 
 .preview .nav-item {
